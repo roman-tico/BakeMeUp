@@ -4,54 +4,125 @@
   <meta charset="utf-8">
   <title>Bake Me Up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
     .hero {
-      display:flex;
-      min-height:100vh;
+      display: flex;
+      min-height: 100vh;
     }
+
     .text {
-      flex:1;
-      padding:60px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap:20px;
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
     }
-    .text h1 { font-size:48px; margin:0; }
-    .text p { font-size:18px; color:#333; }
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      margin: 0;
+      color: #333;
+      max-width: 520px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 14px 20px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      width: max-content;
+      font-size: 16px;
+      cursor: default;
+    }
+
+    .btn-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: -8px;
+    }
+
     .image {
-      flex:1;
+      flex: 1;
     }
+
     .image img {
-      width:100%;
-      height:100%;
-      object-fit:cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    a {
-      display:inline-block;
-      margin-top:20px;
-      padding:14px 20px;
-      background:#000;
-      color:#fff;
-      text-decoration:none;
-      border-radius:8px;
-      width:max-content;
-    }
-    @media(max-width:900px){
-      .hero{flex-direction:column;}
-      .text{padding:30px;}
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .text {
+        padding: 32px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <section class="hero">
     <div class="text">
+
+      <!-- ELEMENTO: TÍTULO -->
       <h1>Bake Me Up</h1>
-      <p>Repostería artesanal hecha en Puebla. Brownies, bizcochos y postres para cualquier ocasión.</p>
-      <a href="#">Pedir por WhatsApp</a>
+
+      <!-- ELEMENTO: SUBTÍTULO -->
+      <h2>
+        Repostería artesanal hecha en Puebla.  
+        Brownies, bizcochos y postres para cualquier ocasión.
+      </h2>
+
+      <!-- BOTÓN (FAKE) -->
+      <a class="btn">Pedir por WhatsApp</a>
+      <div class="btn-note">(jaja, el botón es fake)</div>
+
+      <!-- ELEMENTO: TEXTO -->
+      <p>
+        Sof y Fer 💛<br><br>
+        Les regalo este dominio con la idea de que les sea útil para lo que quieran:
+        subir su menú, compartirlo con clientes, controlar el WiFi si algún día lo necesitan…
+        una web tiene mil posibilidades.<br><br>
+        Me encanta su proyecto y todo lo que están construyendo.
+        Saben que siempre las voy a apoyar.<br><br>
+        Las quiero,<br>
+        <strong>Román</strong>
+      </p>
+
     </div>
+
     <div class="image">
       <img src="hero.jpg" alt="Bake Me Up">
     </div>
