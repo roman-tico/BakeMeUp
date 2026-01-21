@@ -5,12 +5,15 @@
   <title>Bake Me Up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- =========================
-       ESTILOS GENERALES
-  ========================= -->
+  <!-- =========================================================
+       BLOQUE 1: ESTILOS (CSS)
+       - Aquí está TODO el diseño del header y del hero.
+       - Si algo "se ve feo", casi siempre se arregla aquí.
+  ========================================================== -->
   <style>
-
-    /* RESET BÁSICO */
+    /* -------------------------
+       RESET / BASE
+    -------------------------- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -18,53 +21,85 @@
       color: #111;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* =========================================================
+       BLOQUE 2: HEADER (barra superior)
+       - Fondo café oscuro (contraste con isotipo crema)
+       - Links color crema
+       - Se oculta al hacer scroll hacia abajo (con JS)
+    ========================================================== */
     .site-header {
       width: 100%;
-      background: #f5dfac; /* crema del manual */
-      padding: 16px 32px;
+      background: #26120f; /* café oscuro (contraste con #f5dfac) */
+      padding: 16px 28px;
+
+      /* Para que sea "pro": queda arriba (pero OJO, lo ocultamos con scroll) */
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      /* Animación cuando se esconde/mostrar */
+      transition: transform 0.28s ease;
+    }
+
+    /* Cuando el JS le pone la clase "hide", el header se va para arriba */
+    .site-header.hide {
+      transform: translateY(-110%);
     }
 
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
+    /* Logo / isotipo */
     .logo {
-      height: 48px;
+      height: 46px;
+      width: auto;
+      display: block;
     }
 
+    /* Navegación */
     .main-nav {
       display: flex;
-      gap: 32px;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; /* si se aprieta, brinca a otra línea */
     }
 
     .main-nav a {
       text-decoration: none;
-      color: #26120f;
-      font-size: 16px;
+      color: #f5dfac; /* crema del isotipo */
+      font-size: 15px;
+
+      padding: 10px 14px;
+      border-radius: 999px; /* estilo “pastillita” */
+      transition: background 0.15s ease;
     }
 
     .main-nav a:hover {
-      text-decoration: underline;
+      background: rgba(245, 223, 172, 0.18);
     }
 
-    /* =========================
-       HERO (SECCIÓN PRINCIPAL)
-    ========================= */
+    /* =========================================================
+       BLOQUE 3: HERO (la pantalla principal grande)
+       - Tu estructura original (texto + imagen)
+       - NO modifico tu hero.jpg (se queda igual)
+    ========================================================== */
     .hero {
       display: flex;
-      min-height: calc(100vh - 80px); /* resta el header */
+      min-height: calc(100vh - 74px); /* alto pantalla menos el header aprox */
     }
 
     .text {
       flex: 1;
       padding: 60px;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -100,7 +135,8 @@
       border-radius: 8px;
       width: max-content;
       font-size: 16px;
-      cursor: default;
+      cursor: pointer;
+      display: inline-block;
     }
 
     .btn-note {
@@ -117,15 +153,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    /* =========================================================
+       BLOQUE 4: RESPONSIVE (celular / pantalla chica)
+       - Header se apila (logo arriba, links abajo)
+       - Hero se va en columna
+    ========================================================== */
     @media (max-width: 900px) {
       .header-inner {
         flex-direction: column;
-        gap: 12px;
+        align-items: center;
       }
 
       .hero {
@@ -140,19 +179,20 @@
         font-size: 36px;
       }
     }
-
   </style>
 </head>
 
 <body>
-
-  <!-- =========================
-       HEADER (BARRA SUPERIOR)
-  ========================= -->
+  <!-- =========================================================
+       BLOQUE 5: HEADER (HTML)
+       - Aquí están el logo y los links.
+       - IMPORTANTE: la ruta del isotipo NO lleva "feature/"
+       - Debe ser: assets/images/...
+  ========================================================== -->
   <header class="site-header">
     <div class="header-inner">
 
-      <!-- LOGO -->
+      <!-- LOGO / ISOTIPO (principal por ahora) -->
       <img
         src="assets/images/isotipo crema f5dfac.png"
         alt="Bake Me Up"
@@ -169,24 +209,28 @@
     </div>
   </header>
 
-  <!-- =========================
-       HERO / LANDING
-  ========================= -->
+  <!-- =========================================================
+       BLOQUE 6: HERO (HTML)
+       - Tu landing principal: texto a la izquierda, imagen a la derecha
+       - Hero image: NO la tocamos, se queda hero.jpg como tú quieres
+  ========================================================== -->
   <section class="hero">
-
-    <!-- TEXTO IZQUIERDO -->
     <div class="text">
 
+      <!-- TÍTULO -->
       <h1>Bake Me Up</h1>
 
+      <!-- SUBTÍTULO -->
       <h2>
         Repostería artesanal hecha en Puebla.
         Brownies, bizcochos y postres para cualquier ocasión.
       </h2>
 
+      <!-- BOTÓN (fake por ahora) -->
       <a class="btn">Pedir por WhatsApp</a>
       <div class="btn-note">(jaja, el botón es fake)</div>
 
+      <!-- TEXTO BONITO -->
       <p>
         Sof y Fer 💛<br><br>
         Les regalo este dominio con la idea de que les sea útil para lo que quieran:
@@ -200,12 +244,36 @@
 
     </div>
 
-    <!-- IMAGEN DERECHA -->
+    <!-- IMAGEN HERO (se queda igual) -->
     <div class="image">
       <img src="hero.jpg" alt="Bake Me Up">
     </div>
-
   </section>
+
+  <!-- =========================================================
+       BLOQUE 7: SCRIPT (JS) - esconder header con scroll
+       - Si bajas: header se oculta
+       - Si subes: header aparece
+       - "80px" es como “ya vas scrolleando en serio”
+  ========================================================== -->
+  <script>
+    let lastScroll = 0;
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || 0;
+
+      // Si bajas y ya pasaste 80px → esconder
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add('hide');
+      } else {
+        // Si subes → mostrar
+        header.classList.remove('hide');
+      }
+
+      lastScroll = currentScroll;
+    });
+  </script>
 
 </body>
 </html>
