@@ -5,7 +5,12 @@
   <title>Bake Me Up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- =========================
+       ESTILOS GENERALES
+  ========================= -->
   <style>
+
+    /* RESET BÁSICO */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -13,9 +18,48 @@
       color: #111;
     }
 
+    /* =========================
+       HEADER
+    ========================= */
+    .site-header {
+      width: 100%;
+      background: #f5dfac; /* crema del manual */
+      padding: 16px 32px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 48px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #26120f;
+      font-size: 16px;
+    }
+
+    .main-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       HERO (SECCIÓN PRINCIPAL)
+    ========================= */
     .hero {
       display: flex;
-      min-height: 100vh;
+      min-height: calc(100vh - 80px); /* resta el header */
     }
 
     .text {
@@ -75,7 +119,15 @@
       object-fit: cover;
     }
 
+    /* =========================
+       RESPONSIVE
+    ========================= */
     @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+
       .hero {
         flex-direction: column;
       }
@@ -88,22 +140,26 @@
         font-size: 36px;
       }
     }
+
   </style>
 </head>
 
 <body>
-    <!-- HEADER PRINCIPAL -->
+
+  <!-- =========================
+       HEADER (BARRA SUPERIOR)
+  ========================= -->
   <header class="site-header">
     <div class="header-inner">
 
-      <!-- LOGO (AQUÍ VA EL ISOTIPO 😅) -->
-      <img 
-        src="assets/images/isotipo crema f5dfac.png" 
+      <!-- LOGO -->
+      <img
+        src="assets/images/isotipo crema f5dfac.png"
         alt="Bake Me Up"
         class="logo"
       >
 
-      <!-- NAVEGACIÓN -->
+      <!-- MENÚ DE NAVEGACIÓN -->
       <nav class="main-nav">
         <a href="index.html">Inicio</a>
         <a href="menu.html">Menú</a>
@@ -113,24 +169,24 @@
     </div>
   </header>
 
-
+  <!-- =========================
+       HERO / LANDING
+  ========================= -->
   <section class="hero">
+
+    <!-- TEXTO IZQUIERDO -->
     <div class="text">
 
-      <!-- ELEMENTO: TÍTULO -->
       <h1>Bake Me Up</h1>
 
-      <!-- ELEMENTO: SUBTÍTULO -->
       <h2>
-        Repostería artesanal hecha en Puebla.  
+        Repostería artesanal hecha en Puebla.
         Brownies, bizcochos y postres para cualquier ocasión.
       </h2>
 
-      <!-- BOTÓN (FAKE) -->
       <a class="btn">Pedir por WhatsApp</a>
       <div class="btn-note">(jaja, el botón es fake)</div>
 
-      <!-- ELEMENTO: TEXTO -->
       <p>
         Sof y Fer 💛<br><br>
         Les regalo este dominio con la idea de que les sea útil para lo que quieran:
@@ -144,9 +200,11 @@
 
     </div>
 
+    <!-- IMAGEN DERECHA -->
     <div class="image">
       <img src="hero.jpg" alt="Bake Me Up">
     </div>
+
   </section>
 
 </body>
