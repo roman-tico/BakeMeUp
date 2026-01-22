@@ -1,1 +1,164 @@
+/* =====================
+   HERO SECTION
+   ===================== */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(38, 18, 15, 0.4), rgba(83, 88, 57, 0.3)), 
+                      url('../images/hero/hero-coffee.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 90px;
+}
 
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    font-size: 80px;
+    color: var(--crema);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(38, 18, 15, 0.5);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--crema);
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(38, 18, 15, 0.7);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =====================
+   PRODUCTOS SECTION
+   ===================== */
+.productos {
+    padding: 80px 0;
+    background-color: var(--crema);
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(38, 18, 15, 0.1);
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(38, 18, 15, 0.2);
+}
+
+.producto-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--crema);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.producto-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.producto-card h3 {
+    font-size: 28px;
+    color: var(--verde-oliva);
+    margin-bottom: 15px;
+}
+
+.producto-card p {
+    color: var(--azul-gris-medio);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* =====================
+   ANIMACIONES
+   ===================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        background-attachment: scroll;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .productos {
+        padding: 50px 0;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .producto-card {
+        padding: 25px;
+    }
+
+    .producto-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .producto-card h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+}
