@@ -2,9 +2,8 @@
    HERO SECTION
    ===================== */
 .hero {
-    height: 100vh;
-    background-image: linear-gradient(rgba(38, 18, 15, 0.4), rgba(83, 88, 57, 0.3)), 
-                      url('../images/hero/hero-coffee.png');
+    height: 85vh;
+    background-image: url('../images/hero/hero-coffee.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -16,87 +15,171 @@
     margin-top: 90px;
 }
 
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(38, 18, 15, 0.5) 0%,
+        rgba(83, 88, 57, 0.4) 50%,
+        rgba(208, 187, 125, 0.3) 100%
+    );
+}
+
 .hero-content {
-    max-width: 800px;
-    padding: 20px;
-    animation: fadeInUp 1s ease-out;
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 40px;
+    animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-title {
-    font-size: 80px;
-    color: var(--crema);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(38, 18, 15, 0.5);
+    font-size: 72px;
+    color: var(--blanco);
+    margin-bottom: 25px;
+    text-shadow: 2px 4px 12px rgba(38, 18, 15, 0.4);
     line-height: 1.2;
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 22px;
     color: var(--crema);
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 5px rgba(38, 18, 15, 0.7);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 45px;
+    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.6);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* =====================
+   SECCIÓN BIENVENIDA
+   ===================== */
+.welcome {
+    padding: 120px 0;
+    background-color: var(--crema);
+}
+
+.welcome-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 18px;
+    line-height: 2;
+    color: var(--cafe-oscuro);
+    opacity: 0.9;
 }
 
 /* =====================
    PRODUCTOS SECTION
    ===================== */
 .productos {
-    padding: 80px 0;
-    background-color: var(--crema);
+    padding: 120px 0;
+    background-color: var(--blanco);
 }
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 80px;
 }
 
 .producto-card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 30px;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(38, 18, 15, 0.1);
+    padding: 0;
+    transition: all 0.4s ease;
 }
 
 .producto-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(38, 18, 15, 0.2);
+    transform: translateY(-8px);
 }
 
-.producto-image {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 25px;
+.producto-icon {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--crema);
+    background: linear-gradient(135deg, var(--crema) 0%, rgba(245, 223, 172, 0.5) 100%);
     border-radius: 50%;
-    padding: 20px;
+    padding: 35px;
+    transition: all 0.4s ease;
 }
 
-.producto-image img {
+.producto-card:hover .producto-icon {
+    background: linear-gradient(135deg, var(--dorado) 0%, var(--crema) 100%);
+    transform: scale(1.05);
+}
+
+.producto-icon img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
 .producto-card h3 {
-    font-size: 28px;
+    font-size: 32px;
     color: var(--verde-oliva);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
 .producto-card p {
     color: var(--azul-gris-medio);
-    line-height: 1.6;
+    line-height: 1.8;
     font-size: 16px;
+    padding: 0 10px;
+}
+
+/* =====================
+   SECCIÓN VISÍTANOS
+   ===================== */
+.visit {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--azul-gris-claro) 0%, var(--azul-gris-medio) 100%);
+    color: var(--blanco);
+}
+
+.visit-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.visit-content .section-title {
+    color: var(--blanco);
+    margin-bottom: 40px;
+}
+
+.visit-address {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    color: var(--blanco);
+}
+
+.address-icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.visit .btn-secondary {
+    color: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.visit .btn-secondary:hover {
+    background-color: var(--blanco);
+    color: var(--verde-oliva);
 }
 
 /* =====================
@@ -105,7 +188,7 @@
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -116,6 +199,33 @@
 /* =====================
    RESPONSIVE
    ===================== */
+@media (max-width: 968px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+    }
+
+    .welcome {
+        padding: 80px 0;
+    }
+
+    .productos {
+        padding: 80px 0;
+    }
+
+    .visit {
+        padding: 80px 0;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         height: 70vh;
@@ -123,33 +233,45 @@
     }
 
     .hero-title {
-        font-size: 48px;
+        font-size: 42px;
     }
 
     .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .productos {
-        padding: 50px 0;
+        font-size: 17px;
     }
 
     .productos-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 60px;
     }
 
-    .producto-card {
-        padding: 25px;
-    }
-
-    .producto-image {
-        width: 150px;
-        height: 150px;
+    .producto-icon {
+        width: 160px;
+        height: 160px;
     }
 
     .producto-card h3 {
-        font-size: 24px;
+        font-size: 28px;
+    }
+
+    .welcome {
+        padding: 60px 0;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+    }
+
+    .productos {
+        padding: 60px 0;
+    }
+
+    .visit {
+        padding: 60px 0;
+    }
+
+    .visit-address {
+        font-size: 18px;
     }
 }
 
@@ -159,6 +281,12 @@
     }
 
     .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 36px;
         font-size: 14px;
     }
 }
