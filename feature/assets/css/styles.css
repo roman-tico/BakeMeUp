@@ -90,7 +90,7 @@ body {
 
 /* LOGO */
 .logo img {
-    height: 69px;
+    height: 85px;
     width: auto;
     transition: transform 0.3s ease;
 }
