@@ -1,154 +1,111 @@
-/* =====================
-   HERO DEL MENÚ
-   ===================== */
-.menu-hero {
-    height: 40vh;
-    min-height: 300px;
-    background: linear-gradient(135deg, var(--verde-oliva) 0%, var(--azul-gris-medio) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 90px;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Bake me up</title>
+    <link rel="stylesheet" href="/BakeMeUp/feature/assets/css/styles.css">
+    <link rel="stylesheet" href="/BakeMeUp/feature/assets/css/menu.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="/BakeMeUp/feature/index.html" class="logo">
+                <img src="/BakeMeUp/feature/assets/images/logos/logotipo-verde-535839.png" alt="Bake me up">
+            </a>
+            <nav class="nav">
+                <a href="/BakeMeUp/feature/index.html" class="nav-link">Inicio</a>
+                <a href="/BakeMeUp/feature/menu.html" class="nav-link active">Menú</a>
+                <a href="/BakeMeUp/feature/about.html" class="nav-link">About Us</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-.menu-hero-content {
-    max-width: 700px;
-    padding: 40px;
-}
+    <!-- HERO DEL MENÚ -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1 class="menu-title">Nuestro Menú</h1>
+            <p class="menu-subtitle">Descubre nuestras deliciosas creaciones</p>
+        </div>
+    </section>
 
-.menu-title {
-    font-size: 64px;
-    color: var(--blanco);
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
+    <!-- VISOR DEL MENÚ PDF -->
+    <section class="menu-viewer">
+        <div class="container">
+            <div class="pdf-container">
+                <iframe 
+                    src="/BakeMeUp/feature/assets/documents/menu.pdf"
+                    class="menu-pdf"
+                    title="Menú Bake me up">
+                </iframe>
+            </div>
+            
+            <div class="menu-actions">
+                <a href="/BakeMeUp/feature/assets/documents/menu.pdf" download class="btn-primary">
+                    📄 Descargar Menú (PDF)
+                </a>
+                <a href="https://wa.me/522222991502?text=Hola!%20Quiero%20hacer%20un%20pedido" target="_blank" class="btn-secondary">
+                    💬 Hacer un pedido
+                </a>
+            </div>
+        </div>
+    </section>
 
-.menu-subtitle {
-    font-size: 20px;
-    color: var(--crema);
-    line-height: 1.6;
-}
+    <!-- SECCIÓN DE CONTACTO -->
+    <section class="menu-contact">
+        <div class="container">
+            <h2 class="section-title">¿Tienes alguna pregunta?</h2>
+            <p class="contact-text">Contáctanos por WhatsApp para hacer tu pedido o resolver cualquier duda</p>
+            <a href="https://wa.me/522222991502" target="_blank" class="btn-primary">
+                Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
 
-/* =====================
-   VISOR DEL MENÚ PDF
-   ===================== */
-.menu-viewer {
-    padding: 80px 0;
-    background-color: var(--blanco);
-}
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <img src="/BakeMeUp/feature/assets/images/logos/logotipo-crema-f5dfac.png" alt="Bake me up" class="footer-logo">
+                    <p class="footer-tagline">café y postres</p>
+                </div>
 
-.pdf-container {
-    max-width: 900px;
-    margin: 0 auto 50px;
-    background: var(--blanco);
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(38, 18, 15, 0.1);
-    overflow: hidden;
-}
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><a href="https://wa.me/522222991502">+52 1 222 299 1502</a></p>
+                    <p class="footer-address">Blvd. Municipio Libre 1972<br>Ex Hacienda Mayorazgo<br>Puebla, Pue.</p>
+                </div>
 
-.menu-pdf {
-    width: 100%;
-    height: 800px;
-    border: none;
-    display: block;
-}
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p><strong>Lunes a Viernes</strong><br>10:00 - 17:00</p>
+                    <p><strong>Sábados</strong><br>9:00 - 13:00</p>
+                </div>
 
-.menu-actions {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <a href="https://www.instagram.com/bakemeup_mx/" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        @bakemeup_mx
+                    </a>
+                </div>
+            </div>
 
-/* =====================
-   SECCIÓN DE CONTACTO
-   ===================== */
-.menu-contact {
-    padding: 80px 0;
-    background: linear-gradient(135deg, var(--crema) 0%, rgba(245, 223, 172, 0.5) 100%);
-    text-align: center;
-}
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bake me up • Hecho con ❤️ para Sofía Gavito</p>
+            </div>
+        </div>
+    </footer>
 
-.menu-contact .section-title {
-    margin-bottom: 20px;
-}
-
-.contact-text {
-    font-size: 18px;
-    color: var(--azul-gris-medio);
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-@media (max-width: 768px) {
-    .menu-hero {
-        height: 35vh;
-        min-height: 250px;
-    }
-
-    .menu-title {
-        font-size: 42px;
-    }
-
-    .menu-subtitle {
-        font-size: 17px;
-    }
-
-    .menu-viewer {
-        padding: 50px 0;
-    }
-
-    .pdf-container {
-        margin: 0 auto 30px;
-        border-radius: 10px;
-    }
-
-    .menu-pdf {
-        height: 600px;
-    }
-
-    .menu-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-actions a {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-    }
-
-    .menu-contact {
-        padding: 60px 0;
-    }
-
-    .contact-text {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu-title {
-        font-size: 36px;
-    }
-
-    .menu-subtitle {
-        font-size: 15px;
-    }
-
-    .menu-pdf {
-        height: 500px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        font-size: 14px;
-        padding: 14px 32px;
-    }
-}
+    <script src="/BakeMeUp/feature/assets/js/main.js"></script>
+</body>
+</html>
