@@ -1,177 +1,310 @@
+/* =====================================================
+   ESTILOS DE LA LANDING PAGE - home.css
+   =====================================================
+   Este archivo contiene estilos ESPECÍFICOS de index.html
+   (hero, sección bienvenida, productos, visítanos)
+   ===================================================== */
+
 /* =====================
-   HERO SECTION
+   SECCIÓN HERO (IMAGEN GRANDE CON TEXTO)
    ===================== */
+
 .hero {
+    /* ALTURA DEL HERO - Cambia 85vh para más/menos alto */
+    /* vh = viewport height (altura de la ventana) */
+    /* 85vh = 85% de la altura de la pantalla */
     height: 85vh;
+    
+    /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
     background-image: url('../images/hero/hero-coffee.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    
+    /* AJUSTE DE LA IMAGEN */
+    background-size: cover;  /* La imagen cubre todo el espacio */
+    background-position: center;  /* Centra la imagen */
+    background-attachment: fixed;  /* Efecto parallax al hacer scroll */
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;  /* Centra verticalmente el contenido */
+    justify-content: center;  /* Centra horizontalmente el contenido */
     text-align: center;
-    position: relative;
+    
+    position: relative;  /* Para que el overlay funcione */
+    
+    /* ESPACIO ARRIBA - Para que no se tape con el header fijo */
     margin-top: 90px;
 }
 
+/* OVERLAY (CAPA OSCURA ENCIMA DE LA IMAGEN) */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    
+    /* GRADIENTE DEL OVERLAY - Cambia los colores y opacidades aquí */
+    /* rgba(R, G, B, opacidad) - opacidad va de 0 (transparente) a 1 (opaco) */
     background: linear-gradient(
-        135deg,
-        rgba(38, 18, 15, 0.5) 0%,
-        rgba(83, 88, 57, 0.4) 50%,
-        rgba(208, 187, 125, 0.3) 100%
+        135deg,  /* Ángulo del gradiente - cambia para otra dirección */
+        rgba(38, 18, 15, 0.5) 0%,    /* Café oscuro 50% opaco al inicio */
+        rgba(83, 88, 57, 0.4) 50%,   /* Verde oliva 40% opaco al medio */
+        rgba(208, 187, 125, 0.3) 100%  /* Dorado 30% opaco al final */
     );
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 2;  /* Asegura que esté encima del overlay */
+    
+    /* ANCHO MÁXIMO DEL CONTENIDO - Cambia 700px */
     max-width: 700px;
+    
     padding: 40px;
+    
+    /* ANIMACIÓN DE ENTRADA */
     animation: fadeInUp 1.2s ease-out;
 }
 
+/* TÍTULO DEL HERO */
 .hero-title {
+    /* TAMAÑO DEL TÍTULO - Cambia 72px para más grande/pequeño */
     font-size: 72px;
+    
+    /* COLOR DEL TÍTULO - Cambia aquí */
     color: var(--blanco);
+    
     margin-bottom: 25px;
+    
+    /* SOMBRA DEL TEXTO - Para que se lea mejor sobre la imagen */
+    /* X, Y, blur, color */
     text-shadow: 2px 4px 12px rgba(38, 18, 15, 0.4);
+    
     line-height: 1.2;
+    
+    /* ESPACIADO ENTRE LETRAS - Cambia 1px */
     letter-spacing: 1px;
 }
 
+/* SUBTÍTULO DEL HERO */
 .hero-subtitle {
+    /* TAMAÑO - Cambia 22px */
     font-size: 22px;
+    
+    /* COLOR - Cambia aquí */
     color: var(--crema);
+    
     margin-bottom: 45px;
+    
+    /* SOMBRA - Más fuerte que el título para mejor legibilidad */
     text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.6);
+    
     line-height: 1.6;
+    
+    /* GROSOR DE LA FUENTE - Cambia 300 (light, normal=400, bold=700) */
     font-weight: 300;
 }
 
 /* =====================
    SECCIÓN BIENVENIDA
    ===================== */
+
 .welcome {
+    /* ESPACIADO VERTICAL - Cambia 120px para más/menos espacio */
+    /* El primer número es arriba, el segundo es abajo */
     padding: 120px 0;
+    
+    /* COLOR DE FONDO - Cambia aquí */
     background-color: var(--crema);
 }
 
 .welcome-content {
+    /* ANCHO MÁXIMO - Cambia 800px */
     max-width: 800px;
-    margin: 0 auto;
+    
+    margin: 0 auto;  /* Centra el contenido */
     text-align: center;
 }
 
 .welcome-text {
+    /* TAMAÑO DEL TEXTO - Cambia 18px */
     font-size: 18px;
+    
+    /* ESPACIADO ENTRE LÍNEAS - Cambia 2 para más/menos espacio */
     line-height: 2;
+    
     color: var(--cafe-oscuro);
+    
+    /* OPACIDAD - 0.9 = 90% opaco, cambia para más/menos contraste */
     opacity: 0.9;
 }
 
 /* =====================
-   PRODUCTOS SECTION
+   SECCIÓN PRODUCTOS
    ===================== */
+
 .productos {
+    /* ESPACIADO - Cambia 120px */
     padding: 120px 0;
+    
+    /* COLOR DE FONDO - Cambia aquí */
     background-color: var(--blanco);
 }
 
+/* GRID DE PRODUCTOS */
 .productos-grid {
     display: grid;
+    
+    /* COLUMNAS - repeat(3, 1fr) = 3 columnas de igual tamaño */
+    /* Cambia el 3 para más/menos columnas */
     grid-template-columns: repeat(3, 1fr);
+    
+    /* ESPACIO ENTRE TARJETAS - Cambia 60px */
     gap: 60px;
+    
     margin-top: 80px;
 }
 
+/* TARJETA DE PRODUCTO */
 .producto-card {
     text-align: center;
     padding: 0;
+    
+    /* ANIMACIÓN AL HOVER */
     transition: all 0.4s ease;
 }
 
 .producto-card:hover {
+    /* ELEVACIÓN AL HOVER - Cambia -8px para más/menos elevación */
     transform: translateY(-8px);
 }
 
+/* ÍCONO/IMAGEN DEL PRODUCTO */
 .producto-icon {
+    /* TAMAÑO DEL CÍRCULO - Cambia 180px */
     width: 180px;
     height: 180px;
+    
     margin: 0 auto 35px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--crema) 0%, rgba(245, 223, 172, 0.5) 100%);
+    
+    /* FONDO CON GRADIENTE - Cambia los colores aquí */
+    background: linear-gradient(
+        135deg, 
+        var(--crema) 0%, 
+        rgba(245, 223, 172, 0.5) 100%
+    );
+    
+    /* FORMA CIRCULAR */
     border-radius: 50%;
+    
+    /* ESPACIO INTERNO - Cambia 35px */
     padding: 35px;
+    
     transition: all 0.4s ease;
 }
 
+/* CAMBIO DE GRADIENTE AL HOVER */
 .producto-card:hover .producto-icon {
-    background: linear-gradient(135deg, var(--dorado) 0%, var(--crema) 100%);
+    /* NUEVO GRADIENTE - Cambia los colores */
+    background: linear-gradient(
+        135deg, 
+        var(--dorado) 0%, 
+        var(--crema) 100%
+    );
+    
+    /* CRECIMIENTO - Cambia 1.05 (5% más grande) */
     transform: scale(1.05);
 }
 
 .producto-icon img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
+    object-fit: contain;  /* La imagen se ajusta sin deformarse */
 }
 
+/* TÍTULO DEL PRODUCTO */
 .producto-card h3 {
+    /* TAMAÑO - Cambia 32px */
     font-size: 32px;
+    
+    /* COLOR - Cambia aquí */
     color: var(--verde-oliva);
+    
     margin-bottom: 20px;
     line-height: 1.3;
 }
 
+/* DESCRIPCIÓN DEL PRODUCTO */
 .producto-card p {
+    /* COLOR - Cambia aquí */
     color: var(--azul-gris-medio);
+    
     line-height: 1.8;
+    
+    /* TAMAÑO - Cambia 16px */
     font-size: 16px;
+    
+    /* PADDING LATERAL - Para que no toque los bordes */
     padding: 0 10px;
 }
 
 /* =====================
    SECCIÓN VISÍTANOS
    ===================== */
+
 .visit {
+    /* ESPACIADO - Cambia 100px */
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--azul-gris-claro) 0%, var(--azul-gris-medio) 100%);
+    
+    /* FONDO CON GRADIENTE - Cambia los colores aquí */
+    background: linear-gradient(
+        135deg, 
+        var(--azul-gris-claro) 0%, 
+        var(--azul-gris-medio) 100%
+    );
+    
     color: var(--blanco);
 }
 
 .visit-content {
     text-align: center;
+    
+    /* ANCHO MÁXIMO - Cambia 700px */
     max-width: 700px;
+    
     margin: 0 auto;
 }
 
 .visit-content .section-title {
+    /* COLOR DEL TÍTULO - Blanco para contraste con fondo azul */
     color: var(--blanco);
+    
     margin-bottom: 40px;
 }
 
+/* DIRECCIÓN */
 .visit-address {
+    /* TAMAÑO - Cambia 20px */
     font-size: 20px;
+    
     line-height: 1.8;
     margin-bottom: 50px;
     color: var(--blanco);
 }
 
+/* ÍCONO DE UBICACIÓN */
 .address-icon {
+    /* TAMAÑO DEL EMOJI - Cambia 28px */
     font-size: 28px;
+    
     display: block;
     margin-bottom: 15px;
 }
 
+/* BOTÓN ESPECIAL PARA ESTA SECCIÓN */
 .visit .btn-secondary {
     color: var(--blanco);
     border-color: var(--blanco);
@@ -185,27 +318,34 @@
 /* =====================
    ANIMACIONES
    ===================== */
+
+/* ANIMACIÓN DE ENTRADA (fadeInUp) */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(40px);
+        opacity: 0;  /* Invisible */
+        transform: translateY(40px);  /* 40px abajo */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;  /* Visible */
+        transform: translateY(0);  /* Posición normal */
     }
 }
 
-/* =====================
-   RESPONSIVE
-   ===================== */
+/* =====================================================
+   RESPONSIVE (ADAPTACIÓN A DIFERENTES PANTALLAS)
+   ===================================================== */
+
+/* TABLETS (pantallas menores a 968px) */
 @media (max-width: 968px) {
+    
     .productos-grid {
+        /* 2 COLUMNAS en tablets en lugar de 3 */
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
     }
 
     .hero-title {
+        /* TÍTULOS MÁS PEQUEÑOS en tablets */
         font-size: 56px;
     }
 
@@ -213,6 +353,7 @@
         font-size: 19px;
     }
 
+    /* MENOS ESPACIADO en tablets */
     .welcome {
         padding: 80px 0;
     }
@@ -226,13 +367,19 @@
     }
 }
 
+/* MÓVILES (pantallas menores a 768px) */
 @media (max-width: 768px) {
+    
     .hero {
+        /* HERO MÁS BAJO en móvil */
         height: 70vh;
+        
+        /* QUITA EL PARALLAX en móvil (mejor rendimiento) */
         background-attachment: scroll;
     }
 
     .hero-title {
+        /* TÍTULO MÁS PEQUEÑO en móvil */
         font-size: 42px;
     }
 
@@ -241,11 +388,13 @@
     }
 
     .productos-grid {
+        /* UNA SOLA COLUMNA en móvil */
         grid-template-columns: 1fr;
         gap: 60px;
     }
 
     .producto-icon {
+        /* ÍCONOS MÁS PEQUEÑOS en móvil */
         width: 160px;
         height: 160px;
     }
@@ -254,6 +403,7 @@
         font-size: 28px;
     }
 
+    /* MENOS ESPACIADO en móvil */
     .welcome {
         padding: 60px 0;
     }
@@ -275,8 +425,11 @@
     }
 }
 
+/* MÓVILES PEQUEÑOS (pantallas menores a 480px) */
 @media (max-width: 480px) {
+    
     .hero-title {
+        /* AÚN MÁS PEQUEÑO en móviles pequeños */
         font-size: 36px;
     }
 
@@ -284,6 +437,7 @@
         font-size: 15px;
     }
 
+    /* BOTONES MÁS PEQUEÑOS en móviles pequeños */
     .btn-primary,
     .btn-secondary {
         padding: 14px 36px;
