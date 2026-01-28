@@ -204,6 +204,22 @@ body {
     background-color: var(--cafe-oscuro);
     transition: all 0.3s ease;
 }
+/* =====================
+   TIPOGRAFÍA DEL HEADER
+   ===================== */
+
+/* Links del menú */
+.header .nav-link {
+    font-family: 'Armany', serif; /* tipografía de subtítulo */
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase; /* opcional, se ve más pro */
+}
+
+/* Si el logo tiene texto (por si acaso) */
+.header {
+    font-family: 'Armany', serif;
+}
 
 /* =====================
    BOTONES
