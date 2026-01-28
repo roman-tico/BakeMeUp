@@ -1,21 +1,17 @@
 /* =====================================================
    ESTILOS GLOBALES - styles.css
-   =====================================================
-   Este archivo contiene los estilos que se usan en 
-   TODAS las páginas del sitio (header, footer, botones)
    ===================================================== */
 
 /* =====================
    FUENTES PERSONALIZADAS
    ===================== */
-/* Aquí cargamos las fuentes del manual de identidad */
 
 @font-face {
-    font-family: 'Bake Script';  /* Nombre que usaremos en el CSS */
-    src: url('../fonts/BakeScript.woff2') format('woff2');  /* Ruta al archivo de fuente */
+    font-family: 'Bake Script';
+    src: url('../fonts/BakeScript.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;  /* Mejora el rendimiento de carga */
+    font-display: swap;
 }
 
 @font-face {
@@ -29,58 +25,40 @@
 /* =====================
    VARIABLES DE COLOR
    ===================== */
-/* Colores del manual de identidad guardados como variables
-   Para usarlos: var(--nombre-color) 
-   PUEDES CAMBIAR ESTOS VALORES para experimentar con colores */
 
 :root {
-    --verde-oliva: #535839;      /* Verde principal de la marca */
-    --azul-gris-claro: #97a6bb;  /* Azul grisáceo claro */
-    --azul-gris-medio: #79879b;  /* Azul grisáceo medio */
-    --dorado: #d0bb7d;           /* Dorado/beige */
-    --cafe-oscuro: #26120f;      /* Café muy oscuro (casi negro) */
-    --crema: #f5dfac;            /* Crema/beige claro */
-    --blanco: #ffffff;           /* Blanco puro */
+    --verde-oliva: #535839;
+    --azul-gris-claro: #97a6bb;
+    --azul-gris-medio: #79879b;
+    --dorado: #d0bb7d;
+    --cafe-oscuro: #26120f;
+    --crema: #f5dfac;
+    --blanco: #ffffff;
 }
 
 /* =====================
    RESET Y BASE
    ===================== */
-/* Resetea estilos por defecto del navegador */
 
 * {
-    margin: 0;          /* Quita márgenes por defecto */
-    padding: 0;         /* Quita padding por defecto */
-    box-sizing: border-box;  /* El padding no aumenta el tamaño total */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;  /* Scroll suave al navegar con anclas */
-}
+html { scroll-behavior: smooth; }
 
 body {
-    /* TIPOGRAFÍA BASE - Cambia aquí la fuente de todo el texto */
     font-family: 'Armany', Georgia, serif;
-    
-    /* COLOR DE TEXTO BASE - Cambia aquí el color del texto */
     color: var(--cafe-oscuro);
-    
-    /* COLOR DE FONDO BASE */
     background-color: var(--blanco);
-    
-    /* ESPACIADO ENTRE LÍNEAS - Aumenta/disminuye para más/menos espacio */
     line-height: 1.8;
-    
-    overflow-x: hidden;  /* Evita scroll horizontal */
+    overflow-x: hidden;
 }
 
 .container {
-    /* ANCHO MÁXIMO DEL CONTENIDO - Cambia 1200px para hacerlo más ancho/angosto */
     max-width: 1200px;
-    
-    margin: 0 auto;  /* Centra el contenido */
-    
-    /* PADDING LATERAL - Espacio a los lados, cambia 30px para más/menos espacio */
+    margin: 0 auto;
     padding: 0 30px;
 }
 
@@ -89,67 +67,53 @@ body {
    ===================== */
 
 .header {
-    position: fixed;  /* Se queda fijo arriba al hacer scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
-    /* FONDO DEL HEADER - Cambia el color aquí */
-    background-color: rgba(255, 255, 255, 0.98);  /* Blanco casi opaco */
-    backdrop-filter: blur(10px);  /* Efecto de blur (desenfoque) */
-    
-    z-index: 1000;  /* Asegura que esté encima de todo */
-    
-    /* SOMBRA DEL HEADER - Cambia para sombra más/menos pronunciada */
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
     box-shadow: 0 1px 3px rgba(38, 18, 15, 0.08);
-    
-    transition: all 0.3s ease;  /* Animación suave al cambiar */
+    transition: all 0.3s ease;
+
+    /* ✅ tipografía del header */
+    font-family: 'Armany', Georgia, serif;
 }
 
 .header .container {
-    display: flex;  /* Flexbox para alinear logo y menú */
-    justify-content: space-between;  /* Logo a la izquierda, menú a la derecha */
-    align-items: center;  /* Centra verticalmente */
-    
-    /* ALTURA DEL HEADER - Cambia 20px para más/menos espacio arriba y abajo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 30px;
 }
 
 /* LOGO */
 .logo img {
-    /* TAMAÑO DEL LOGO - Cambia 50px para hacerlo más grande/pequeño */
     height: 50px;
-    width: auto;  /* El ancho se ajusta proporcionalmente */
-    
+    width: auto;
     transition: transform 0.3s ease;
 }
 
-.logo:hover img {
-    transform: scale(1.05);  /* Crece 5% al pasar el mouse - cambia 1.05 para más/menos */
-}
+.logo:hover img { transform: scale(1.05); }
 
 /* NAVEGACIÓN */
 .nav {
     display: flex;
-    
-    /* ESPACIO ENTRE LINKS - Cambia 45px para más/menos espacio */
     gap: 45px;
 }
 
+/* ✅ aquí queda la tipografía “subtítulo” del header */
 .nav-link {
-    /* COLOR DE LOS LINKS - Cambia aquí el color */
+    font-family: 'Armany', Georgia, serif;
     color: var(--cafe-oscuro);
-    
-    text-decoration: none;  /* Quita el subrayado */
-    
-    /* TAMAÑO DE TEXTO - Cambia 15px para links más grandes/pequeños */
+    text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    
-    /* ESPACIADO ENTRE LETRAS - Cambia 0.5px para más/menos espacio */
-    letter-spacing: 0.5px;
-    
-    position: relative;  /* Necesario para la línea animada de abajo */
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+
+    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -161,31 +125,25 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    
-    /* GROSOR DE LA LÍNEA - Cambia 2px */
     height: 2px;
-    
-    /* COLOR DE LA LÍNEA - Cambia aquí */
     background-color: var(--dorado);
-    
     transition: width 0.3s ease;
 }
 
-/* ESTADO HOVER (al pasar el mouse) Y ACTIVO */
+/* ESTADO HOVER Y ACTIVO */
 .nav-link:hover,
 .nav-link.active {
-    /* COLOR AL PASAR EL MOUSE - Cambia aquí */
     color: var(--verde-oliva);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 100%;  /* La línea se expande al 100% del ancho */
+    width: 100%;
 }
 
 /* MENÚ HAMBURGUESA (solo móvil) */
 .menu-toggle {
-    display: none;  /* Oculto por defecto, se muestra en móvil */
+    display: none;
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -196,98 +154,51 @@ body {
 
 .menu-toggle span {
     display: block;
-    
-    /* TAMAÑO DE LAS LÍNEAS - Cambia aquí */
     width: 28px;
     height: 2px;
-    
     background-color: var(--cafe-oscuro);
     transition: all 0.3s ease;
-}
-/* =====================
-   TIPOGRAFÍA DEL HEADER
-   ===================== */
-
-/* Links del menú */
-.header .nav-link {
-    font-family: 'Armany', serif; /* tipografía de subtítulo */
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    text-transform: uppercase; /* opcional, se ve más pro */
-}
-
-/* Si el logo tiene texto (por si acaso) */
-.header {
-    font-family: 'Armany', serif;
 }
 
 /* =====================
    BOTONES
    ===================== */
 
-/* BOTÓN PRIMARIO (verde) */
 .btn-primary {
     display: inline-block;
-    
-    /* TAMAÑO DEL BOTÓN - Cambia padding para botón más grande/pequeño */
     padding: 16px 48px;
-    
-    /* COLOR DE FONDO - Cambia aquí */
     background-color: var(--verde-oliva);
-    
-    /* COLOR DEL TEXTO - Cambia aquí */
     color: var(--blanco);
-    
     text-decoration: none;
-    
-    /* TAMAÑO DEL TEXTO - Cambia 15px */
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    
-    /* REDONDEZ DEL BOTÓN - Cambia 50px para más/menos redondez */
     border-radius: 50px;
-    
     transition: all 0.4s ease;
-    
-    /* SOMBRA DEL BOTÓN - Cambia para sombra más/menos fuerte */
     box-shadow: 0 4px 20px rgba(83, 88, 57, 0.25);
 }
 
 .btn-primary:hover {
-    /* COLOR AL HOVER - Cambia aquí */
     background-color: var(--cafe-oscuro);
-    
-    /* ELEVACIÓN AL HOVER - Cambia -2px para más/menos elevación */
     transform: translateY(-2px);
-    
     box-shadow: 0 8px 30px rgba(38, 18, 15, 0.3);
 }
 
-/* BOTÓN SECUNDARIO (solo borde) */
 .btn-secondary {
     display: inline-block;
     padding: 16px 48px;
-    
-    background-color: transparent;  /* Sin fondo */
-    
-    /* COLOR DEL TEXTO Y BORDE */
+    background-color: transparent;
     color: var(--verde-oliva);
-    
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    
-    /* GROSOR DEL BORDE - Cambia 2px */
     border: 2px solid var(--verde-oliva);
-    
     border-radius: 50px;
     transition: all 0.4s ease;
 }
 
 .btn-secondary:hover {
-    /* Al hover, se rellena con el color */
     background-color: var(--verde-oliva);
     color: var(--blanco);
     transform: translateY(-2px);
@@ -297,79 +208,51 @@ body {
    TIPOGRAFÍA
    ===================== */
 
-/* Todos los títulos usan la fuente Bake Script (cursiva) */
+/* ✅ títulos del sitio (no header) */
 h1, h2, h3 {
     font-family: 'Bake Script', cursive;
-    font-weight: normal;  /* La fuente ya es decorativa, no necesita bold */
+    font-weight: normal;
 }
 
-/* TÍTULO DE SECCIÓN (para fondos claros) */
 .section-title {
-    /* TAMAÑO DEL TÍTULO - Cambia 56px para más grande/pequeño */
     font-size: 56px;
-    
     color: var(--cafe-oscuro);
     text-align: center;
-    
-    /* ESPACIO DEBAJO - Cambia 30px */
     margin-bottom: 30px;
-    
     line-height: 1.2;
 }
 
-/* TÍTULO DE SECCIÓN (para fondos oscuros o con más espacio) */
 .section-title-dark {
     font-size: 56px;
     color: var(--cafe-oscuro);
     text-align: center;
-    
-    /* MÁS ESPACIO DEBAJO que section-title */
     margin-bottom: 70px;
-    
     line-height: 1.2;
 }
 
 /* =====================
-   FOOTER (PIE DE PÁGINA)
+   FOOTER
    ===================== */
 
 .footer {
-    /* COLOR DE FONDO - Cambia aquí */
     background-color: var(--cafe-oscuro);
-    
-    /* COLOR DEL TEXTO */
     color: var(--crema);
-    
-    /* ESPACIADO - Cambia para más/menos espacio */
     padding: 80px 0 30px;
-    
     margin-top: 0;
 }
 
 .footer-content {
     display: grid;
-    
-    /* COLUMNAS DEL FOOTER - Cambia los tamaños para ajustar anchos */
-    /* 1.5fr significa 1.5 veces más ancho que las columnas de 1fr */
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    
-    /* ESPACIO ENTRE COLUMNAS - Cambia 60px */
     gap: 60px;
-    
     margin-bottom: 50px;
 }
 
 .footer-section h4 {
     font-family: 'Bake Script', cursive;
-    
-    /* TAMAÑO DEL TÍTULO - Cambia 26px */
     font-size: 26px;
-    
     margin-bottom: 20px;
-    
-    /* COLOR DEL TÍTULO - Cambia aquí */
     color: var(--dorado);
-    
     font-weight: normal;
 }
 
@@ -384,9 +267,7 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
-.footer-address {
-    opacity: 0.85;  /* Ligeramente transparente */
-}
+.footer-address { opacity: 0.85; }
 
 .footer-section a {
     color: var(--crema);
@@ -394,9 +275,7 @@ h1, h2, h3 {
     transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-    color: var(--dorado);
-}
+.footer-section a:hover { color: var(--dorado); }
 
 .footer-brand {
     display: flex;
@@ -404,11 +283,7 @@ h1, h2, h3 {
     gap: 15px;
 }
 
-.footer-logo {
-    /* TAMAÑO DEL LOGO EN FOOTER - Cambia 70px */
-    height: 70px;
-    width: auto;
-}
+.footer-logo { height: 70px; width: auto; }
 
 .footer-tagline {
     font-style: italic;
@@ -424,13 +299,8 @@ h1, h2, h3 {
     padding: 10px 0;
 }
 
-.social-link svg {
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover svg {
-    transform: scale(1.15);  /* Crece al hover */
-}
+.social-link svg { transition: transform 0.3s ease; }
+.social-link:hover svg { transform: scale(1.15); }
 
 .footer-bottom {
     text-align: center;
@@ -440,33 +310,24 @@ h1, h2, h3 {
     font-size: 14px;
 }
 
-/* =====================================================
-   RESPONSIVE (ADAPTACIÓN A DIFERENTES PANTALLAS)
-   ===================================================== */
+/* =====================
+   RESPONSIVE
+   ===================== */
 
-/* TABLETS (pantallas menores a 968px) */
 @media (max-width: 968px) {
     .footer-content {
-        /* En tablets, 2 columnas en lugar de 4 */
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
-
     .section-title,
-    .section-title-dark {
-        /* Títulos más pequeños en tablets */
-        font-size: 42px;
-    }
+    .section-title-dark { font-size: 42px; }
 }
 
-/* MÓVILES (pantallas menores a 768px) */
 @media (max-width: 768px) {
-    
-    /* MENÚ DE NAVEGACIÓN EN MÓVIL */
     .nav {
         position: fixed;
         top: 90px;
-        left: -100%;  /* Oculto fuera de pantalla por defecto */
+        left: -100%;
         width: 100%;
         height: calc(100vh - 90px);
         background-color: var(--blanco);
@@ -477,44 +338,27 @@ h1, h2, h3 {
         box-shadow: 0 4px 20px rgba(38, 18, 15, 0.1);
     }
 
-    .nav.active {
-        left: 0;  /* Se muestra al activarse */
-    }
+    .nav.active { left: 0; }
 
-    .nav-link {
-        font-size: 18px;  /* Links más grandes en móvil */
-    }
+    .nav-link { font-size: 18px; }
 
-    .menu-toggle {
-        display: flex;  /* Muestra el botón hamburguesa */
-    }
+    .menu-toggle { display: flex; }
 
-    /* ANIMACIÓN DEL MENÚ HAMBURGUESA (X) */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
     }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;  /* Línea del medio desaparece */
-    }
-
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
     .footer-content {
-        /* Una sola columna en móvil */
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
     }
-
-    .footer-brand {
-        align-items: center;
-    }
+    .footer-brand { align-items: center; }
 
     .section-title,
-    .section-title-dark {
-        font-size: 36px;  /* Títulos aún más pequeños en móvil */
-    }
+    .section-title-dark { font-size: 36px; }
 }
