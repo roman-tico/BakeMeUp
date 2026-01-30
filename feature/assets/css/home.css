@@ -42,14 +42,9 @@
     width: 100%;
     height: 100%;
     
-    /* GRADIENTE DEL OVERLAY - Cambia los colores y opacidades aquí */
-    /* rgba(R, G, B, opacidad) - opacidad va de 0 (transparente) a 1 (opaco) */
-    background: linear-gradient(
-        135deg,  /* Ángulo del gradiente - cambia para otra dirección */
-        rgba(38, 18, 15, 0.5) 0%,    /* Café oscuro 50% opaco al inicio */
-        rgba(83, 88, 57, 0.4) 50%,   /* Verde oliva 40% opaco al medio */
-        rgba(208, 187, 125, 0.3) 100%  /* Dorado 30% opaco al final */
-    );
+    /* 🔥 COLOR DEL FONDO DONDE ESTÁ EL ISOTIPO BMU 🔥 */
+    /* Cambia SOLO este rgba si quieres otro tono */
+    background: rgba(151, 166, 187, 1); /* Café oscuro BMU */
 }
 
 .hero-content {
@@ -87,8 +82,8 @@
 
 /* SUBTÍTULO DEL HERO */
 .hero-subtitle {
-    /* TAMAÑO - Cambia 22px */
-    font-size: 22px;
+    /* TAMAÑO - Cambia 28px */
+    font-size: 28px;
     
     /* COLOR - Cambia aquí */
     color: var(--crema);
@@ -127,10 +122,10 @@
 
 .welcome-text {
     /* TAMAÑO DEL TEXTO - Cambia 18px */
-    font-size: 18px;
+    font-size: 20px;
     
     /* ESPACIADO ENTRE LÍNEAS - Cambia 2 para más/menos espacio */
-    line-height: 2;
+    line-height: 1.5;
     
     color: var(--cafe-oscuro);
     

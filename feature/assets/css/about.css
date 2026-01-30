@@ -1,1 +1,270 @@
+/* =====================================================
+   ESTILOS ABOUT US - about.css
+   =====================================================
+   Este archivo contiene estilos ESPECÍFICOS de about.html
+   (hero about, historia, misión/visión, valores, CTA)
+   ===================================================== */
 
+/* =====================
+   HERO ABOUT
+   ===================== */
+
+.about-hero {
+    /* ALTURA DEL HERO ABOUT */
+    height: 70vh;
+
+    /* FONDO BASE (marca) */
+    background: linear-gradient(
+        135deg,
+        rgba(245, 223, 172, 0.95) 0%,
+        rgba(208, 187, 125, 0.75) 100%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    position: relative;
+
+    /* ESPACIO ARRIBA - Para que no se tape con el header fijo */
+    margin-top: 90px;
+    overflow: hidden;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    /* Tinte sutil para dar profundidad */
+    background: radial-gradient(
+        circle at 50% 30%,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(38, 18, 15, 0.08) 70%,
+        rgba(38, 18, 15, 0.14) 100%
+    );
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+    padding: 40px;
+}
+
+.about-hero-isotipo {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto 18px;
+    display: block;
+}
+
+.about-hero-title {
+    font-family: 'Bake Script', cursive;
+    font-size: 64px;
+    font-weight: normal;
+    color: var(--cafe-oscuro);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.about-hero-subtitle {
+    font-size: 22px;
+    color: var(--verde-oliva);
+    opacity: 0.95;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* =====================
+   HISTORIA / ESENCIA
+   ===================== */
+
+.about-story {
+    padding: 110px 0;
+    background-color: var(--blanco);
+}
+
+.about-story-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 22px;
+    line-height: 2;
+    color: var(--cafe-oscuro);
+    opacity: 0.9;
+    margin-bottom: 26px;
+}
+
+.about-quote {
+    margin-top: 30px;
+    padding: 22px 26px;
+    border-left: 3px solid var(--dorado);
+    background: rgba(245, 223, 172, 0.25);
+    border-radius: 14px;
+}
+
+.about-quote p {
+    font-size: 18px;
+    color: var(--verde-oliva);
+    font-style: italic;
+}
+
+/* =====================
+   MISIÓN Y VISIÓN
+   ===================== */
+
+.about-mv {
+    padding: 110px 0;
+    background-color: var(--crema);
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.mv-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(38, 18, 15, 0.08);
+    border-radius: 18px;
+    padding: 34px 30px;
+    box-shadow: 0 10px 30px rgba(38, 18, 15, 0.06);
+}
+
+.mv-title {
+    font-size: 36px;
+    color: var(--verde-oliva);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.mv-text {
+    font-size: 16px;
+    color: var(--cafe-oscuro);
+    opacity: 0.9;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+/* =====================
+   VALORES
+   ===================== */
+
+.about-values {
+    padding: 110px 0;
+    background-color: var(--blanco);
+}
+
+.about-values-subtitle {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    color: var(--azul-gris-medio);
+    line-height: 1.9;
+    margin-top: 18px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 60px;
+}
+
+.value-card {
+    background: linear-gradient(
+        135deg,
+        rgba(245, 223, 172, 0.22) 0%,
+        rgba(255, 255, 255, 0.9) 100%
+    );
+    border: 1px solid rgba(38, 18, 15, 0.08);
+    border-radius: 18px;
+    padding: 26px 22px;
+    transition: transform 0.25s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+}
+
+.value-card h4 {
+    font-family: 'Bake Script', cursive;
+    font-size: 28px;
+    color: var(--cafe-oscuro);
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.value-card p {
+    font-size: 15px;
+    color: var(--azul-gris-medio);
+    line-height: 1.8;
+}
+
+/* =====================
+   CTA FINAL
+   ===================== */
+
+.about-cta {
+    padding: 110px 0;
+    background-color: var(--cafe-oscuro);
+    color: var(--crema);
+}
+
+.about-cta-content {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-cta .section-title {
+    color: var(--crema);
+}
+
+.about-cta-text {
+    font-size: 18px;
+    line-height: 2;
+    opacity: 0.9;
+    margin: 18px auto 40px;
+    max-width: 720px;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 968px) {
+    .about-hero-title { font-size: 52px; }
+
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 60vh;
+        margin-top: 90px;
+    }
+
+    .about-hero-title { font-size: 44px; }
+    .about-hero-isotipo { height: 90px; }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}

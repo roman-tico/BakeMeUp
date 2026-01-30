@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bake me up</title>
 
+    <!-- ARCHIVOS DE ESTILOS -->
+    <!-- styles.css = Estilos globales (header, footer, botones, tipografías) -->
+    <link rel="stylesheet" href="feature/assets/css/styles.css">
+    <!-- about.css = Estilos específicos de esta página (about hero, misión/visión, valores) -->
+    <link rel="stylesheet" href="feature/assets/css/about.css">
+</head>
+<body>
+
+    <!-- ========================================
+         HEADER (BARRA DE NAVEGACIÓN SUPERIOR)
+         ======================================== -->
+    <!-- Este header es FIJO (se queda arriba siempre, incluso al hacer scroll) -->
+    <header class="header">
+        <div class="container">
+
+            <!-- LOGO -->
+            <!-- Cambia la imagen del logo aquí si quieres otro color/versión -->
+            <a href="index.html" class="logo">
+                <img src="feature/assets/images/logos/logotipo-cafeoscuro-26120f.png" alt="Bake me up">
+            </a>
+
+            <!-- MENÚ DE NAVEGACIÓN -->
+            <!-- Links a las diferentes páginas del sitio -->
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="menu.html" class="nav-link">Menú</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <!-- Para agregar más links: copia una línea <a> y cambia el href y el texto -->
+            </nav>
+
+            <!-- BOTÓN HAMBURGUESA (solo se ve en móvil) -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO ABOUT (CABECERA DE ABOUT)
+         ======================================== -->
+    <!-- Sección elegante con isotipo y mensaje corto -->
+    <section class="about-hero">
+        <div class="about-hero-overlay"></div>
+
+        <div class="about-hero-content">
+            <!-- ISOTIPO -->
+            <img
+                src="feature/assets/images/logos/isotipo-verde-535839.png"
+                alt="Bake Me Up isotipo"
+                class="about-hero-isotipo"
+            >
+
+            <!-- TÍTULO -->
+            <h1 class="about-hero-title">Sobre Bake Me Up</h1>
+
+            <!-- SUBTÍTULO -->
+            <p class="about-hero-subtitle">
+                Un refugio cálido donde el café se sirve con calma y los postres cuentan historias.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN HISTORIA / ESENCIA
+         ======================================== -->
+    <section class="about-story">
+        <div class="container">
+            <div class="about-story-content">
+
+                <h2 class="section-title">Nuestra esencia</h2>
+
+                <p class="about-text">
+                    En Bake Me Up elaboramos repostería fina y café de especialidad con una idea muy clara:
+                    crear una experiencia que se sienta íntima, elegante y cercana. Nos obsesionan los detalles,
+                    el diseño, la textura y ese primer bocado que confirma que valió la pena la pausa.
+                </p>
+
+                <p class="about-text">
+                    Trabajamos de forma artesanal, con ingredientes premium, técnicas cuidadas y una producción
+                    organizada que respeta la puntualidad, la precisión y la promesa de entregar exactamente
+                    lo que el cliente visualizó… y más.
+                </p>
+
+                <div class="about-quote">
+                    <p>“Aquí, la repostería y el café no solo se consumen: se viven.”</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MISIÓN Y VISIÓN
+         ======================================== -->
+    <section class="about-mv">
+        <div class="container">
+
+            <h2 class="section-title-dark">Misión y Visión</h2>
+
+            <div class="mv-grid">
+                <!-- MISIÓN -->
+                <div class="mv-card">
+                    <h3 class="mv-title">Misión</h3>
+                    <p class="mv-text">
+                        En Bake Me Up elaboramos productos de repostería fina, de alta calidad y completamente
+                        personalizables, diseñados para satisfacer los requerimientos específicos de cada cliente.
+                        Brindamos una experiencia única de sabor, diseño y atención, ofreciendo soluciones tanto
+                        para el antojo del día a día como para momentos especiales.
+                    </p>
+                    <p class="mv-text">
+                        Nos comprometemos a un servicio cercano, cálido y profesional, donde la personalización,
+                        la familiaridad y el excelente servicio al cliente son parte esencial de nuestra identidad.
+                    </p>
+                </div>
+
+                <!-- VISIÓN -->
+                <div class="mv-card">
+                    <h3 class="mv-title">Visión</h3>
+                    <p class="mv-text">
+                        En los próximos años, Bake Me Up aspira a consolidarse como una de las marcas más
+                        prestigiosas, reconocidas y queridas de Puebla y CDMX, siendo referencia en sabor,
+                        calidad, diseño y experiencia dentro de la repostería fina y el café de especialidad.
+                    </p>
+                    <p class="mv-text">
+                        Queremos construir un modelo escalable sin sacrificar nuestra esencia artesanal:
+                        excelencia en sabor, presentación impecable y personalización auténtica.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         VALORES
+         ======================================== -->
+    <section class="about-values">
+        <div class="container">
+
+            <h2 class="section-title">Nuestros valores</h2>
+            <p class="about-values-subtitle">
+                Son la forma en la que trabajamos, atendemos y cuidamos cada detalle — incluso cuando nadie nos ve.
+            </p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Calidad innegociable</h4>
+                    <p>Ingredientes premium, técnicas cuidadas y presentación impecable. Sin atajos.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Honestidad</h4>
+                    <p>Lo que prometemos, lo cumplimos. Transparencia con clientes y equipo.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Respeto y buen trato</h4>
+                    <p>Amabilidad, profesionalismo y un ambiente donde todos se sientan valorados.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Compromiso</h4>
+                    <p>Puntualidad, precisión y responsabilidad incluso bajo presión.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Comunicación asertiva</h4>
+                    <p>Claridad y orden para trabajar mejor y minimizar errores.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Trabajo en equipo</h4>
+                    <p>Una sola unidad: cooperación, apoyo mutuo y orgullo por el resultado.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Proactividad</h4>
+                    <p>Iniciativa, propuestas y mejora continua como parte de la cultura.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Resiliencia</h4>
+                    <p>Calma, flexibilidad y enfoque para mantener calidad ante retos.</p>
+                </div>
+
+                <div class="value-card">
+                    <h4>Dedicación al servicio</h4>
+                    <p>Atención memorable de principio a fin, superando expectativas.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================
+         CTA FINAL (VISÍTANOS)
+         ======================================== -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="about-cta-content">
+                <h2 class="section-title">Ven a conocernos</h2>
+                <p class="about-cta-text">
+                    Si buscas una pausa con intención, un postre impecable o un café que se sienta como ritual,
+                    Bake Me Up es para ti.
+                </p>
+
+                <a href="https://maps.app.goo.gl/NJ14GSEf7EmWPsYf8"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-primary">
+                    Abrir ubicación en Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER (PIE DE PÁGINA)
+         ======================================== -->
+    <!-- Footer con fondo oscuro, se repite en todas las páginas -->
+    <footer class="footer">
+        <div class="container">
+
+            <!-- GRID DEL FOOTER (4 columnas) -->
+            <div class="footer-content">
+
+                <!-- COLUMNA 1: LOGO Y TAGLINE -->
+                <div class="footer-section footer-brand">
+                    <!-- Logo del footer (versión crema para contraste) -->
+                    <img src="feature/assets/images/logos/logotipo-crema-f5dfac.png" alt="Bake me up" class="footer-logo">
+                    <p class="footer-tagline">café y postres</p>
+                </div>
+
+                <!-- COLUMNA 2: CONTACTO -->
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><a href="https://wa.me/522222991502">+52 1 222 299 1502</a></p>
+                    <p class="footer-address">Blvd. Municipio Libre 1972<br>Ex Hacienda Mayorazgo<br>Puebla, Pue.</p>
+                </div>
+
+                <!-- COLUMNA 3: HORARIOS -->
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p><strong>Lunes a Viernes</strong><br>10:00 - 17:00</p>
+                    <p><strong>Sábados</strong><br>9:00 - 13:00</p>
+                </div>
+
+                <!-- COLUMNA 4: REDES SOCIALES -->
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <a href="https://www.instagram.com/bakemeup_mx/" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        @bakemeup_mx
+                    </a>
+                </div>
+            </div>
+
+            <!-- LÍNEA DE COPYRIGHT -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bake me up • Hecho con ❤️ </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ARCHIVO DE JAVASCRIPT -->
+    <script src="feature/assets/js/main.js"></script>
+</body>
+</html>

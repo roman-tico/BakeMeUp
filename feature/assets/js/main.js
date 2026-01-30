@@ -4,7 +4,7 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 
-if (menuToggle) {
+if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         nav.classList.toggle('active');
@@ -21,13 +21,18 @@ if (menuToggle) {
 }
 
 // =====================
-// SCROLL SUAVE
+// SCROLL SUAVE PARA ANCLAS
 // =====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+
+        // Evitar interferir con links vacíos
+        if (targetId === '#') return;
+
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -37,26 +42,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // =====================
-// HEADER SCROLL EFFECT
+// HEADER SCROLL BEHAVIOR
+// (sombra + auto-hide)
 // =====================
-let lastScroll = 0;
 const header = document.querySelector('.header');
+let lastScrollY = window.scrollY;
+const scrollThreshold = 10;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    if (!header) return;
 
-    // Agregar sombra al header cuando hay scroll
-    if (currentScroll > 0) {
+    // Si el menú móvil está abierto, no ocultar header
+    if (nav && nav.classList.contains('active')) return;
+
+    const currentScrollY = window.scrollY;
+
+    // 🔹 Sombra del header
+    if (currentScrollY > 0) {
         header.style.boxShadow = '0 2px 20px rgba(38, 18, 15, 0.15)';
     } else {
         header.style.boxShadow = '0 2px 10px rgba(38, 18, 15, 0.1)';
     }
 
-    lastScroll = currentScroll;
+    // 🔹 Evitar micro movimientos
+    if (Math.abs(currentScrollY - lastScrollY) < scrollThreshold) return;
+
+    // 🔹 Ocultar al bajar / mostrar al subir
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add('header--hidden');
+    } else {
+        header.classList.remove('header--hidden');
+    }
+
+    lastScrollY = currentScrollY;
 });
 
 // =====================
-// ANIMACIÓN DE ENTRADA
+// ANIMACIONES DE ENTRADA (IntersectionObserver)
 // =====================
 const observerOptions = {
     threshold: 0.1,
@@ -72,7 +94,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observar tarjetas de productos
+// Observar tarjetas de productos (si existen)
 const productCards = document.querySelectorAll('.producto-card');
 productCards.forEach((card, index) => {
     card.style.opacity = '0';
@@ -91,5 +113,5 @@ window.addEventListener('load', () => {
 // =====================
 // CONSOLA DE BIENVENIDA
 // =====================
-console.log('%c🧁 Bake me up 🧁', 'font-size: 20px; color: #535839; font-weight: bold;');
-console.log('%cHecho con ❤️ para Sofía Gavito', 'font-size: 12px; color: #79879b;');
+console.log('%c🧁 Bake Me Up 🧁', 'font-size: 20px; color: #535839; font-weight: bold;');
+console.log('%cHecho con ❤️', 'font-size: 12px; color: #79879b;');
