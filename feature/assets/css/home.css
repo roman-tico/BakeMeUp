@@ -16,7 +16,7 @@
     height: 85vh;
     
     /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
-    background-image: url('../images/hero/hero-coffee.png');
+    background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
     
     /* AJUSTE DE LA IMAGEN */
     background-size: cover;  /* La imagen cubre todo el espacio */
@@ -34,18 +34,6 @@
     margin-top: 90px;
 }
 
-/* OVERLAY (CAPA OSCURA ENCIMA DE LA IMAGEN) */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* 🔥 COLOR DEL FONDO DONDE ESTÁ EL ISOTIPO BMU 🔥 */
-    /* Cambia SOLO este rgba si quieres otro tono */
-    background: rgba(151, 166, 187, 1); /* Café oscuro BMU */
-}
 
 .hero-content {
     position: relative;
@@ -82,21 +70,21 @@
 
 /* SUBTÍTULO DEL HERO */
 .hero-subtitle {
-    /* TAMAÑO - Cambia 28px */
-    font-size: 28px;
+    /* TAMAÑO - Cambia 35px */
+    font-size: 35px;
     
     /* COLOR - Cambia aquí */
-    color: var(--crema);
+    color: var(--cafe-oscuro);
     
-    margin-bottom: 45px;
+    margin-bottom: 15px;
     
     /* SOMBRA - Más fuerte que el título para mejor legibilidad */
-    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.6);
+    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.75);
     
     line-height: 1.6;
     
     /* GROSOR DE LA FUENTE - Cambia 300 (light, normal=400, bold=700) */
-    font-weight: 300;
+    font-weight: 500;
 }
 
 /* =====================
