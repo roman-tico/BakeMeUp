@@ -16,7 +16,7 @@
     height: 85vh;
     
     /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
-    background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
+    background-image: url('../images/Ilustraciones/rebanada-pastel-cereza.webp');
     
     /* AJUSTE DE LA IMAGEN */
     background-size: cover;  /* La imagen cubre todo el espacio */
@@ -34,12 +34,7 @@
     margin-top: 90px;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
 
-    background: rgba(151, 166, 187, 0.65); /* azul BMU con transparencia */
-}
 
 .hero-content {
     position: relative;
