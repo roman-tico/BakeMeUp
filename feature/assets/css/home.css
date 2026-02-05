@@ -12,7 +12,7 @@
     /* ALTURA DEL HERO */
     height: 85vh;
     
-    /* IMAGEN DE FONDO */
+    /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
     background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
     
     /* AJUSTE DE LA IMAGEN */
@@ -31,7 +31,7 @@
     margin-top: 90px;
 }
 
-/* CONTENIDO DEL HERO */
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -56,14 +56,20 @@
 
 /* SUBTÍTULO DEL HERO */
 .hero-subtitle {
+    /* TAMAÑO - Cambia 35px */
     font-size: 35px;
+    
+    /* COLOR - Cambia aquí */
     color: var(--cafe-oscuro);
     
     margin-bottom: 15px;
     
+    /* SOMBRA - Más fuerte que el título para mejor legibilidad */
     text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.75);
     
     line-height: 1.6;
+    
+    /* GROSOR DE LA FUENTE - Cambia 300 (light, normal=400, bold=700) */
     font-weight: 500;
 }
 
