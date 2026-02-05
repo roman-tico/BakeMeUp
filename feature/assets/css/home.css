@@ -16,7 +16,7 @@
     height: 85vh;
     
     /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
-    background-image: url('../images/Ilustraciones/rebanada-pastel-cereza.webp');
+    background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
     
     /* AJUSTE DE LA IMAGEN */
     background-size: cover;  /* La imagen cubre todo el espacio */
@@ -77,10 +77,10 @@
     /* COLOR - Cambia aquí */
     color: var(--cafe-oscuro);
     
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     
     /* SOMBRA - Más fuerte que el título para mejor legibilidad */
-    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.6);
+    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.70);
     
     line-height: 1.6;
     
@@ -95,31 +95,39 @@
 .welcome {
     /* ESPACIADO VERTICAL - Cambia 120px para más/menos espacio */
     /* El primer número es arriba, el segundo es abajo */
-    padding: 120px 0;
+    padding: 100px ;
     
     /* COLOR DE FONDO - Cambia aquí */
-    background-color: var(--crema);
+    background-color: var(--cafe-oscuro);
 }
 
 .welcome-content {
     /* ANCHO MÁXIMO - Cambia 800px */
-    max-width: 800px;
+    max-width: 990px;
     
     margin: 0 auto;  /* Centra el contenido */
     text-align: center;
 }
+/* =====================
+   TÍTULO BIENVENIDA - COLOR ESPECÍFICO
+   ===================== */
+
+.welcome .section-title {
+    color: var(--dorado); /* o el color que quieras */
+    font-size: 67px;
+}
 
 .welcome-text {
     /* TAMAÑO DEL TEXTO - Cambia 18px */
-    font-size: 20px;
+    font-size: 25px;
     
     /* ESPACIADO ENTRE LÍNEAS - Cambia 2 para más/menos espacio */
     line-height: 1.5;
     
-    color: var(--cafe-oscuro);
+    color: var(--blanco);
     
     /* OPACIDAD - 0.9 = 90% opaco, cambia para más/menos contraste */
-    opacity: 0.9;
+    opacity: 1;
 }
 
 /* =====================
@@ -128,7 +136,7 @@
 
 .productos {
     /* ESPACIADO - Cambia 120px */
-    padding: 120px 0;
+    padding: 80px 0;
     
     /* COLOR DE FONDO - Cambia aquí */
     background-color: var(--blanco);
@@ -154,7 +162,7 @@
     padding: 0;
     
     /* ANIMACIÓN AL HOVER */
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
 }
 
 .producto-card:hover {
@@ -165,10 +173,10 @@
 /* ÍCONO/IMAGEN DEL PRODUCTO */
 .producto-icon {
     /* TAMAÑO DEL CÍRCULO - Cambia 180px */
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     
-    margin: 0 auto 35px;
+    margin: 0 auto 30px;
     
     display: flex;
     align-items: center;
@@ -177,7 +185,7 @@
     /* FONDO CON GRADIENTE - Cambia los colores aquí */
     background: linear-gradient(
         135deg, 
-        var(--crema) 0%, 
+        var(--verde-oliva) 100%, 
         rgba(245, 223, 172, 0.5) 100%
     );
     
@@ -185,7 +193,7 @@
     border-radius: 50%;
     
     /* ESPACIO INTERNO - Cambia 35px */
-    padding: 35px;
+    padding: 22px;
     
     transition: all 0.4s ease;
 }
@@ -212,27 +220,27 @@
 /* TÍTULO DEL PRODUCTO */
 .producto-card h3 {
     /* TAMAÑO - Cambia 32px */
-    font-size: 32px;
+    font-size: 37px;
     
     /* COLOR - Cambia aquí */
     color: var(--verde-oliva);
     
     margin-bottom: 20px;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 /* DESCRIPCIÓN DEL PRODUCTO */
 .producto-card p {
     /* COLOR - Cambia aquí */
-    color: var(--azul-gris-medio);
+    color: var(--cafe-oscuro);
     
-    line-height: 1.8;
+    line-height: 1.2;
     
     /* TAMAÑO - Cambia 16px */
-    font-size: 16px;
+    font-size: 22px;
     
     /* PADDING LATERAL - Para que no toque los bordes */
-    padding: 0 10px;
+    padding: 0 8px;
 }
 
 /* =====================
@@ -241,13 +249,13 @@
 
 .visit {
     /* ESPACIADO - Cambia 100px */
-    padding: 100px 0;
+    padding: 80px 0;
     
     /* FONDO CON GRADIENTE - Cambia los colores aquí */
     background: linear-gradient(
         135deg, 
         var(--azul-gris-claro) 0%, 
-        var(--azul-gris-medio) 100%
+        var(--azul-gris-medio) 10%
     );
     
     color: var(--blanco);
@@ -265,6 +273,7 @@
 .visit-content .section-title {
     /* COLOR DEL TÍTULO - Blanco para contraste con fondo azul */
     color: var(--blanco);
+    font-size: 67px;
     
     margin-bottom: 40px;
 }
@@ -272,9 +281,9 @@
 /* DIRECCIÓN */
 .visit-address {
     /* TAMAÑO - Cambia 20px */
-    font-size: 20px;
+    font-size: 22px;
     
-    line-height: 1.8;
+    line-height: 1.2;
     margin-bottom: 50px;
     color: var(--blanco);
 }
@@ -282,7 +291,7 @@
 /* ÍCONO DE UBICACIÓN */
 .address-icon {
     /* TAMAÑO DEL EMOJI - Cambia 28px */
-    font-size: 28px;
+    font-size: 32px;
     
     display: block;
     margin-bottom: 15px;
