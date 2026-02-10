@@ -8,39 +8,44 @@
    SECCIÓN HERO (IMAGEN GRANDE CON TEXTO)
    ===================== */
 
+/* =====================
+   SECCIÓN HERO
+   ===================== */
+
 .hero {
-    /* ALTURA DEL HERO */
     height: 85vh;
-    
-    /* IMAGEN DE FONDO - Cambia la ruta para otra imagen */
+
     background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
-    
-    /* AJUSTE DE LA IMAGEN */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    
+    background-repeat: no-repeat;
+
+    /* IMPORTANTE: Android no maneja bien fixed */
+    background-attachment: scroll;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
     position: relative;
-    
-    /* ESPACIO PARA HEADER FIJO */
     margin-top: 90px;
 }
+
 
 
 .hero-content {
     position: relative;
     z-index: 2;
-    
+
     max-width: 700px;
+    width: 100%;
+
     padding: 40px;
-    
+
     animation: fadeInUp 1.2s ease-out;
 }
+
 
 /* TÍTULO DEL HERO */
 .hero-title {
@@ -62,7 +67,7 @@
     /* COLOR - Cambia aquí */
     color: var(--cafe-oscuro);
     
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     
     /* SOMBRA - Más fuerte que el título para mejor legibilidad */
     text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.75);
@@ -423,3 +428,28 @@
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content {
+        padding: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+}
+
