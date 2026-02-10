@@ -428,3 +428,28 @@
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-content {
+        padding: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+}
+
