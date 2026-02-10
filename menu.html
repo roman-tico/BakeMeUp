@@ -4,22 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú - Bake me up</title>
+    
     <!-- =====================
-     FAVICON / ICONOS
-     ===================== -->
-<link rel="icon" type="image/x-icon" href="feature/assets/images/favicon/favicon.ico">
-
-<link rel="icon" type="image/svg+xml" href="feature/assets/images/favicon/favicon.svg">
-
-<link rel="icon" type="image/png" sizes="96x96"
-      href="feature/assets/images/favicon/favicon-96x96.png">
-
-<link rel="apple-touch-icon"
-      href="feature/assets/images/favicon/apple-touch-icon.png">
-
-<link rel="manifest"
-      href="feature/assets/images/favicon/site.webmanifest">
-
+         FAVICON / ICONOS
+         ===================== -->
+    <link rel="icon" type="image/x-icon" href="feature/assets/images/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="feature/assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="feature/assets/images/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="feature/assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="feature/assets/images/favicon/site.webmanifest">
+    
     <style>
         * {
             margin: 0;
@@ -33,15 +27,80 @@
             overflow: hidden;
         }
 
+        /* IFRAME - Solo para desktop */
         iframe {
             width: 100%;
             height: 100%;
             border: none;
             display: block;
         }
+
+        /* PANTALLA DE CARGA - Solo se ve en móvil mientras redirige */
+        .loading-screen {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: #f5dfac;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-screen.active {
+            display: flex;
+        }
+
+        .loading-text {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #26120f;
+            margin-top: 20px;
+        }
+
+        /* Spinner animado */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(83, 88, 57, 0.2);
+            border-top-color: #535839;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
-    <iframe src="feature/assets/documents/menu.pdf" title="Menú Bake me up"></iframe>
+    <!-- IFRAME para desktop -->
+    <iframe id="pdf-viewer" src="feature/assets/documents/menu.pdf" title="Menú Bake me up"></iframe>
+    
+    <!-- Pantalla de carga para móvil (solo se ve durante la redirección) -->
+    <div class="loading-screen" id="loading">
+        <div class="spinner"></div>
+        <p class="loading-text">Abriendo menú...</p>
+    </div>
+
+    <script>
+        // DETECTAR SI ES MÓVIL (iOS o Android)
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Si es móvil, redirigir directamente al PDF
+        if (isMobile()) {
+            // Mostrar pantalla de carga
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('pdf-viewer').style.display = 'none';
+            
+            // Redirigir al PDF después de 500ms (para que se vea el spinner)
+            setTimeout(function() {
+                window.location.href = 'feature/assets/documents/menu.pdf';
+            }, 500);
+        }
+    </script>
 </body>
 </html>
