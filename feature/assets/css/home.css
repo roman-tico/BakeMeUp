@@ -11,7 +11,11 @@
 /* =====================
    SECCIÓN HERO
    ===================== */
-
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .hero {
     height: 85vh;
 

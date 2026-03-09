@@ -33,32 +33,7 @@
          HEADER (BARRA DE NAVEGACIÓN SUPERIOR)
          ======================================== -->
     <!-- Este header es FIJO (se queda arriba siempre, incluso al hacer scroll) -->
-    <header class="header">
-        <div class="container">
-            
-            <!-- LOGO -->
-            <!-- Cambia la imagen del logo aquí si quieres otro color/versión -->
-            <a href="index.html" class="logo">
-                <img src="feature/assets/images/logos/logotipo-cafeoscuro-26120f.png" alt="Bake me up">
-            </a>
-            
-            <!-- MENÚ DE NAVEGACIÓN -->
-            <!-- Links a las diferentes páginas del sitio -->
-            <nav class="nav">
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <a href="menu.html" class="nav-link">Menú</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <!-- Para agregar más links: copia una línea <a> y cambia el href y el texto -->
-            </nav>
-            
-            <!-- BOTÓN HAMBURGUESA (solo se ve en móvil) -->
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- ========================================
          SECCIÓN HERO (IMAGEN GRANDE DE BIENVENIDA)
@@ -194,7 +169,7 @@
             </p>
             
             <!-- BOTÓN DE WHATSAPP -->
-            <a href="https://wa.me/522222991502" class="btn-secondary">
+            <a href="https://wa.me/522213626142" class="btn-secondary">
                 Contáctanos por WhatsApp
             </a>
 
@@ -207,63 +182,7 @@
          FOOTER (PIE DE PÁGINA)
          ======================================== -->
     <!-- Footer con fondo oscuro, se repite en todas las páginas -->
-    <footer class="footer">
-        <div class="container">
-            
-            <!-- GRID DEL FOOTER (4 columnas) -->
-            <div class="footer-content">
-                
-                <!-- COLUMNA 1: LOGO Y TAGLINE -->
-                <div class="footer-section footer-brand">
-                    <!-- Logo del footer (versión crema para contraste) -->
-                    <img src="feature/assets/images/logos/logotipo-crema-f5dfac.png" alt="Bake me up" class="footer-logo">
-                    <p class="footer-tagline">Postres, Pasteles y Café</p>
-                </div>
-
-                <!-- COLUMNA 2: CONTACTO -->
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <!-- Teléfono con link a WhatsApp -->
-                    <p><a href="https://wa.me/522222991502">+52 1 222 299 1502</a></p>
-                    <!-- Dirección física -->
-                    <p class="footer-address">Blvd. Municipio Libre 1972<br>Ex Hacienda Mayorazgo<br>Puebla, Pue.</p>
-                </div>
-
-                <!-- COLUMNA 3: HORARIOS -->
-                <div class="footer-section">
-                    <h4>Horarios</h4>
-                    <!-- Cambia los horarios aquí -->
-                    <p><strong>Lunes a Viernes</strong><br>08:00 - 20:00</p>
-                    <p><strong>Sábados</strong><br>9:00 - 19:00</p>
-                    <p><strong>Domingos</strong><br>9:00 - 14:00</p>
-                </div>
-
-                <!-- COLUMNA 4: REDES SOCIALES -->
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
-                    <!-- Link a Instagram con ícono SVG -->
-                    <a href="https://www.instagram.com/bakemeup_mx/" target="_blank" class="social-link">
-                        <!-- Ícono de Instagram (SVG) -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        @bakemeup_mx
-                    </a>
-                    
-                    <!-- PARA AGREGAR MÁS REDES SOCIALES:
-                         Copia el <a> de arriba y cambia:
-                         - El href (link)
-                         - El ícono SVG
-                         - El texto (@usuario) -->
-                </div>
-            </div>
-
-            <!-- LÍNEA DE COPYRIGHT -->
-            <div class="footer-bottom">
-                <p>&copy; 2026 Bake me up • Hecho con ❤️ </p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- ARCHIVO DE JAVASCRIPT -->
     <!-- Maneja el menú móvil, animaciones y scroll suave -->

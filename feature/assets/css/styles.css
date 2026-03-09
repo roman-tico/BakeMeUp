@@ -93,7 +93,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 16px 10px;
 }
 
 /* LOGO */
@@ -108,7 +108,8 @@ body {
 /* NAVEGACIÓN */
 .nav {
     display: flex;
-    gap: 45px;
+    align-items: center;
+    gap: 35px;
 }
 
 /* ✅ aquí queda la tipografía “subtítulo” del header */
@@ -116,13 +117,48 @@ body {
     font-family: 'Armany', Georgia, serif; 
     color: var(--cafe-oscuro);
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.6px;
+
+    font-size: 18px;      /* antes 17 */
+    font-weight: 600;     /* antes 500 */
+    letter-spacing: 1px;  /* antes 0.6 */
+
     text-transform: uppercase;
 
     position: relative;
     transition: color 0.3s ease;
+}
+/* =====================
+   BOTÓN CTA NAVBAR
+   ===================== */
+
+.nav-cta {
+
+    font-family: 'Armany', Georgia, serif;
+
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 9px 22px;
+
+    border-radius: 30px;
+
+    letter-spacing: 0.6px;
+
+    transition: all 0.3s ease;
+
+}
+
+.nav-cta:hover {
+
+    background-color: var(--cafe-oscuro);
+
+    transform: translateY(-2px);
+
 }
 
 /* LÍNEA ANIMADA DEBAJO DEL LINK */

@@ -1,117 +1,183 @@
-// =====================
-// MENÚ HAMBURGUESA MÓVIL
-// =====================
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
+// =============================
+// UTILIDADES
+// =============================
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => scope.querySelectorAll(selector);
 
-if (menuToggle && nav) {
+// =============================
+// CARGAR COMPONENTES (HEADER / FOOTER)
+// =============================
+async function loadComponent(id, path) {
+
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    try {
+        const res = await fetch(path);
+        el.innerHTML = await res.text();
+    } catch (err) {
+        console.error("No se pudo cargar:", path);
+    }
+}
+
+// =============================
+// MENÚ HAMBURGUESA
+// =============================
+function initMobileMenu() {
+
+    const menuToggle = $('.menu-toggle');
+    const nav = $('.nav');
+
+    if (!menuToggle || !nav) return;
+
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         nav.classList.toggle('active');
     });
 
-    // Cerrar menú al hacer click en un link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
+    $$('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
             nav.classList.remove('active');
         });
     });
+
 }
 
-// =====================
-// SCROLL SUAVE PARA ANCLAS
-// =====================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
+// =============================
+// SCROLL SUAVE
+// =============================
+function initSmoothScroll() {
 
-        // Evitar interferir con links vacíos
-        if (targetId === '#') return;
+    $$('a[href^="#"]').forEach(anchor => {
 
-        const target = document.querySelector(targetId);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        anchor.addEventListener('click', e => {
+
+            const targetId = anchor.getAttribute('href');
+            if (targetId === '#') return;
+
+            const target = $(targetId);
+
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+        });
+
     });
-});
 
-// =====================
+}
+
+// =============================
 // HEADER SCROLL BEHAVIOR
-// (sombra + auto-hide)
-// =====================
-const header = document.querySelector('.header');
-let lastScrollY = window.scrollY;
-const scrollThreshold = 10;
+// =============================
+function initHeaderScroll() {
 
-window.addEventListener('scroll', () => {
+    const header = $('.header');
+    const nav = $('.nav');
+
     if (!header) return;
 
-    // Si el menú móvil está abierto, no ocultar header
-    if (nav && nav.classList.contains('active')) return;
+    let lastScroll = window.scrollY;
+    const threshold = 10;
 
-    const currentScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
 
-    // 🔹 Sombra del header
-    if (currentScrollY > 0) {
-        header.style.boxShadow = '0 2px 20px rgba(38, 18, 15, 0.15)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(38, 18, 15, 0.1)';
-    }
+        if (nav && nav.classList.contains('active')) return;
 
-    // 🔹 Evitar micro movimientos
-    if (Math.abs(currentScrollY - lastScrollY) < scrollThreshold) return;
+        const current = window.scrollY;
 
-    // 🔹 Ocultar al bajar / mostrar al subir
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        header.classList.add('header--hidden');
-    } else {
-        header.classList.remove('header--hidden');
-    }
+        // sombra
+        header.style.boxShadow =
+            current > 0
+                ? '0 2px 20px rgba(38,18,15,0.15)'
+                : '0 2px 10px rgba(38,18,15,0.1)';
 
-    lastScrollY = currentScrollY;
-});
+        if (Math.abs(current - lastScroll) < threshold) return;
 
-// =====================
-// ANIMACIONES DE ENTRADA (IntersectionObserver)
-// =====================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+        if (current > lastScroll && current > 100) {
+            header.classList.add('header--hidden');
+        } else {
+            header.classList.remove('header--hidden');
         }
+
+        lastScroll = current;
+
     });
-}, observerOptions);
 
-// Observar tarjetas de productos (si existen)
-const productCards = document.querySelectorAll('.producto-card');
-productCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
+}
+
+// =============================
+// ANIMACIONES SCROLL
+// =============================
+function initScrollAnimations() {
+
+    const cards = $$('.producto-card');
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+
+        });
+
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    cards.forEach((card, i) => {
+
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `all 0.6s ease ${i * 0.1}s`;
+
+        observer.observe(card);
+
+    });
+
+}
+
+// =============================
+// PRELOADER
+// =============================
+function initPreloader() {
+
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+
+}
+
+// =============================
+// INIT APP
+// =============================
+document.addEventListener('DOMContentLoaded', async () => {
+
+    // cargar componentes
+    await loadComponent("header-placeholder", "feature/components/header.html");
+    await loadComponent("footer-placeholder", "feature/components/footer.html");
+
+    // inicializar módulos
+    initMobileMenu();
+    initSmoothScroll();
+    initHeaderScroll();
+    initScrollAnimations();
+    initPreloader();
+
 });
 
-// =====================
-// PRELOADER (opcional)
-// =====================
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
-// =====================
-// CONSOLA DE BIENVENIDA
-// =====================
-console.log('%c🧁 Bake Me Up 🧁', 'font-size: 20px; color: #535839; font-weight: bold;');
-console.log('%cHecho con ❤️', 'font-size: 12px; color: #79879b;');
+// =============================
+// CONSOLA
+// =============================
+console.log('%c🧁 Bake Me Up 🧁', 'font-size:20px;color:#535839;font-weight:bold;');
+console.log('%cHecho con ❤️', 'font-size:12px;color:#79879b;');
