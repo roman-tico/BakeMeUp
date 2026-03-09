@@ -662,6 +662,28 @@ h3 {
     transition: color 0.3s ease;
 
 }
+/* =====================
+   LINK DE GOOGLE MAPS
+   ===================== */
+
+.footer-map-link{
+
+    color:var(--crema);
+
+    text-decoration:none;
+
+    display:inline-block;
+
+    transition:color 0.3s ease;
+
+}
+
+.footer-map-link:hover{
+
+    color:var(--dorado);
+
+}
+
 
 .footer-section a:hover {
 

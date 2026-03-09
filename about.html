@@ -1,251 +1,431 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Bake me up</title>
-    <!-- =====================
-     FAVICON / ICONOS
-     ===================== -->
-<link rel="icon" type="image/x-icon" href="feature/assets/images/favicon/favicon.ico">
 
-<link rel="icon" type="image/svg+xml" href="feature/assets/images/favicon/favicon.svg">
+<!-- =====================================================
+HEAD
+Contiene metadatos, favicon y hojas de estilo
+===================================================== -->
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sobre nosotras | Bake Me Up</title>
+
+<meta name="description" content="Conoce la esencia de Bake Me Up: repostería fina, café de especialidad y una experiencia cálida en Puebla.">
+
+
+<!-- =====================================================
+FAVICON / ICONOS DEL SITIO
+===================================================== -->
+
+<link rel="icon" type="image/x-icon"
+href="feature/assets/images/favicon/favicon.ico">
+
+<link rel="icon" type="image/svg+xml"
+href="feature/assets/images/favicon/favicon.svg">
 
 <link rel="icon" type="image/png" sizes="96x96"
-      href="feature/assets/images/favicon/favicon-96x96.png">
+href="feature/assets/images/favicon/favicon-96x96.png">
 
 <link rel="apple-touch-icon"
-      href="feature/assets/images/favicon/apple-touch-icon.png">
+href="feature/assets/images/favicon/apple-touch-icon.png">
 
 <link rel="manifest"
-      href="feature/assets/images/favicon/site.webmanifest">
+href="feature/assets/images/favicon/site.webmanifest">
 
 
-    <!-- ARCHIVOS DE ESTILOS -->
-    <!-- styles.css = Estilos globales (header, footer, botones, tipografías) -->
-    <link rel="stylesheet" href="feature/assets/css/styles.css">
-    <!-- about.css = Estilos específicos de esta página (about hero, misión/visión, valores) -->
-    <link rel="stylesheet" href="feature/assets/css/about.css">
+<!-- =====================================================
+HOJAS DE ESTILO
+styles.css → estilos globales del sitio
+about.css → estilos exclusivos de esta página
+===================================================== -->
+
+<link rel="stylesheet" href="feature/assets/css/styles.css">
+
+<link rel="stylesheet" href="feature/assets/css/about.css">
+
 </head>
+
+
+
+<!-- =====================================================
+BODY
+===================================================== -->
 <body>
 
-    <!-- ========================================
-         HEADER (BARRA DE NAVEGACIÓN SUPERIOR)
-         ======================================== -->
-    <!-- Este header es FIJO (se queda arriba siempre, incluso al hacer scroll) -->
-    <header class="header">
-        <div class="container">
 
-            <!-- LOGO -->
-            <!-- Cambia la imagen del logo aquí si quieres otro color/versión -->
-            <a href="index.html" class="logo">
-                <img src="feature/assets/images/logos/logotipo-cafeoscuro-26120f.png" alt="Bake me up">
-            </a>
 
-            <!-- MENÚ DE NAVEGACIÓN -->
-            <!-- Links a las diferentes páginas del sitio -->
-            <nav class="nav">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="menu.html" class="nav-link">Menú</a>
-                <a href="about.html" class="nav-link active">About Us</a>
-                <!-- Para agregar más links: copia una línea <a> y cambia el href y el texto -->
-            </nav>
+<!-- =====================================================
+HEADER GLOBAL
+El header se carga dinámicamente desde header.html
+para reutilizarlo en todas las páginas del sitio
+===================================================== -->
 
-            <!-- BOTÓN HAMBURGUESA (solo se ve en móvil) -->
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+<div id="header-placeholder"></div>
 
-    <!-- ========================================
-         HERO ABOUT (CABECERA DE ABOUT)
-         ======================================== -->
-    <!-- Sección elegante con isotipo y mensaje corto -->
-    <section class="about-hero">
-        <div class="about-hero-overlay"></div>
 
-        <div class="about-hero-content">
-            <!-- ISOTIPO -->
-            <img
-                src="feature/assets/images/logos/isotipo-verde-535839.png"
-                alt="Bake Me Up isotipo"
-                class="about-hero-isotipo"
-            >
 
-            <!-- TÍTULO -->
-            <h1 class="about-hero-title">Sobre Bake Me Up</h1>
+<!-- =====================================================
+HERO ABOUT
+Cabecera visual de la página About
+Incluye isotipo, título y mensaje corto
+===================================================== -->
 
-            <!-- SUBTÍTULO -->
-            <p class="about-hero-subtitle">
-                Un refugio cálido donde el café se sirve con calma y los postres cuentan historias.
-            </p>
-        </div>
-    </section>
+<section class="about-hero">
 
-    <!-- ========================================
-         SECCIÓN HISTORIA / ESENCIA
-         ======================================== -->
-    <section class="about-story">
-        <div class="container">
-            <div class="about-story-content">
+<div class="about-hero-overlay"></div>
 
-                <h2 class="section-title">Nuestra esencia</h2>
+<div class="about-hero-content">
 
-                <p class="about-text">
-                    En Bake Me Up elaboramos repostería fina y café de especialidad con una idea muy clara:
-                    crear una experiencia que se sienta íntima, elegante y cercana. Nos obsesionan los detalles,
-                    el diseño, la textura y ese primer bocado que confirma que valió la pena la pausa.
-                </p>
+<!-- ISOTIPO DE MARCA -->
+<img
+src="feature/assets/images/logos/isotipo-verde-535839.png"
+alt="Isotipo Bake Me Up"
+class="about-hero-isotipo"
+>
 
-                <p class="about-text">
-                    Trabajamos de forma artesanal, con ingredientes premium, técnicas cuidadas y una producción
-                    organizada que respeta la puntualidad, la precisión y la promesa de entregar exactamente
-                    lo que el cliente visualizó… y más.
-                </p>
+<!-- TÍTULO PRINCIPAL -->
+<h1 class="about-hero-title">
 
-                <div class="about-quote">
-                    <p>“Aquí, la repostería y el café no solo se consumen: se viven.”</p>
-                </div>
+Sobre Bake Me Up
 
-            </div>
-        </div>
-    </section>
+</h1>
 
-    <!-- ========================================
-         MISIÓN Y VISIÓN
-         ======================================== -->
-    <section class="about-mv">
-        <div class="container">
 
-            <h2 class="section-title-dark">Misión y Visión</h2>
+<!-- SUBTÍTULO / FRASE DE MARCA -->
 
-            <div class="mv-grid">
-                <!-- MISIÓN -->
-                <div class="mv-card">
-                    <h3 class="mv-title">Misión</h3>
-                    <p class="mv-text">
-                        En Bake Me Up elaboramos productos de repostería fina, de alta calidad y completamente
-                        personalizables, diseñados para satisfacer los requerimientos específicos de cada cliente.
-                        Brindamos una experiencia única de sabor, diseño y atención, ofreciendo soluciones tanto
-                        para el antojo del día a día como para momentos especiales.
-                    </p>
-                    <p class="mv-text">
-                        Nos comprometemos a un servicio cercano, cálido y profesional, donde la personalización,
-                        la familiaridad y el excelente servicio al cliente son parte esencial de nuestra identidad.
-                    </p>
-                </div>
+<p class="about-hero-subtitle">
 
-                <!-- VISIÓN -->
-                <div class="mv-card">
-                    <h3 class="mv-title">Visión</h3>
-                    <p class="mv-text">
-                        En los próximos años, Bake Me Up aspira a consolidarse como una de las marcas más
-                        prestigiosas, reconocidas y queridas de Puebla y CDMX, siendo referencia en sabor,
-                        calidad, diseño y experiencia dentro de la repostería fina y el café de especialidad.
-                    </p>
-                    <p class="mv-text">
-                        Queremos construir un modelo escalable sin sacrificar nuestra esencia artesanal:
-                        excelencia en sabor, presentación impecable y personalización auténtica.
-                    </p>
-                </div>
-            </div>
+Un refugio cálido donde el café se sirve con calma  
+y los postres cuentan historias.
 
-        </div>
-    </section>
+</p>
 
-    <!-- ========================================
-         VALORES
-         ======================================== -->
-    <section class="about-values">
-        <div class="container">
+</div>
 
-            <h2 class="section-title">Nuestros valores</h2>
-            <p class="about-values-subtitle">
-                Son la forma en la que trabajamos, atendemos y cuidamos cada detalle — incluso cuando nadie nos ve.
-            </p>
+</section>
 
-            <div class="values-grid">
-                <div class="value-card">
-                    <h4>Calidad innegociable</h4>
-                    <p>Ingredientes premium, técnicas cuidadas y presentación impecable. Sin atajos.</p>
-                </div>
 
-                <div class="value-card">
-                    <h4>Honestidad</h4>
-                    <p>Lo que prometemos, lo cumplimos. Transparencia con clientes y equipo.</p>
-                </div>
 
-                <div class="value-card">
-                    <h4>Respeto y buen trato</h4>
-                    <p>Amabilidad, profesionalismo y un ambiente donde todos se sientan valorados.</p>
-                </div>
 
-                <div class="value-card">
-                    <h4>Compromiso</h4>
-                    <p>Puntualidad, precisión y responsabilidad incluso bajo presión.</p>
-                </div>
+<!-- =====================================================
+SECCIÓN HISTORIA / ESENCIA
+Cuenta la identidad y filosofía de Bake Me Up
+===================================================== -->
 
-                <div class="value-card">
-                    <h4>Comunicación asertiva</h4>
-                    <p>Claridad y orden para trabajar mejor y minimizar errores.</p>
-                </div>
+<section class="about-story">
 
-                <div class="value-card">
-                    <h4>Trabajo en equipo</h4>
-                    <p>Una sola unidad: cooperación, apoyo mutuo y orgullo por el resultado.</p>
-                </div>
+<div class="container">
 
-                <div class="value-card">
-                    <h4>Proactividad</h4>
-                    <p>Iniciativa, propuestas y mejora continua como parte de la cultura.</p>
-                </div>
+<div class="about-story-content">
 
-                <div class="value-card">
-                    <h4>Resiliencia</h4>
-                    <p>Calma, flexibilidad y enfoque para mantener calidad ante retos.</p>
-                </div>
 
-                <div class="value-card">
-                    <h4>Dedicación al servicio</h4>
-                    <p>Atención memorable de principio a fin, superando expectativas.</p>
-                </div>
-            </div>
+<!-- TÍTULO DE SECCIÓN -->
 
-        </div>
-    </section>
+<h2 class="section-title">
 
-    <!-- ========================================
-         CTA FINAL (VISÍTANOS)
-         ======================================== -->
-    <section class="about-cta">
-        <div class="container">
-            <div class="about-cta-content">
-                <h2 class="section-title">Ven a conocernos</h2>
-                <p class="about-cta-text">
-                    Si buscas una pausa con intención, un postre impecable o un café que se sienta como ritual,
-                    Bake Me Up es para ti.
-                </p>
+Nuestra esencia
 
-                <a href="https://maps.app.goo.gl/NJ14GSEf7EmWPsYf8"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn-primary">
-                    Abrir ubicación en Google Maps
-                </a>
-            </div>
-        </div>
-    </section>
+</h2>
 
-    <!-- ========================================
-         FOOTER (PIE DE PÁGINA)
-         ======================================== -->
-    <!-- Footer con fondo oscuro, se repite en todas las páginas -->
-    <div id="footer-placeholder"></div>
 
-    <!-- ARCHIVO DE JAVASCRIPT -->
-    <script src="feature/assets/js/main.js"></script>
+
+<!-- TEXTO PRINCIPAL -->
+
+<p class="about-text">
+
+En Bake Me Up elaboramos repostería fina y café de especialidad con una idea muy clara:
+crear una experiencia que se sienta íntima, elegante y cercana. Nos obsesionan los
+detalles, el diseño, la textura y ese primer bocado que confirma que valió la pena
+hacer una pausa.
+
+</p>
+
+
+
+<!-- SEGUNDO PÁRRAFO -->
+
+<p class="about-text">
+
+Trabajamos de forma artesanal, con ingredientes premium, técnicas cuidadas y una
+producción organizada que respeta la puntualidad, la precisión y la promesa de
+entregar exactamente lo que el cliente visualizó… y más.
+
+</p>
+
+
+
+<!-- FRASE DE MARCA -->
+
+<div class="about-quote">
+
+<p>
+
+“En Bake Me Up la repostería y el café no solo se consumen: se viven.”
+
+</p>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+MISIÓN Y VISIÓN
+Sección que explica el propósito y dirección de la marca
+===================================================== -->
+
+<section class="about-mv">
+
+<div class="container">
+
+<h2 class="section-title-dark">
+Misión y Visión
+</h2>
+
+
+<div class="mv-grid">
+
+<!-- =====================================================
+MISIÓN
+===================================================== -->
+
+<div class="mv-card">
+
+<h3 class="mv-title">Misión</h3>
+
+<p class="mv-text">
+
+En Bake Me Up elaboramos productos de repostería fina de alta calidad,
+completamente personalizables y diseñados para satisfacer los
+requerimientos específicos de cada cliente.
+
+</p>
+
+<p class="mv-text">
+
+Buscamos brindar una experiencia única de sabor, diseño y atención,
+ofreciendo soluciones tanto para el antojo del día a día como para
+momentos especiales.
+
+</p>
+
+<p class="mv-text">
+
+Nuestro compromiso es mantener un servicio cercano, cálido y profesional,
+donde la personalización, la familiaridad y el excelente servicio al
+cliente forman parte esencial de nuestra identidad.
+
+</p>
+
+</div>
+
+
+
+<!-- =====================================================
+VISIÓN
+===================================================== -->
+
+<div class="mv-card">
+
+<h3 class="mv-title">Visión</h3>
+
+<p class="mv-text">
+
+En los próximos años, Bake Me Up aspira a consolidarse como una de las
+marcas más prestigiosas, reconocidas y queridas de Puebla y Ciudad de
+México.
+
+</p>
+
+<p class="mv-text">
+
+Queremos ser referencia en sabor, calidad, diseño y experiencia dentro
+de la repostería fina y el café de especialidad.
+
+</p>
+
+<p class="mv-text">
+
+Buscamos construir un modelo escalable sin sacrificar nuestra esencia
+artesanal: excelencia en sabor, presentación impecable y una
+personalización auténtica para cada cliente.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+VALORES
+Principios que guían la operación de la marca
+===================================================== -->
+
+<section class="about-values">
+
+<div class="container">
+
+<h2 class="section-title">
+Nuestros valores
+</h2>
+
+
+<p class="about-values-subtitle">
+
+Son la forma en la que trabajamos, atendemos y cuidamos cada detalle —
+incluso cuando nadie nos ve.
+
+</p>
+
+
+
+<div class="values-grid">
+
+
+<!-- VALOR 1 -->
+<div class="value-card">
+<h4>Calidad innegociable</h4>
+<p>Ingredientes premium, técnicas cuidadas y presentación impecable. Sin atajos.</p>
+</div>
+
+
+<!-- VALOR 2 -->
+<div class="value-card">
+<h4>Honestidad</h4>
+<p>Lo que prometemos, lo cumplimos. Transparencia con clientes y equipo.</p>
+</div>
+
+
+<!-- VALOR 3 -->
+<div class="value-card">
+<h4>Respeto y buen trato</h4>
+<p>Amabilidad, profesionalismo y un ambiente donde todos se sientan valorados.</p>
+</div>
+
+
+<!-- VALOR 4 -->
+<div class="value-card">
+<h4>Compromiso</h4>
+<p>Puntualidad, precisión y responsabilidad incluso bajo presión.</p>
+</div>
+
+
+<!-- VALOR 5 -->
+<div class="value-card">
+<h4>Comunicación asertiva</h4>
+<p>Claridad y orden para trabajar mejor y minimizar errores.</p>
+</div>
+
+
+<!-- VALOR 6 -->
+<div class="value-card">
+<h4>Trabajo en equipo</h4>
+<p>Una sola unidad: cooperación, apoyo mutuo y orgullo por el resultado.</p>
+</div>
+
+
+<!-- VALOR 7 -->
+<div class="value-card">
+<h4>Proactividad</h4>
+<p>Iniciativa, propuestas y mejora continua como parte de nuestra cultura.</p>
+</div>
+
+
+<!-- VALOR 8 -->
+<div class="value-card">
+<h4>Resiliencia</h4>
+<p>Calma, flexibilidad y enfoque para mantener la calidad ante cualquier reto.</p>
+</div>
+
+
+<!-- VALOR 9 -->
+<div class="value-card">
+<h4>Dedicación al servicio</h4>
+<p>Atención memorable de principio a fin, buscando siempre superar expectativas.</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+CTA FINAL
+Invitación a visitar el local
+===================================================== -->
+
+<section class="about-cta">
+
+<div class="container">
+
+<div class="about-cta-content">
+
+
+<h2 class="section-title">
+Ven a conocernos
+</h2>
+
+
+<p class="about-cta-text">
+
+Si buscas una pausa con intención, un postre impecable o un café que se
+sienta como ritual, Bake Me Up es para ti.
+
+</p>
+
+
+<a
+href="https://maps.app.goo.gl/2QA8L5DEZhghSWLn6"
+target="_blank"
+rel="noopener"
+class="btn-primary">
+
+Abrir ubicación en Google Maps
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+FOOTER GLOBAL
+Se carga dinámicamente desde footer.html
+===================================================== -->
+
+<div id="footer-placeholder"></div>
+
+
+
+<!-- =====================================================
+JAVASCRIPT PRINCIPAL
+Carga header, footer y comportamiento del menú
+===================================================== -->
+
+<script src="feature/assets/js/main.js"></script>
+
 </body>
 </html>
