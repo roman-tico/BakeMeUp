@@ -62,23 +62,23 @@ animation:fadeInUp 1.2s ease;
 
 .hero-logo{
 
-height:120px;
+height:320px;
 
-margin-bottom:20px;
+margin-bottom:10px;
 
 }
 
 .hero-subtitle{
 
-font-size:22px;
+font-size:38px;
 
-line-height:1.6;
+line-height:1.2;
 
 color:var(--cafe-oscuro);
 
 max-width:520px;
 
-margin:0 auto 35px;
+margin:0 auto 15px;
 
 font-weight:500;
 
@@ -573,5 +573,30 @@ gap:40px;
 text-align:center;
 
 }
+
+}
+
+/* =====================================================
+LINK TARJETAS PRODUCTOS
+===================================================== */
+
+.producto-card-link{
+
+display:block;
+
+text-decoration:none;
+
+color:inherit;
+
+cursor:pointer;
+
+}
+
+
+/* efecto hover más suave */
+
+.producto-card-link:hover .producto-card{
+
+transform:translateY(-6px);
 
 }
