@@ -1,459 +1,577 @@
 /* =====================================================
-   ESTILOS DE LA LANDING PAGE - home.css
-   =====================================================
-   Este archivo contiene estilos ESPECÍFICOS de index.html
-   (hero, sección bienvenida, productos, visítanos)
-   ===================================================== */
-/* =====================
-   SECCIÓN HERO (IMAGEN GRANDE CON TEXTO)
-   ===================== */
+HOME PAGE - ESTILOS DE INDEX
+===================================================== */
 
-/* =====================
-   SECCIÓN HERO
-   ===================== */
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.hero {
-    height: 85vh;
-
-    background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* IMPORTANTE: Android no maneja bien fixed */
-    background-attachment: scroll;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    position: relative;
-    margin-top: 90px;
-}
-
-
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 700px;
-    width: 100%;
-
-    padding: 40px;
-
-    animation: fadeInUp 1.2s ease-out;
-}
-
-
-/* TÍTULO DEL HERO */
-.hero-title {
-    font-size: 72px;
-    color: var(--blanco);
-    
-    margin-bottom: 25px;
-    
-    text-shadow: 2px 4px 12px rgba(38, 18, 15, 0.4);
-    line-height: 1.2;
-    letter-spacing: 1px;
-}
-
-/* SUBTÍTULO DEL HERO */
-.hero-subtitle {
-    /* TAMAÑO - Cambia 35px */
-    font-size: 35px;
-    
-    /* COLOR - Cambia aquí */
-    color: var(--cafe-oscuro);
-    
-    margin-bottom: 35px;
-    
-    /* SOMBRA - Más fuerte que el título para mejor legibilidad */
-    text-shadow: 1px 2px 8px rgba(38, 18, 15, 0.75);
-    
-    line-height: 1.6;
-    
-    /* GROSOR DE LA FUENTE - Cambia 300 (light, normal=400, bold=700) */
-    font-weight: 500;
-}
-
-
-/* =====================
-   SECCIÓN BIENVENIDA
-   ===================== */
-
-.welcome {
-    /* ESPACIADO VERTICAL - Cambia 120px para más/menos espacio */
-    /* El primer número es arriba, el segundo es abajo */
-    padding: 100px ;
-    
-    /* COLOR DE FONDO - Cambia aquí */
-    background-color: var(--cafe-oscuro);
-}
-
-.welcome-content {
-    /* ANCHO MÁXIMO - Cambia 800px */
-    max-width: 990px;
-    
-    margin: 0 auto;  /* Centra el contenido */
-    text-align: center;
-}
-/* =====================
-   TÍTULO BIENVENIDA - COLOR ESPECÍFICO
-   ===================== */
-
-.welcome .section-title {
-    color: var(--dorado); /* o el color que quieras */
-    font-size: 67px;
-}
-
-.welcome-text {
-    /* TAMAÑO DEL TEXTO - Cambia 18px */
-    font-size: 25px;
-    
-    /* ESPACIADO ENTRE LÍNEAS - Cambia 2 para más/menos espacio */
-    line-height: 1.5;
-    
-    color: var(--blanco);
-    
-    /* OPACIDAD - 0.9 = 90% opaco, cambia para más/menos contraste */
-    opacity: 1;
-}
-
-/* =====================
-   SECCIÓN PRODUCTOS
-   ===================== */
-
-.productos {
-    /* ESPACIADO - Cambia 120px */
-    padding: 80px 0;
-    
-    /* COLOR DE FONDO - Cambia aquí */
-    background-color: var(--blanco);
-}
-
-/* GRID DE PRODUCTOS */
-.productos-grid {
-    display: grid;
-    
-    /* COLUMNAS - repeat(3, 1fr) = 3 columnas de igual tamaño */
-    /* Cambia el 3 para más/menos columnas */
-    grid-template-columns: repeat(3, 1fr);
-    
-    /* ESPACIO ENTRE TARJETAS - Cambia 60px */
-    gap: 60px;
-    
-    margin-top: 80px;
-}
-
-/* TARJETA DE PRODUCTO */
-.producto-card {
-    text-align: center;
-    padding: 0;
-    
-    /* ANIMACIÓN AL HOVER */
-    transition: all 0.6s ease;
-}
-
-.producto-card:hover {
-    /* ELEVACIÓN AL HOVER - Cambia -8px para más/menos elevación */
-    transform: translateY(-8px);
-}
-
-/* ÍCONO/IMAGEN DEL PRODUCTO */
-.producto-icon {
-    /* TAMAÑO DEL CÍRCULO - Cambia 180px */
-    width: 200px;
-    height: 200px;
-    
-    margin: 0 auto 30px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* FONDO CON GRADIENTE - Cambia los colores aquí */
-    background: linear-gradient(
-        135deg, 
-        var(--verde-oliva) 100%, 
-        rgba(245, 223, 172, 0.5) 100%
-    );
-    
-    /* FORMA CIRCULAR */
-    border-radius: 50%;
-    
-    /* ESPACIO INTERNO - Cambia 35px */
-    padding: 22px;
-    
-    transition: all 0.4s ease;
-}
-
-/* CAMBIO DE GRADIENTE AL HOVER */
-.producto-card:hover .producto-icon {
-    /* NUEVO GRADIENTE - Cambia los colores */
-    background: linear-gradient(
-        135deg, 
-        var(--dorado) 0%, 
-        var(--crema) 100%
-    );
-    
-    /* CRECIMIENTO - Cambia 1.05 (5% más grande) */
-    transform: scale(1.05);
-}
-
-.producto-icon img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;  /* La imagen se ajusta sin deformarse */
-}
-
-/* TÍTULO DEL PRODUCTO */
-.producto-card h3 {
-    /* TAMAÑO - Cambia 32px */
-    font-size: 37px;
-    
-    /* COLOR - Cambia aquí */
-    color: var(--verde-oliva);
-    
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-/* DESCRIPCIÓN DEL PRODUCTO */
-.producto-card p {
-    /* COLOR - Cambia aquí */
-    color: var(--cafe-oscuro);
-    
-    line-height: 1.2;
-    
-    /* TAMAÑO - Cambia 16px */
-    font-size: 22px;
-    
-    /* PADDING LATERAL - Para que no toque los bordes */
-    padding: 0 8px;
-}
-
-/* =====================
-   SECCIÓN VISÍTANOS
-   ===================== */
-
-.visit {
-    /* ESPACIADO - Cambia 100px */
-    padding: 80px 0;
-    
-    /* FONDO CON GRADIENTE - Cambia los colores aquí */
-    background: linear-gradient(
-        135deg, 
-        var(--azul-gris-claro) 0%, 
-        var(--azul-gris-medio) 10%
-    );
-    
-    color: var(--blanco);
-}
-
-.visit-content {
-    text-align: center;
-    
-    /* ANCHO MÁXIMO - Cambia 700px */
-    max-width: 700px;
-    
-    margin: 0 auto;
-}
-
-.visit-content .section-title {
-    /* COLOR DEL TÍTULO - Blanco para contraste con fondo azul */
-    color: var(--blanco);
-    font-size: 67px;
-    
-    margin-bottom: 40px;
-}
-
-/* DIRECCIÓN */
-.visit-address {
-    /* TAMAÑO - Cambia 20px */
-    font-size: 22px;
-    
-    line-height: 1.2;
-    margin-bottom: 50px;
-    color: var(--blanco);
-}
-
-/* ÍCONO DE UBICACIÓN */
-.address-icon {
-    /* TAMAÑO DEL EMOJI - Cambia 28px */
-    font-size: 32px;
-    
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* BOTÓN ESPECIAL PARA ESTA SECCIÓN */
-.visit .btn-secondary {
-    color: var(--blanco);
-    border-color: var(--blanco);
-}
-
-.visit .btn-secondary:hover {
-    background-color: var(--blanco);
-    color: var(--verde-oliva);
-}
-
-/* =====================
-   ANIMACIONES
-   ===================== */
-
-/* ANIMACIÓN DE ENTRADA (fadeInUp) */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;  /* Invisible */
-        transform: translateY(40px);  /* 40px abajo */
-    }
-    to {
-        opacity: 1;  /* Visible */
-        transform: translateY(0);  /* Posición normal */
-    }
-}
 
 /* =====================================================
-   RESPONSIVE (ADAPTACIÓN A DIFERENTES PANTALLAS)
-   ===================================================== */
+HERO
+===================================================== */
 
-/* TABLETS (pantallas menores a 968px) */
-@media (max-width: 968px) {
-    
-    .productos-grid {
-        /* 2 COLUMNAS en tablets en lugar de 3 */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-    }
+.hero {
 
-    .hero-title {
-        /* TÍTULOS MÁS PEQUEÑOS en tablets */
-        font-size: 56px;
-    }
+height:85vh;
 
-    .hero-subtitle {
-        font-size: 19px;
-    }
+background-image:url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
 
-    /* MENOS ESPACIADO en tablets */
-    .welcome {
-        padding: 80px 0;
-    }
+background-size:cover;
 
-    .productos {
-        padding: 80px 0;
-    }
+background-position:center;
 
-    .visit {
-        padding: 80px 0;
-    }
+background-repeat:no-repeat;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+position:relative;
+
+margin-top:90px;
+
 }
 
-/* MÓVILES (pantallas menores a 768px) */
-@media (max-width: 768px) {
-    
-    .hero {
-        /* HERO MÁS BAJO en móvil */
-        height: 70vh;
-        
-        /* QUITA EL PARALLAX en móvil (mejor rendimiento) */
-        background-attachment: scroll;
-    }
+.hero-overlay{
 
-    .hero-title {
-        /* TÍTULO MÁS PEQUEÑO en móvil */
-        font-size: 42px;
-    }
+position:absolute;
 
-    .hero-subtitle {
-        font-size: 17px;
-    }
+inset:0;
 
-    .productos-grid {
-        /* UNA SOLA COLUMNA en móvil */
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
+background:linear-gradient(
+rgba(255,255,255,0.1),
+rgba(38,18,15,0.15)
+);
 
-    .producto-icon {
-        /* ÍCONOS MÁS PEQUEÑOS en móvil */
-        width: 160px;
-        height: 160px;
-    }
-
-    .producto-card h3 {
-        font-size: 28px;
-    }
-
-    /* MENOS ESPACIADO en móvil */
-    .welcome {
-        padding: 60px 0;
-    }
-
-    .welcome-text {
-        font-size: 16px;
-    }
-
-    .productos {
-        padding: 60px 0;
-    }
-
-    .visit {
-        padding: 60px 0;
-    }
-
-    .visit-address {
-        font-size: 18px;
-    }
 }
 
-/* MÓVILES PEQUEÑOS (pantallas menores a 480px) */
-@media (max-width: 480px) {
-    
-    .hero-title {
-        /* AÚN MÁS PEQUEÑO en móviles pequeños */
-        font-size: 36px;
-    }
+.hero-content{
 
-    .hero-subtitle {
-        font-size: 15px;
-    }
+position:relative;
 
-    /* BOTONES MÁS PEQUEÑOS en móviles pequeños */
-    .btn-primary,
-    .btn-secondary {
-        padding: 14px 36px;
-        font-size: 14px;
-    }
+z-index:2;
+
+max-width:700px;
+
+padding:40px;
+
+animation:fadeInUp 1.2s ease;
+
 }
 
-@media (max-width: 768px) {
-    .hero {
-        height: 70vh;
-    }
+.hero-logo{
 
-    .hero-content {
-        padding: 24px;
-    }
+height:120px;
 
-    .hero-subtitle {
-        font-size: 20px;
-    }
+margin-bottom:20px;
+
 }
 
-@media (max-width: 480px) {
-    .hero {
-        height: 65vh;
-    }
+.hero-subtitle{
 
-    .hero-subtitle {
-        font-size: 18px;
-    }
+font-size:22px;
+
+line-height:1.6;
+
+color:var(--cafe-oscuro);
+
+max-width:520px;
+
+margin:0 auto 35px;
+
+font-weight:500;
+
+text-shadow:1px 2px 8px rgba(38,18,15,0.5);
+
 }
 
+
+
+/* =====================================================
+WELCOME (EDITORIAL)
+===================================================== */
+
+.welcome{
+
+padding:120px 0;
+
+background-color:var(--cafe-oscuro);
+
+}
+
+.welcome-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.welcome-text-block{
+
+max-width:520px;
+
+}
+
+.welcome .section-title{
+
+color:var(--dorado);
+
+font-size:64px;
+
+margin-bottom:30px;
+
+}
+
+.welcome-text{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:var(--blanco);
+
+}
+
+.welcome-image{
+
+width:100%;
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+
+}
+
+.welcome-image img{
+
+width:100%;
+
+height:auto;
+
+object-fit:cover;
+
+border-radius:24px;
+
+}
+
+
+
+/* =====================================================
+PRODUCTOS
+===================================================== */
+
+.productos{
+
+padding:120px 0;
+
+background-color:var(--blanco);
+
+}
+
+.productos-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:70px;
+
+margin-top:80px;
+
+}
+
+.producto-card{
+
+text-align:center;
+
+transition:all 0.35s ease;
+
+padding:10px 10px 20px;
+
+}
+
+.producto-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.producto-icon{
+
+width:180px;
+
+height:180px;
+
+margin:0 auto 25px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:var(--verde-oliva);
+
+border-radius:50%;
+
+padding:30px;
+
+transition:all 0.35s ease;
+
+}
+.producto-icon img{
+filter: brightness(0) saturate(100%) invert(74%) sepia(26%) saturate(510%) hue-rotate(2deg) brightness(96%) contrast(90%);
+transition:all 0.3s ease;
+}
+.producto-card:hover .producto-icon{
+
+background:var(--dorado);
+
+}
+
+.producto-card:hover .producto-icon img{
+
+filter: brightness(0) saturate(100%) invert(28%) sepia(16%) saturate(626%) hue-rotate(29deg) brightness(93%) contrast(89%);
+
+}
+
+.producto-icon img{
+
+max-width:100%;
+
+max-height:100%;
+
+object-fit:contain;
+
+}
+
+.producto-card h3{
+
+font-size:32px;
+
+color:var(--verde-oliva);
+
+margin-bottom:16px;
+
+}
+
+.producto-card p{
+
+font-size:18px;
+
+line-height:1.6;
+
+color:var(--cafe-oscuro);
+
+padding:0 10px;
+
+}
+
+
+
+/* =====================================================
+PLACEHOLDER PARA IMÁGENES FUTURAS
+===================================================== */
+
+.producto-placeholder{
+
+width:100%;
+
+height:160px;
+
+border-radius:18px;
+
+margin-top:25px;
+
+background:linear-gradient(
+135deg,
+var(--crema),
+var(--dorado)
+);
+
+opacity:0.35;
+
+}
+
+
+
+/* =====================================================
+VISÍTANOS
+===================================================== */
+
+.visit{
+
+padding:120px 0;
+
+background:linear-gradient(
+135deg,
+var(--azul-gris-claro),
+var(--azul-gris-medio)
+);
+
+color:var(--blanco);
+
+}
+
+.visit-content{
+
+text-align:center;
+
+max-width:700px;
+
+margin:0 auto;
+
+}
+
+.visit-content .section-title{
+
+color:var(--blanco);
+
+font-size:56px;
+
+margin-bottom:40px;
+
+}
+
+.visit-address{
+
+font-size:20px;
+
+line-height:1.7;
+
+margin-bottom:50px;
+
+}
+
+.address-icon{
+
+font-size:30px;
+
+display:block;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* =====================================================
+ANIMACIONES
+===================================================== */
+
+@keyframes fadeInUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+
+@media (max-width:968px){
+
+.productos-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.welcome-grid{
+
+gap:60px;
+
+}
+
+}
+
+
+
+@media (max-width:768px){
+
+.hero{
+
+height:70vh;
+
+}
+
+.hero-logo{
+
+height:90px;
+
+}
+
+.hero-subtitle{
+
+font-size:20px;
+
+}
+
+.welcome-grid{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.welcome-text-block{
+
+text-align:center;
+
+margin:auto;
+
+}
+
+.productos-grid{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.producto-icon{
+
+width:150px;
+
+height:150px;
+
+}
+
+.producto-card h3{
+
+font-size:28px;
+
+}
+
+.visit{
+
+padding:80px 0;
+
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+.hero{
+
+height:65vh;
+
+}
+
+.hero-subtitle{
+
+font-size:18px;
+
+}
+
+}
+/* =====================================================
+VISIT GRID
+===================================================== */
+
+.visit-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+margin-top:40px;
+
+}
+
+.visit-map iframe{
+
+width:100%;
+
+height:260px;
+
+border:none;
+
+border-radius:18px;
+
+}
+
+.visit-info{
+
+text-align:left;
+
+}
+
+.visit-address-link{
+
+color:var(--blanco);
+
+text-decoration:none;
+
+font-size:20px;
+
+line-height:1.7;
+
+}
+
+.visit-address-link:hover{
+
+text-decoration:underline;
+
+}
+
+.address-icon{
+
+display:block;
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+@media (max-width:768px){
+
+.visit-grid{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.visit-info{
+
+text-align:center;
+
+}
+
+}

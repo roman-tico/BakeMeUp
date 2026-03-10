@@ -1,190 +1,295 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bake me up - Postres, Pasteles y Café</title>
-    <!-- =====================
-     FAVICON / ICONOS
-     ===================== -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bake me up - Postres, Pasteles y Café</title>
+
+<!-- =====================
+FAVICON / ICONOS
+===================== -->
+
 <link rel="icon" type="image/x-icon" href="feature/assets/images/favicon/favicon.ico">
 
 <link rel="icon" type="image/svg+xml" href="feature/assets/images/favicon/favicon.svg">
 
 <link rel="icon" type="image/png" sizes="96x96"
-      href="feature/assets/images/favicon/favicon-96x96.png">
+href="feature/assets/images/favicon/favicon-96x96.png">
 
 <link rel="apple-touch-icon"
-      href="feature/assets/images/favicon/apple-touch-icon.png">
+href="feature/assets/images/favicon/apple-touch-icon.png">
 
 <link rel="manifest"
-      href="feature/assets/images/favicon/site.webmanifest">
+href="feature/assets/images/favicon/site.webmanifest">
 
-    
-    <!-- ARCHIVOS DE ESTILOS -->
-    <!-- styles.css = Estilos globales (header, footer, botones, tipografías) -->
-    <link rel="stylesheet" href="feature/assets/css/styles.css">
-    <!-- home.css = Estilos específicos de esta página (hero, productos, etc) -->
-    <link rel="stylesheet" href="feature/assets/css/home.css">
+
+<!-- CSS GLOBAL -->
+<link rel="stylesheet" href="feature/assets/css/styles.css">
+
+<!-- CSS HOME -->
+<link rel="stylesheet" href="feature/assets/css/home.css">
+
 </head>
+
+
 <body>
-    
-    <!-- ========================================
-         HEADER (BARRA DE NAVEGACIÓN SUPERIOR)
-         ======================================== -->
-    <!-- Este header es FIJO (se queda arriba siempre, incluso al hacer scroll) -->
-    <div id="header-placeholder"></div>
 
-    <!-- ========================================
-         SECCIÓN HERO (IMAGEN GRANDE DE BIENVENIDA)
-         ======================================== -->
-    <!-- Esta sección tiene la imagen de fondo y el texto principal -->
-    <section class="hero">
-        <!-- Overlay = capa oscura encima de la imagen para que el texto se lea mejor -->
-        <div class="hero-overlay"></div>
-        
-        <!-- CONTENIDO DEL HERO -->
-        <div class="hero-content">
-            <!-- TÍTULO PRINCIPAL -->
-            <!-- Cambia el texto aquí para modificar el título grande -->
-            <div class="footer-isotipo">
-                <img 
-                    src="feature/assets/images/logos/isotipo-oscuro-26120f.png"
-                    alt="Bake Me Up isotipo"
-                    class="footer-isotipo-img"
-                >
-            </div>
 
-            
-            <!-- SUBTÍTULO -->
-            <!-- Texto descriptivo debajo del título -->
-            <p class="hero-subtitle">Donde el café se sirve con calma y cada detalle evoca elegancia</p>
-            
-            <!-- BOTÓN DE LLAMADA A LA ACCIÓN -->
-            <!-- Cambia "menu.html" si quieres que vaya a otra página -->
-            <!-- Cambia el texto del botón aquí -->
-            <a href="menu.html" class="btn-primary">Descubre nuestro menú</a>
-        </div>
-    </section>
+<!-- HEADER -->
+<div id="header-placeholder"></div>
 
-    <!-- ========================================
-         SECCIÓN BIENVENIDA
-         ======================================== -->
-    <!-- Sección con fondo color crema y texto de presentación -->
-    <section class="welcome">
-        <div class="container">
-            <div class="welcome-content">
-                
-                <!-- TÍTULO DE LA SECCIÓN -->
-                <!-- Este usa la fuente Bake Script (cursiva elegante) -->
-                <h2 class="section-title">Bake me up</h2>
-                
-                <!-- TEXTO DE PRESENTACIÓN -->
-                <!-- Puedes modificar este texto para contar tu historia -->
-                <p class="welcome-text">
-                    Hemos creado un espacio sobrio y lleno de movimiento, 
-                    pensado para quienes disfrutan del arte de la pausa. Aquí, cada 
-                    visita es un pequeño viaje entre sabores delicados, texturas 
-                    perfectas y una atmósfera que abraza.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- ========================================
-         SECCIÓN PRODUCTOS / SERVICIOS
-         ======================================== -->
-    <!-- Grid de 3 columnas mostrando lo que ofrecen -->
-    <section class="productos">
-        <div class="container">
-            
-            <!-- TÍTULO DE LA SECCIÓN -->
-            <h2 class="section-title-dark">Nuestra esencia</h2>
-            
-            <!-- GRID DE PRODUCTOS -->
-            <!-- Aquí puedes agregar más tarjetas copiando todo el <div class="producto-card"> -->
-            <div class="productos-grid">
-                
-                <!-- TARJETA 1: CAFÉ -->
-                <div class="producto-card">
-                    <!-- Ícono/imagen del producto -->
-                    <div class="producto-icon">
-                        <!-- Cambia la imagen aquí -->
-                        <img src="feature/assets/images/Ilustraciones/cafe-para-llevar.webp" alt="Café especialidad">
-                    </div>
-                    <!-- Título del producto -->
-                    <h3>Café de especialidad</h3>
-                    <!-- Descripción del producto -->
-                    <p>Cuidadosamente seleccionado para ofrecerte la mejor experiencia en cada taza</p>
-                </div>
 
-                <!-- TARJETA 2: POSTRES -->
-                <div class="producto-card">
-                    <div class="producto-icon">
-                        <img src="feature/assets/images/Ilustraciones/rebanada-pastel-cereza.webp" alt="Postres artesanales">
-                    </div>
-                    <h3>Postres artesanales</h3>
-                    <p>Creaciones únicas hechas con amor y los mejores ingredientes</p>
-                </div>
+<!-- =====================================================
+HERO
+===================================================== -->
 
-                <!-- TARJETA 3: EXPERIENCIA -->
-                <div class="producto-card">
-                    <div class="producto-icon">
-                        <img src="feature/assets/images/Ilustraciones/popsicle.webp" alt="Experiencia única">
-                    </div>
-                    <h3>Experiencia única</h3>
-                    <p>Un espacio pensado para disfrutar del arte de la pausa</p>
-                </div>
-                
-                <!-- PARA AGREGAR MÁS TARJETAS: 
-                     Copia desde <div class="producto-card"> hasta </div>
-                     y pega aquí abajo, luego cambia la imagen y el texto -->
-                
-            </div>
-        </div>
-    </section>
+<section class="hero">
 
-    <!-- ========================================
-         SECCIÓN VISÍTANOS
-         ======================================== -->
-<!-- Sección con fondo azul gradiente y call-to-action -->
-<section class="visit">
-    <div class="container">
-        <div class="visit-content">
-            
-            <!-- TÍTULO -->
-            <h2 class="section-title">Ven a visitarnos</h2>
-            
-            <!-- DIRECCIÓN (link a Google Maps) -->
-            <p class="visit-address">
-                <a href="https://maps.app.goo.gl/NJ14GSEf7EmWPsYf8"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-address-link">
+<div class="hero-overlay"></div>
 
-                    <span class="address-icon">📍</span>
-                    Blvd. Municipio Libre 1972, Ex Hacienda Mayorazgo<br>
-                    Heroica Puebla de Zaragoza, Pue.
-                </a>
-            </p>
-            
-            <!-- BOTÓN DE WHATSAPP -->
-            <a href="https://wa.me/522213626142" class="btn-secondary">
-                Contáctanos por WhatsApp
-            </a>
+<div class="hero-content">
 
-        </div>
-    </div>
+<div class="hero-brand">
+
+<img
+src="feature/assets/images/logos/isotipo-oscuro-26120f.png"
+alt="Bake Me Up"
+class="hero-logo">
+
+</div>
+
+<p class="hero-subtitle">
+Donde el café se sirve con calma y cada detalle evoca elegancia
+</p>
+
+<a href="menu.html" class="btn-primary">
+Descubre nuestro menú
+</a>
+
+</div>
+
 </section>
-    <!-- ========================================
-         FOOTER (PIE DE PÁGINA)
-         ======================================== -->
-    <!-- Footer con fondo oscuro, se repite en todas las páginas -->
-    <div id="footer-placeholder"></div>
 
 
-    <!-- ARCHIVO DE JAVASCRIPT -->
-    <!-- Maneja el menú móvil, animaciones y scroll suave -->
-    <script src="feature/assets/js/main.js"></script>
+
+<!-- =====================================================
+BIENVENIDA (EDITORIAL)
+===================================================== -->
+
+<section class="welcome">
+
+<div class="container">
+
+<div class="welcome-grid">
+
+<div class="welcome-text-block">
+
+<h2 class="section-title">
+Bake me up
+</h2>
+
+<p class="welcome-text">
+
+Hemos creado un espacio sobrio y lleno de movimiento,
+pensado para quienes disfrutan del arte de la pausa.
+
+Aquí cada visita es un pequeño viaje entre sabores
+delicados, texturas perfectas y una atmósfera que abraza.
+
+</p>
+
+</div>
+
+
+<div class="welcome-image">
+
+<img
+src="feature/assets/images/productos/Coffee-cup.webp"
+alt="Café Bake Me Up">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+SECCIÓN ESENCIA
+===================================================== -->
+
+<section class="productos">
+
+<div class="container">
+
+<h2 class="section-title-dark">
+Nuestra esencia
+</h2>
+
+
+<div class="productos-grid">
+
+
+<!-- CAFÉ -->
+
+<div class="producto-card">
+
+<div class="producto-icon">
+
+<img src="feature/assets/images/Ilustraciones/cafe-para-llevar.webp">
+
+</div>
+
+<h3>Café de especialidad</h3>
+
+<p>
+Seleccionado cuidadosamente para ofrecerte
+la mejor experiencia en cada taza.
+</p>
+
+<div class="producto-placeholder"></div>
+
+</div>
+
+
+
+<!-- POSTRES -->
+
+<div class="producto-card">
+
+<div class="producto-icon">
+
+<img src="feature/assets/images/Ilustraciones/rebanada-pastel-cereza.webp">
+
+</div>
+
+<h3>Postres artesanales</h3>
+
+<p>
+Creaciones únicas hechas con ingredientes
+de alta calidad y pasión por el detalle.
+</p>
+
+<div class="producto-placeholder"></div>
+
+</div>
+
+
+
+<!-- EXPERIENCIA -->
+
+<div class="producto-card">
+
+<div class="producto-icon">
+
+<img src="feature/assets/images/Ilustraciones/popsicle.webp">
+
+</div>
+
+<h3>Experiencia única</h3>
+
+<p>
+Un espacio pensado para disfrutar
+del arte de la pausa.
+</p>
+
+<div class="producto-placeholder"></div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+    <!-- =====================================================
+    SECCIÓN VISÍTANOS
+    ===================================================== -->
+
+    <section class="visit">
+
+    <div class="container">
+
+    <div class="visit-content">
+
+    <h2 class="section-title">
+    Ven a visitarnos
+    </h2>
+
+    <div class="visit-grid">
+
+    <!-- MAPA -->
+
+    <div class="visit-map">
+
+    <iframe
+    src="https://www.google.com/maps?q=Blvd.+Municipio+Libre+1972,+Puebla&output=embed"
+    loading="lazy">
+    </iframe>
+
+    </div>
+
+    <!-- INFORMACIÓN -->
+
+    <div class="visit-info">
+
+    <p class="visit-address">
+
+    <a
+    href="https://maps.app.goo.gl/NJ14GSEf7EmWPsYf8"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="visit-address-link">
+
+    <span class="address-icon">📍</span>
+
+    Blvd. Municipio Libre 1972  
+    Ex Hacienda Mayorazgo  
+    <br>
+    Heroica Puebla de Zaragoza, Puebla
+
+    </a>
+
+    </p>
+
+    <a
+    href="https://maps.app.goo.gl/NJ14GSEf7EmWPsYf8"
+    class="btn-secondary"
+    target="_blank">
+
+    Abrir en Google Maps
+
+    </a>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </section>
+
+
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+
+
+<script src="feature/assets/js/main.js"></script>
+
 </body>
+
 </html>
