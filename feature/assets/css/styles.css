@@ -1,8 +1,7 @@
 /* =====================================================
    STYLES.CSS
-   ESTILOS GLOBALES DEL SITIO
+   ESTILOS GLOBALES DEL SITIO - BAKE ME UP
    ===================================================== */
-
 
 
 /* =====================================================
@@ -27,14 +26,12 @@
 }
 
 
-
 /* =====================================================
    2. VARIABLES DE COLOR
    Paleta central del sitio
    ===================================================== */
 
 :root {
-
     --verde-oliva: #535839;
     --azul-gris-claro: #97a6bb;
     --azul-gris-medio: #79879b;
@@ -42,13 +39,11 @@
     --cafe-oscuro: #26120f;
     --crema: #f5dfac;
     --blanco: #ffffff;
-
 }
 
 
-
 /* =====================================================
-   3. RESET GLOBAL
+   3. RESET GLOBAL Y BASE
    Elimina estilos por defecto del navegador
    ===================================================== */
 
@@ -60,123 +55,60 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
-
-
-/* =====================================================
-   4. BASE DEL SITIO
-   Tipografía y layout general
-   ===================================================== */
 
 body {
-
     font-family: 'Armany', Georgia, serif;
-
     color: var(--cafe-oscuro);
     background-color: var(--blanco);
-
     line-height: 1.8;
-
-    /* evita scroll horizontal accidental */
     overflow-x: hidden;
-
 }
 
-
-
-/* =====================================================
-   CONTENEDOR CENTRAL
-   Mantiene contenido alineado
-   ===================================================== */
-
+/* Contenedor centralizado del sitio */
 .container {
-
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 0 30px;
-
 }
 
 
-
 /* =====================================================
-   5. HEADER PRINCIPAL
-   Barra superior fija del sitio
+   4. HEADER PRINCIPAL
+   Barra superior fija del sitio y diseño de navegación
    ===================================================== */
 
 .header {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     background-color: rgba(255, 255, 255, 0.98);
-
     backdrop-filter: blur(10px);
-
     z-index: 1000;
-
     box-shadow: 0 1px 3px rgba(38, 18, 15, 0.08);
-
     font-family: 'Armany', Georgia, serif;
-
     transform: translateY(0);
-
     transition: transform 0.35s ease;
-
 }
-
-
-
-/* =====================================================
-   HEADER OCULTO AL HACER SCROLL
-   (controlado por JavaScript)
-   ===================================================== */
 
 .header--hidden {
     transform: translateY(-100%);
 }
 
-
-
-/* =====================================================
-   LAYOUT INTERNO DEL HEADER
-   Logo a la izquierda
-   navegación a la derecha
-   ===================================================== */
-
 .header .container {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 16px 10px;
-
 }
 
-
-
-/* =====================================================
-   LOGO
-   ===================================================== */
-
 .logo img {
-
     height: 90px;
-
     width: auto;
-
     transition: transform 0.3s ease;
-
 }
 
 .logo:hover img {
@@ -184,82 +116,41 @@ body {
 }
 
 
-
 /* =====================================================
-   6. NAVEGACIÓN PRINCIPAL
+   5. NAVEGACIÓN PRINCIPAL
+   Links del menú y botón de llamada a la acción (CTA)
    ===================================================== */
 
 .nav {
-
     display: flex;
-
     align-items: center;
-
     gap: 35px;
-
 }
-
-
-
-/* =====================================================
-   LINKS DEL MENÚ
-   ===================================================== */
 
 .nav-link {
-
     font-family: 'Armany', Georgia, serif;
-
     color: var(--cafe-oscuro);
-
     text-decoration: none;
-
     font-size: 18px;
-
     font-weight: 600;
-
     letter-spacing: 1px;
-
     text-transform: uppercase;
-
     position: relative;
-
     transition: color 0.3s ease;
-
 }
 
-
-
-/* =====================================================
-   SUBRAYADO ANIMADO DEL MENÚ
-   ===================================================== */
-
+/* Animación de subrayado */
 .nav-link::after {
-
     content: '';
-
     position: absolute;
-
     bottom: -5px;
-
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 0;
-
     height: 2px;
-
     background-color: var(--dorado);
-
     transition: width 0.3s ease;
-
 }
-
-
-
-/* =====================================================
-   ESTADO HOVER Y LINK ACTIVO
-   ===================================================== */
 
 .nav-link:hover,
 .nav-link.active {
@@ -271,784 +162,373 @@ body {
     width: 100%;
 }
 
-
-
-/* =====================================================
-   7. BOTÓN CTA DEL HEADER
-   "Personaliza tu pastel"
-   ===================================================== */
-
 .nav-cta {
-
     font-family: 'Armany', Georgia, serif;
-
     background-color: var(--verde-oliva);
-
     color: var(--blanco);
-
     text-decoration: none;
-
     font-size: 16px;
-
     font-weight: 600;
-
     padding: 9px 22px;
-
     border-radius: 30px;
-
     letter-spacing: 0.6px;
-
     transition: all 0.3s ease;
-
 }
 
 .nav-cta:hover {
-
     background-color: var(--cafe-oscuro);
-
     transform: translateY(-2px);
-
 }
 
 
-
 /* =====================================================
-   8. BOTONES GLOBALES
-   Botones reutilizables en todo el sitio
+   6. BOTONES GLOBALES
+   Estilos de botones reutilizables en el sitio
    ===================================================== */
 
-
-/* =====================
-   BOTÓN PRINCIPAL
-   (CTA verde)
-   ===================== */
-
 .btn-primary {
-
     display: inline-block;
-
     padding: 16px 48px;
-
     background-color: var(--verde-oliva);
-
     color: var(--blanco);
-
     text-decoration: none;
-
     font-size: 15px;
-
     font-weight: 600;
-
     letter-spacing: 0.5px;
-
     border-radius: 50px;
-
     transition: all 0.4s ease;
-
     box-shadow: 0 4px 20px rgba(83, 88, 57, 0.25);
-
 }
 
 .btn-primary:hover {
-
     background-color: var(--cafe-oscuro);
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 30px rgba(38, 18, 15, 0.3);
-
 }
 
-
-
-/* =====================
-   BOTÓN SECUNDARIO
-   (outline elegante)
-   ===================== */
-
 .btn-secondary {
-
     display: inline-block;
-
     padding: 16px 48px;
-
     background-color: transparent;
-
     color: var(--verde-oliva);
-
     text-decoration: none;
-
     font-size: 15px;
-
     font-weight: 600;
-
     letter-spacing: 0.5px;
-
     border: 2px solid var(--verde-oliva);
-
     border-radius: 50px;
-
     transition: all 0.4s ease;
-
 }
 
 .btn-secondary:hover {
-
     background-color: var(--verde-oliva);
-
     color: var(--blanco);
-
     transform: translateY(-2px);
-
 }
 
 
-
 /* =====================================================
-   9. TIPOGRAFÍA GLOBAL
+   7. TIPOGRAFÍA GLOBAL Y TÍTULOS DE SECCIÓN
    ===================================================== */
-
-
-/* =====================
-   TÍTULOS DEL SITIO
-   (tipografía Bake Script)
-   ===================== */
 
 h1,
 h2,
 h3 {
-
-    font-family: 'Bake Script', cursive;
-
+    font-family: 'Armany', Georgia, serif;
     font-weight: normal;
-
 }
 
-
-
-/* =====================================================
-   10. TÍTULOS DE SECCIÓN
-   Utilizados en hero y secciones principales
-   ===================================================== */
-
-
-/* Título principal de sección */
+.section-title,
+.section-title-dark {
+    font-family: 'Armany', Georgia, serif;
+    font-size: 56px;
+    color: var(--cafe-oscuro);
+    text-align: center;
+    line-height: 1.2;
+}
 
 .section-title {
-
-    font-size: 56px;
-
-    color: var(--cafe-oscuro);
-
-    text-align: center;
-
     margin-bottom: 30px;
-
-    line-height: 1.2;
-
 }
-
-
-
-/* Variante para secciones con más espacio */
 
 .section-title-dark {
-
-    font-size: 56px;
-
-    color: var(--cafe-oscuro);
-
-    text-align: center;
-
     margin-bottom: 70px;
-
-    line-height: 1.2;
-
 }
 
+/* Letra inicial decorativa optimizada para legibilidad en fondos dinámicos */
+.section-title span,
+.section-title-dark span {
+    font-family: 'Bake Script', cursive;
+    font-size: 1.4em;
+    color: inherit;
+    font-weight: normal;
+}
 
 
 /* =====================================================
-   11. LINKS ESPECIALES
+   8. SECCIÓN VISÍTANOS
    ===================================================== */
 
-
-/* =====================
-   LINK DE DIRECCIÓN
-   usado en sección "visítanos"
-   ===================== */
-
 .visit-address-link {
-
     color: inherit;
-
     text-decoration: none;
-
     display: inline-block;
-
     transition: color 0.3s ease;
-
 }
 
 .visit-address-link:hover {
-
     color: var(--dorado);
-
 }
-
-
-
-/* =====================
-   ICONO DE DIRECCIÓN
-   pequeño ajuste visual
-   ===================== */
 
 .address-icon {
-
     margin-right: 6px;
-
 }
-
 
 
 /* =====================================================
-   12. ISOTIPO DECORATIVO DEL FOOTER
-   Imagen grande usada arriba del footer
-   ===================================================== */
-
-.footer-isotipo {
-
-    margin-top: 4px;
-
-    display: flex;
-
-    justify-content: center;
-
-}
-
-
-
-/* Imagen del isotipo */
-
-.footer-isotipo-img {
-
-    height: 400px;
-
-    width: auto;
-
-    object-fit: contain;
-
-}
-
-
-
-/* =====================================================
-   AJUSTE RESPONSIVE DEL ISOTIPO
-   Reduce tamaño en móviles
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-    .footer-isotipo-img {
-
-        height: 20px;
-
-    }
-
-}
-
-
-
-/* =====================================================
-   13. FOOTER PRINCIPAL
-   Pie de página del sitio
+   9. FOOTER PRINCIPAL
+   Pie de página, columnas y grillas de información
    ===================================================== */
 
 .footer {
-
     background-color: var(--cafe-oscuro);
-
     color: var(--crema);
-
-    padding: 25px 0 15px;
-
+    padding: 35px 0 20px;
     margin-top: 0;
-
 }
-
-
-
-/* =====================================================
-   GRID DEL FOOTER
-   Define las columnas del footer
-   ===================================================== */
 
 .footer-content {
-
     display: grid;
-
     grid-template-columns: 1.3fr 1fr 1fr 0.8fr;
-
     gap: 40px;
-
-    margin-bottom: 13px;
-
+    margin-bottom: 30px;
 }
-
-
-
-/* =====================================================
-   SECCIONES DEL FOOTER
-   ===================================================== */
 
 .footer-section h4 {
-
     font-family: 'Bake Script', cursive;
-
     font-size: 29px;
-
     margin-bottom: 15px;
-
     color: var(--dorado);
-
     font-weight: normal;
-
 }
-
-
 
 .footer-section p {
-
     margin-bottom: 6px;
-
     line-height: 1.8;
-
     font-size: 18px;
-
 }
-
-
 
 .footer-section strong {
-
     color: var(--dorado);
-
     font-weight: 600;
-
 }
-
-
-
-/* Dirección con ligera transparencia */
 
 .footer-address {
-
     opacity: 0.85;
-
 }
 
-
-
-/* =====================================================
-   LINKS DEL FOOTER
-   ===================================================== */
-
-.footer-section a {
-
+.footer-section a,
+.footer-map-link {
     color: var(--crema);
-
     text-decoration: none;
-
+    display: inline-block;
     transition: color 0.3s ease;
-
-}
-/* =====================
-   LINK DE GOOGLE MAPS
-   ===================== */
-
-.footer-map-link{
-
-    color:var(--crema);
-
-    text-decoration:none;
-
-    display:inline-block;
-
-    transition:color 0.3s ease;
-
 }
 
-.footer-map-link:hover{
-
-    color:var(--dorado);
-
-}
-
-
-.footer-section a:hover {
-
+.footer-section a:hover,
+.footer-map-link:hover {
     color: var(--dorado);
-
 }
-
-
-
-/* =====================================================
-   COLUMNA DEL LOGO
-   ===================================================== */
 
 .footer-brand {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
     align-items: flex-start;
-
 }
-
-
-
-/* Logo del footer */
 
 .footer-logo {
-
     height: 160px;
-
     width: auto;
-
     object-fit: contain;
-
 }
-
-
-
-/* Tagline del negocio */
 
 .footer-tagline {
-
     font-style: italic;
-
     color: var(--azul-gris-claro);
-
     font-size: 16px;
-
 }
-
 
 
 /* =====================================================
-   REDES SOCIALES
+   10. REDES SOCIALES
+   Iconos, isotipos y copyright inferior
    ===================================================== */
 
 .social-link {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 12px;
-
     font-size: 16px;
-
     padding: 10px 0;
-
 }
 
-
-
-/* Animación icono redes */
-
 .social-link svg {
-
     transition: transform 0.3s ease;
-
 }
 
 .social-link:hover svg {
-
     transform: scale(1.15);
-
 }
 
+.footer-isotipo {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+}
 
-
-/* =====================================================
-   COPYRIGHT
-   Línea inferior del footer
-   ===================================================== */
+.footer-isotipo-img {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+}
 
 .footer-bottom {
-
     text-align: center;
-
-    padding-top: 12px;
-
+    padding-top: 18px;
     border-top: 1px solid rgba(245, 223, 172, 0.15);
-
     color: var(--azul-gris-claro);
-
     font-size: 14px;
-
 }
 
-
-
-/* =====================================================
-   GRID INTERNO DE HORARIOS
-   Permite mostrar día y horario en dos columnas
-   ===================================================== */
-
 .footer-hours .hours-grid {
-
     display: grid;
-
     grid-template-columns: auto auto;
-
     gap: 6px 18px;
-
     font-size: 18px;
-
 }
 
 .footer-hours strong {
-
     color: var(--dorado);
-
 }
 
 
-
 /* =====================================================
-   14. RESPONSIVE GENERAL
-   ===================================================== */
-
-
-
-/* =====================
-   TABLET
-   ===================== */
-
-@media (max-width: 968px) {
-
-    .footer-content {
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 40px;
-
-    }
-
-    .section-title,
-    .section-title-dark {
-
-        font-size: 42px;
-
-    }
-
-}
-
-/* =====================================================
-   BOTÓN HAMBURGUESA BASE
+   11. RESPONSIVE Y MÓVIL
+   Estilos de adaptación para tablet y celular
    ===================================================== */
 
 .menu-toggle {
-
     display: none;
-
     flex-direction: column;
-
     gap: 6px;
-
     background: none;
-
     border: none;
-
     cursor: pointer;
-
     padding: 8px;
-
 }
-
-/* Líneas del icono */
 
 .menu-toggle span {
-
     display: block;
-
     width: 28px;
-
     height: 3px;
-
     background-color: var(--cafe-oscuro);
-
     border-radius: 2px;
-
     transition: all 0.3s ease;
-
 }
 
-/* =====================================================
-   MENÚ MÓVIL
-   ===================================================== */
+/* Ajustes para tabletas */
+@media (max-width: 968px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .section-title,
+    .section-title-dark {
+        font-size: 42px;
+    }
+}
 
+/* Ajustes para dispositivos móviles (Celulares) */
 @media (max-width: 768px) {
+    /* Header compacto */
+    .logo img {
+        height: 60px;
+    }
 
-
-
-    /* Navegación móvil */
+    .header .container {
+        padding: 8px 10px;
+    }
 
     .nav {
-
         position: fixed;
-
-        top: 90px;
-
+        top: 76px; /* Ajuste basado en la altura del header en móvil */
         left: -100%;
-
         width: 100%;
-
-        height: calc(100vh - 90px);
-
+        height: calc(100vh - 76px);
         background-color: var(--blanco);
-
         flex-direction: column;
-
         align-items: center;
-
         padding: 20px 0;
-
         transition: left 0.3s ease;
-
         box-shadow: 0 4px 20px rgba(38, 18, 15, 0.1);
-
     }
-
-
 
     .nav.active {
-
         left: 0;
-
     }
-
-
 
     .nav-link {
-
         font-size: 18px;
-
     }
-
-
-
-    /* Botón hamburguesa */
 
     .menu-toggle {
-
         display: flex;
-
     }
-
-
 
     .menu-toggle.active span:nth-child(1) {
-
         transform: rotate(45deg) translate(8px, 8px);
-
     }
-
-
 
     .menu-toggle.active span:nth-child(2) {
-
         opacity: 0;
-
     }
-
-
 
     .menu-toggle.active span:nth-child(3) {
-
         transform: rotate(-45deg) translate(7px, -7px);
-
     }
-
-
 
     /* Footer en móvil */
-
     .footer-content {
-
         grid-template-columns: 1fr;
-
         gap: 40px;
-
         text-align: center;
-
     }
-
-
 
     .footer-brand {
-
         align-items: center;
-
     }
-
-
 
     .section-title,
     .section-title-dark {
-
         font-size: 36px;
-
     }
-
+    
+    .footer-isotipo-img {
+        height: 20px;
+    }
 }
 
-
-
-/* =====================================================
-   AJUSTE DE CONTAINER EN PANTALLAS PEQUEÑAS
-   ===================================================== */
-
+/* Padding de seguridad para contenedores en pantallas pequeñas */
 @media (max-width: 768px) {
-
     .container {
-
         padding: 0 20px;
-
     }
-
 }
-
-
 
 @media (max-width: 480px) {
-
     .container {
-
         padding: 0 16px;
-
     }
-
-}
-
-
-
-/* =====================================================
-   FIX GLOBAL ANTI OVERFLOW
-   Previene scroll horizontal en móviles
-   ===================================================== */
-
-html,
-body {
-
-    max-width: 100%;
-
-    overflow-x: hidden;
-
 }

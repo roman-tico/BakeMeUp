@@ -8,82 +8,109 @@ HERO
 ===================================================== */
 
 .hero {
-
-height:85vh;
-
-background-image:url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
-
-background-size:cover;
-
-background-position:center;
-
-background-repeat:no-repeat;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-position:relative;
-
-margin-top:90px;
-
+    height: 85vh;
+    min-height: 500px;
+    
+    /* -----------------------------------------------------
+       EXPLICACIÓN DEL FONDO:
+       Actualmente está configurado con color blanco y un overlay sutil.
+       
+       - Si quieres poner una imagen de fondo, reemplaza "background-color" 
+         por tu ruta, por ejemplo:
+         background-image: url('../images/Ilustraciones/fondo-vertical-amarillo-azul.webp');
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+       
+       - Si quieres un color sólido o degradado, puedes modificar el "background-color" 
+         o la propiedad "background" directamente aquí.
+    ----------------------------------------------------- */
+    background-color: var(--blanco); 
+    background-image: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 90px;
+    padding: 0 20px;
 }
 
-.hero-overlay{
-
-position:absolute;
-
-inset:0;
-
-background:linear-gradient(
-rgba(255,255,255,0.1),
-rgba(38,18,15,0.15)
-);
-
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* Esta capa evita que se vea plano añadiendo un contraste ligero y profundidad */
+    background: linear-gradient(135deg, rgba(245, 223, 172, 0.08) 0%, rgba(255, 255, 255, 0.96) 100%);
+    z-index: 1;
 }
 
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:700px;
-
-padding:40px;
-
-animation:fadeInUp 1.2s ease;
-
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    width: 100%;
+    padding: 40px 20px;
+    animation: fadeInUp 1.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
 }
 
-.hero-logo{
-
-height:320px;
-
-margin-bottom:10px;
-
+.hero-logo {
+    /* Isotipo ligeramente más grande */
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    margin-bottom: 0;
 }
 
-.hero-subtitle{
+.hero-subtitle {
+    font-family: 'Armany', Georgia, serif;
+    /* Subtítulo más grande y con más grosor (bold) */
+    font-size: 36px;
+    line-height: 1.3;
+    color: var(--cafe-oscuro);
+    max-width: 560px;
+    margin: 0;
+    font-weight: 600;
+    text-shadow: 1px 2px 6px rgba(38, 18, 15, 0.15); /* Sutil sombra para dar volumen */
+}
 
-font-size:38px;
+/* =====================================================
+RESPONSIVE HERO
+===================================================== */
 
-line-height:1.2;
+@media (max-width: 768px) {
+    .hero {
+        height: 75vh;
+        min-height: 420px;
+        margin-top: 70px;
+    }
 
-color:var(--cafe-oscuro);
+    .hero-content {
+        gap: 24px;
+        padding: 20px 10px;
+    }
 
-max-width:520px;
+    .hero-logo {
+        max-width: 250px; /* Se ajusta proporcionalmente en pantallas pequeñas */
+    }
 
-margin:0 auto 15px;
+    .hero-subtitle {
+        font-size: 24px;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+}
 
-font-weight:500;
-
-text-shadow:1px 2px 8px rgba(38,18,15,0.5);
-
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh;
+    }
 }
 
 
