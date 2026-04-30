@@ -7,14 +7,10 @@ CUSTOM CAKES PAGE
 SECCIÓN GENERAL
 ===================================================== */
 
-.custom-cakes{
-
-padding-top:140px;
-
-padding-bottom:120px;
-
-background: #fbf7f2; /* suave crema para mejorar contraste con texto */
-
+.custom-cakes {
+    padding-top: 110px;
+    padding-bottom: 120px;
+    background: #fbf7f2; /* suave crema para mejorar contraste con texto */
 }
 
 
@@ -23,68 +19,50 @@ background: #fbf7f2; /* suave crema para mejorar contraste con texto */
 INTRO
 ===================================================== */
 
-.custom-intro{
-
-text-align:center;
-
-max-width:720px;
-
-margin:auto;
-
-margin-bottom:90px;
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#222222;
-font-weight:600;
-
+.custom-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: auto;
+    margin-bottom: 90px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #222222;
+    font-weight: 600;
 }
 
 /* CTA row (único botón principal) */
-.cta-row{
-	text-align:center;
-	margin-top:20px;
-	margin-bottom:40px;
+.cta-row {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-.main-cta{
-	background:var(--verde-oliva,#7a9a4a);
-	color:#ffffff;
-	padding:12px 22px;
-	border-radius:999px;
-	font-weight:700;
-	display:inline-block;
-	text-decoration:none;
-	box-shadow:0 6px 18px rgba(0,0,0,0.08);
-	transition:transform .12s ease, box-shadow .12s ease;
+.main-cta {
+    background: var(--verde-oliva, #7a9a4a);
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform .12s ease, box-shadow .12s ease;
 }
-.main-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.12);}
-
-/* Botón flotante de WhatsApp */
-@media (max-width:768px){
-	.main-cta{padding:10px 18px}
+.main-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
-
-
 
 /* =====================================================
 FILAS ZIG ZAG
 ===================================================== */
 
-.cake-row{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center;
-
-margin-bottom:130px;
-
+.cake-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 130px;
 }
 
 
@@ -93,16 +71,12 @@ margin-bottom:130px;
 INVERTIR ORDEN
 ===================================================== */
 
-.cake-row.reverse{
-
-direction:rtl;
-
+.cake-row.reverse {
+    direction: rtl;
 }
 
-.cake-row.reverse .cake-text{
-
-direction:ltr;
-
+.cake-row.reverse .cake-text {
+    direction: ltr;
 }
 
 
@@ -111,29 +85,19 @@ direction:ltr;
 TEXTO
 ===================================================== */
 
-.cake-text h3{
-
-font-size:40px;
-
-margin-bottom:22px;
-
-}
-.cake-text h3{
-font-weight:700;
-color:#111111;
+.cake-text h3 {
+    font-size: 40px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    color: #111111;
 }
 
-.cake-text p{
-
-font-size:19px;
-
-margin-bottom:30px;
-
-color:#333333;
-font-weight:500;
-
-line-height:1.8;
-
+.cake-text p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    color: #333333;
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 
@@ -142,20 +106,13 @@ line-height:1.8;
 IMAGEN CONTENEDOR
 ===================================================== */
 
-.cake-image{
-
-width:100%;
-
-aspect-ratio:1/1;
-
-border-radius:24px;
-
-position:relative;
-
-overflow:hidden;
-
-background:var(--crema);
-
+.cake-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    background: var(--crema);
 }
 
 
@@ -164,18 +121,12 @@ background:var(--crema);
 IMAGEN
 ===================================================== */
 
-.cake-image img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-object-position:center;
-
-border-radius:24px;
-
+.cake-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
 }
 
 
@@ -184,28 +135,17 @@ border-radius:24px;
 MANCHA DECORATIVA
 ===================================================== */
 
-.cake-image::after{
-
-content:"";
-
-position:absolute;
-
-width:200px;
-
-height:200px;
-
-background:var(--verde-oliva);
-
-border-radius:50%;
-
-top:-50px;
-
-right:-50px;
-
-opacity:0.12;
-
-pointer-events:none;
-
+.cake-image::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--verde-oliva);
+    border-radius: 50%;
+    top: -50px;
+    right: -50px;
+    opacity: 0.12;
+    pointer-events: none;
 }
 
 
@@ -214,14 +154,10 @@ pointer-events:none;
 RESPONSIVE
 ===================================================== */
 
-@media (max-width:968px){
-
-.cake-row{
-
-gap:50px;
-
-}
-
+@media (max-width: 968px) {
+    .cake-row {
+        gap: 50px;
+    }
 }
 
 
@@ -230,50 +166,57 @@ gap:50px;
 MOBILE
 ===================================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+    /* NUEVO: Ajustes de espaciado y márgenes reducidos 
+       para pantallas pequeñas de celulares
+    */
+    .custom-cakes {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
 
-.cake-row{
+    .custom-intro {
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-grid-template-columns:1fr;
+    .cta-row {
+        margin-bottom: 30px;
+    }
 
-gap:40px;
+    .main-cta {
+        padding: 10px 18px;
+    }
 
-margin-bottom:90px;
+    .cake-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px; /* Reducido para mejor fluidez */
+    }
 
-}
+    .cake-row.reverse {
+        direction: ltr;
+    }
 
-.cake-row.reverse{
+    .cake-image {
+        aspect-ratio: 1/1;
+    }
 
-direction:ltr;
+    .cake-text {
+        text-align: center;
+        max-width: 520px;
+        margin: auto;
+    }
 
-}
+    .cake-text h3 {
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
 
-.cake-image{
-
-aspect-ratio:1/1;
-
-}
-
-.cake-text{
-
-text-align:center;
-
-max-width:520px;
-
-margin:auto;
-
-}
-
-.cake-text h3{
-
-font-size:32px;
-
-}
-
-.cake-text p{
-
-font-size:18px;
-
-}
-
+    .cake-text p {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
 }

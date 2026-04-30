@@ -366,52 +366,30 @@ h3 {
    ===================================================== */
 
 .social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el icono y el texto en el centro */
+    gap: 12px;           /* Espacio entre el icono y el texto */
+    text-decoration: none;
+    color: var(--crema); /* Usamos el color de la sección */
     font-size: 16px;
-    padding: 10px 0;
+    font-family: 'Armany', Georgia, serif;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--dorado);
 }
 
 .social-link svg {
+    fill: currentColor; /* Hace que el icono tome el color del texto */
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
 .social-link:hover svg {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
-
-.footer-isotipo {
-    margin-top: 4px;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-isotipo-img {
-    height: 400px;
-    width: auto;
-    object-fit: contain;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 18px;
-    border-top: 1px solid rgba(245, 223, 172, 0.15);
-    color: var(--azul-gris-claro);
-    font-size: 14px;
-}
-
-.footer-hours .hours-grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 6px 18px;
-    font-size: 18px;
-}
-
-.footer-hours strong {
-    color: var(--dorado);
-}
-
 
 /* =====================================================
    11. RESPONSIVE Y MÓVIL
@@ -530,5 +508,44 @@ h3 {
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
+    }
+}
+/* =====================================================
+   HORARIOS DEL FOOTER
+   ===================================================== */
+
+.footer-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los datos hacia la derecha */
+}
+
+.footer-hours .hours-grid {
+    display: grid;
+    grid-template-columns: auto auto; /* Dos columnas automáticas */
+    gap: 8px 24px; /* Espaciado entre días y horas */
+    font-size: 18px;
+    text-align: right;
+}
+
+.footer-hours .day {
+    color: var(--dorado);
+    font-weight: 600;
+}
+
+.footer-hours .time {
+    color: var(--crema);
+    text-align: left; /* Horas alineadas a la izquierda de su columna */
+}
+
+@media (max-width: 768px) {
+    .footer-hours {
+        align-items: center; /* Centrado en móviles */
+    }
+    
+    .footer-hours .hours-grid {
+        text-align: center;
+        grid-template-columns: 1fr 1fr; /* Mantiene dos columnas */
+        gap: 6px 16px;
     }
 }

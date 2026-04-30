@@ -181,3 +181,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 // =============================
 console.log('%c🧁 Bake Me Up 🧁', 'font-size:20px;color:#535839;font-weight:bold;');
 console.log('%cHecho con ❤️', 'font-size:12px;color:#79879b;');
+

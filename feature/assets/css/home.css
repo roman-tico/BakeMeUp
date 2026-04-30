@@ -86,9 +86,9 @@ RESPONSIVE HERO
 
 @media (max-width: 768px) {
     .hero {
-        height: 75vh;
+        height: 70vh;
         min-height: 420px;
-        margin-top: 70px;
+        margin-top: 76px;
     }
 
     .hero-content {
@@ -97,7 +97,7 @@ RESPONSIVE HERO
     }
 
     .hero-logo {
-        max-width: 250px; /* Se ajusta proporcionalmente en pantallas pequeñas */
+        max-width: 260px; /* Se ajusta proporcionalmente en pantallas pequeñas */
     }
 
     .hero-subtitle {
@@ -449,7 +449,7 @@ height:70vh;
 
 .hero-logo{
 
-height:90px;
+height:150px;
 
 }
 
