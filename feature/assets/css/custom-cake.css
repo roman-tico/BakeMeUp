@@ -8,7 +8,7 @@ SECCIÓN GENERAL
 ===================================================== */
 
 .custom-cakes {
-    padding-top: 110px;
+    padding-top: 150px;
     padding-bottom: 120px;
     background: #fbf7f2; /* suave crema para mejorar contraste con texto */
 }
@@ -171,7 +171,7 @@ MOBILE
        para pantallas pequeñas de celulares
     */
     .custom-cakes {
-        padding-top: 120px;
+        padding-top: 140px;
         padding-bottom: 60px;
     }
 
