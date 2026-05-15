@@ -302,14 +302,42 @@ h3 {
     grid-template-columns: 1.3fr 1fr 1fr 0.8fr;
     gap: 40px;
     margin-bottom: 30px;
+    align-items: start;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .footer-section h4 {
     font-family: 'Bake Script', cursive;
     font-size: 29px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     color: var(--dorado);
     font-weight: normal;
+}
+
+.footer-section h4.footer-heading-mixed {
+    font-family: 'Armany', Georgia, serif;
+}
+
+.footer-section h4.footer-heading-mixed .decorative-letter {
+    font-family: 'Bake Script', cursive;
+    font-size: 1.3em;
+    vertical-align: top;
+    display: inline-block;
+    line-height: 1;
 }
 
 .footer-section p {
@@ -517,7 +545,7 @@ h3 {
 .footer-hours {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea los datos hacia la derecha */
+    align-items: flex-start;
 }
 
 .footer-hours .hours-grid {
@@ -525,7 +553,7 @@ h3 {
     grid-template-columns: auto auto; /* Dos columnas automáticas */
     gap: 8px 24px; /* Espaciado entre días y horas */
     font-size: 18px;
-    text-align: right;
+    text-align: left;
 }
 
 .footer-hours .day {
