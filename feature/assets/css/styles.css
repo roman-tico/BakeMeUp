@@ -102,7 +102,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 10px;
+    padding: 24px 10px 8px; /* Más padding arriba, menos abajo */
 }
 
 .logo img {
@@ -379,6 +379,11 @@ h3 {
     height: 160px;
     width: auto;
     object-fit: contain;
+    margin-left: -20px;
+    margin-top: -15px;
+    margin-bottom: -10px;
+    transform: scale(1.15);
+    transform-origin: left center;
 }
 
 .footer-tagline {

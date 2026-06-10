@@ -50,20 +50,20 @@ HERO
     z-index: 2;
     max-width: 680px;
     width: 100%;
-    padding: 40px 20px;
+    padding: 20px;
     animation: fadeInUp 1.2s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
 }
 
 .hero-logo {
-    /* Isotipo ligeramente más grande */
-    max-width: 320px;
+    /* Isotipo ligeramente más compacto */
+    max-width: 280px;
     width: 100%;
     height: auto;
-    max-height: 320px;
+    max-height: 280px;
     object-fit: contain;
     margin-bottom: 0;
 }
@@ -259,15 +259,8 @@ filter: brightness(0) saturate(100%) invert(74%) sepia(26%) saturate(510%) hue-r
 transition:all 0.3s ease;
 }
 .producto-card:hover .producto-icon{
-
-background:var(--dorado);
-
-}
-
-.producto-card:hover .producto-icon img{
-
-filter: brightness(0) saturate(100%) invert(28%) sepia(16%) saturate(626%) hue-rotate(29deg) brightness(93%) contrast(89%);
-
+transform: scale(1.15);
+box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 .producto-icon img{
