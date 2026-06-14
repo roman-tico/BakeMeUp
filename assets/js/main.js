@@ -164,8 +164,8 @@ function initPreloader() {
 document.addEventListener('DOMContentLoaded', async () => {
 
     // cargar componentes
-    await loadComponent("header-placeholder", "feature/components/header.html");
-    await loadComponent("footer-placeholder", "feature/components/footer.html");
+    await loadComponent("header-placeholder", "components/header.html");
+    await loadComponent("footer-placeholder", "components/footer.html");
 
     // inicializar módulos
     initMobileMenu();
