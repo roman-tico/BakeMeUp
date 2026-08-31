@@ -124,16 +124,16 @@ body {
 .nav {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 26px;
 }
 
 .nav-link {
     font-family: 'Armany', Georgia, serif;
     color: var(--cafe-oscuro);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     position: relative;
     transition: color 0.3s ease;
@@ -481,7 +481,10 @@ h3 {
         background-color: var(--blanco);
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        gap: 22px;
+        padding: 30px 20px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         transition: left 0.3s ease;
         box-shadow: 0 4px 20px rgba(38, 18, 15, 0.1);
     }
@@ -510,15 +513,48 @@ h3 {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
-    /* Footer en móvil */
+    /* Footer en móvil - Totalmente Centrado */
+    .footer {
+        padding: 40px 0 20px;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
         text-align: center;
+        justify-items: center;
+    }
+
+    .footer-section {
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
 
     .footer-brand {
         align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+        transform: scale(1);
+        transform-origin: center center;
+        display: block;
+    }
+
+    .footer-heading-mixed {
+        text-align: center;
+        width: 100%;
+    }
+
+    .social-link {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        text-align: center;
     }
 
     .section-title,
@@ -573,12 +609,22 @@ h3 {
 
 @media (max-width: 768px) {
     .footer-hours {
-        align-items: center; /* Centrado en móviles */
+        align-items: center;
+        text-align: center;
+        width: 100%;
     }
     
     .footer-hours .hours-grid {
-        text-align: center;
-        grid-template-columns: 1fr 1fr; /* Mantiene dos columnas */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 6px 16px;
+        text-align: center;
+        width: auto;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .footer-hours .hours-grid > div {
+        text-align: center;
     }
 }

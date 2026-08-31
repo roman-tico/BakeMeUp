@@ -11,6 +11,191 @@ SECCIÓN GENERAL
     padding-top: 150px;
     padding-bottom: 120px;
     background: #fbf7f2; /* suave crema para mejorar contraste con texto */
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-content-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+   ILUSTRACIONES FLOTANTES DECORATIVAS DE FONDO
+   ===================================================== */
+
+.custom-bg-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.custom-float-item {
+    position: absolute;
+    opacity: 0.48;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                filter 0.4s ease;
+    filter: saturate(1.2) drop-shadow(0 10px 22px rgba(38, 18, 15, 0.09));
+    pointer-events: auto;
+    cursor: pointer;
+    will-change: transform;
+}
+
+.custom-float-item:hover {
+    opacity: 0.95;
+    filter: saturate(1.35) drop-shadow(0 16px 32px rgba(38, 18, 15, 0.2));
+}
+
+/* --- 1. ZONA HERO / SUPERIOR --- */
+.hero-fresas {
+    top: 40px;
+    left: 7%;
+    width: 105px;
+    transform: rotate(18deg);
+    animation: floatCakeA 6.5s ease-in-out infinite alternate;
+}
+.hero-fresas:hover {
+    transform: scale(1.18) rotate(26deg) !important;
+}
+
+.hero-batido {
+    top: 70px;
+    right: 7%;
+    width: 110px;
+    transform: rotate(-16deg);
+    animation: floatCakeB 7.2s ease-in-out infinite alternate;
+    animation-delay: 0.8s;
+}
+.hero-batido:hover {
+    transform: scale(1.18) rotate(-8deg) !important;
+}
+
+.hero-galleta {
+    top: 250px;
+    left: 4%;
+    width: 85px;
+    transform: rotate(14deg);
+    animation: floatCakeC 6.8s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
+}
+.hero-galleta:hover {
+    transform: scale(1.2) rotate(22deg) !important;
+}
+
+/* --- 2. BLOQUE 1 (Diseños únicos) --- */
+.b1-pastel {
+    top: 36%;
+    right: 5%;
+    width: 135px;
+    transform: rotate(10deg);
+    animation: floatCakeB 7.5s ease-in-out infinite alternate;
+    animation-delay: 2.2s;
+}
+.b1-pastel:hover {
+    transform: scale(1.16) rotate(16deg) !important;
+}
+
+.b1-granos {
+    top: 46%;
+    left: 5%;
+    width: 95px;
+    transform: rotate(-14deg);
+    animation: floatCakeA 6.2s ease-in-out infinite alternate;
+    animation-delay: 1s;
+}
+.b1-granos:hover {
+    transform: scale(1.2) rotate(-6deg) !important;
+}
+
+/* --- 3. BLOQUE 2 (Sabores que enamoran) --- */
+.b2-rebanada {
+    top: 59%;
+    left: 4%;
+    width: 130px;
+    transform: rotate(-12deg);
+    animation: floatCakeC 6.4s ease-in-out infinite alternate;
+    animation-delay: 0.5s;
+}
+.b2-rebanada:hover {
+    transform: scale(1.16) rotate(-4deg) !important;
+}
+
+.b2-fresas {
+    top: 68%;
+    right: 6%;
+    width: 90px;
+    transform: rotate(22deg);
+    animation: floatCakeA 7s ease-in-out infinite alternate;
+    animation-delay: 1.8s;
+}
+.b2-fresas:hover {
+    transform: scale(1.2) rotate(30deg) !important;
+}
+
+/* --- 4. BLOQUE 3 (Hecho para ti) --- */
+.b3-rol {
+    top: 83%;
+    right: 5%;
+    width: 120px;
+    transform: rotate(15deg);
+    animation: floatCakeB 6.9s ease-in-out infinite alternate;
+    animation-delay: 2.5s;
+}
+.b3-rol:hover {
+    transform: scale(1.18) rotate(22deg) !important;
+}
+
+.b3-cafe {
+    bottom: 40px;
+    left: 6%;
+    width: 115px;
+    transform: rotate(-8deg);
+    animation: floatCakeA 7.8s ease-in-out infinite alternate;
+    animation-delay: 1.2s;
+}
+.b3-cafe:hover {
+    transform: scale(1.15) rotate(0deg) !important;
+}
+
+/* --- ANIMACIONES ORGÁNICAS --- */
+
+@keyframes floatCakeA {
+    0% {
+        transform: translateY(0px) rotate(16deg);
+    }
+    50% {
+        transform: translateY(-16px) translateX(6px) rotate(22deg);
+    }
+    100% {
+        transform: translateY(-28px) translateX(-4px) rotate(12deg);
+    }
+}
+
+@keyframes floatCakeB {
+    0% {
+        transform: translateY(0px) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(-18px) translateX(-6px) rotate(-9deg);
+    }
+    100% {
+        transform: translateY(-26px) translateX(5px) rotate(-20deg);
+    }
+}
+
+@keyframes floatCakeC {
+    0% {
+        transform: translateY(0px) rotate(10deg);
+    }
+    50% {
+        transform: translateY(-14px) translateX(8px) rotate(16deg);
+    }
+    100% {
+        transform: translateY(-24px) translateX(-6px) rotate(4deg);
+    }
 }
 
 
@@ -154,22 +339,33 @@ MANCHA DECORATIVA
 RESPONSIVE
 ===================================================== */
 
+@media (max-width: 1100px) {
+    .custom-float-item {
+        opacity: 0.40;
+    }
+    .hero-fresas { width: 85px; left: 3%; top: 30px; }
+    .hero-batido { width: 90px; right: 3%; top: 50px; }
+    .hero-galleta { width: 70px; left: 2%; }
+    .b1-pastel { width: 105px; right: 2%; }
+    .b1-granos { width: 75px; left: 2%; }
+    .b2-rebanada { width: 100px; left: 2%; }
+    .b2-fresas { width: 75px; right: 2%; }
+    .b3-rol { width: 95px; right: 2%; }
+    .b3-cafe { width: 90px; left: 2%; }
+}
+
 @media (max-width: 968px) {
     .cake-row {
         gap: 50px;
     }
 }
 
-
-
 /* =====================================================
 MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
-    /* NUEVO: Ajustes de espaciado y márgenes reducidos 
-       para pantallas pequeñas de celulares
-    */
+    /* Ajustes de espaciado y márgenes reducidos */
     .custom-cakes {
         padding-top: 140px;
         padding-bottom: 60px;
@@ -192,7 +388,7 @@ MOBILE
     .cake-row {
         grid-template-columns: 1fr;
         gap: 40px;
-        margin-bottom: 60px; /* Reducido para mejor fluidez */
+        margin-bottom: 60px;
     }
 
     .cake-row.reverse {
@@ -218,5 +414,23 @@ MOBILE
         font-size: 17px;
         line-height: 1.6;
         margin-bottom: 15px;
+    }
+
+    /* Adaptación de ilustraciones en celular */
+    .custom-float-item {
+        opacity: 0.35;
+    }
+    .hero-fresas { width: 65px; left: 2%; top: 20px; }
+    .hero-batido { width: 70px; right: 2%; top: 35px; }
+    .b1-pastel { width: 75px; right: 2%; top: 34%; }
+    .b2-rebanada { width: 75px; left: 2%; top: 60%; }
+    .b3-rol { width: 75px; right: 2%; top: 84%; }
+    
+    /* Ocultamos los elementos adicionales en móvil para evitar sobrecarga */
+    .hero-galleta,
+    .b1-granos,
+    .b2-fresas,
+    .b3-cafe {
+        display: none;
     }
 }

@@ -122,13 +122,14 @@
 }
 
 /* =====================================================
-   2. HISTORIA / ESENCIA (SPLIT LAYOUT)
+   2. HISTORIA / ESENCIA (SPLIT LAYOUT CON COLLAGE EN CAPAS)
    ===================================================== */
 
 .about-story {
     padding: 90px 0;
     background-color: var(--crema);
     position: relative;
+    overflow: hidden;
 }
 
 .story-grid {
@@ -192,6 +193,7 @@
     line-height: 1.5;
     position: relative;
     z-index: 2;
+    margin: 0;
 }
 
 .about-quote-card p span {
@@ -199,68 +201,116 @@
     font-weight: 700;
 }
 
-/* Columna visual / Imagen */
+/* Columna visual / Collage en Capas */
 .story-visual-column {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-.image-frame-container {
+.story-collage {
     position: relative;
-    max-width: 460px;
+    max-width: 440px;
     width: 100%;
+    padding-bottom: 25px;
+}
+
+.collage-main-frame {
+    width: 100%;
+    height: 460px;
     border-radius: 24px;
-    padding: 12px;
+    padding: 10px;
     background-color: var(--blanco);
-    box-shadow: 0 16px 36px rgba(38, 18, 15, 0.12);
+    box-shadow: 0 18px 42px rgba(38, 18, 15, 0.14);
     border: 2px solid var(--azul-gris-medio);
+    transition: transform 0.4s ease;
 }
 
-.story-main-img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.image-frame-container:hover .story-main-img {
+.collage-main-frame:hover {
     transform: scale(1.02);
 }
 
-.story-badge-card {
-    position: absolute;
-    bottom: -25px;
-    left: -20px;
-    background-color: var(--cafe-oscuro);
-    color: var(--blanco);
-    padding: 16px 24px;
+.collage-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 16px;
+    display: block;
+}
+
+.collage-secondary-frame {
+    position: absolute;
+    bottom: -10px;
+    left: -24px;
+    width: 190px;
+    padding: 10px 10px 14px;
+    background-color: var(--blanco);
+    border-radius: 18px;
+    box-shadow: 0 16px 36px rgba(38, 18, 15, 0.22);
+    border: 2px solid var(--dorado);
+    transform: rotate(-6deg);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 3;
+}
+
+.collage-secondary-frame:hover {
+    transform: rotate(0deg) scale(1.06);
+    z-index: 5;
+}
+
+.collage-secondary-img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.collage-caption {
+    font-family: 'Armany', Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cafe-oscuro);
+    text-align: center;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Sello Artesanal Giratorio */
+.story-stamp-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 90px;
+    height: 90px;
+    background-color: var(--cafe-oscuro);
+    color: var(--dorado);
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 16px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
     border: 2px solid var(--dorado);
+    z-index: 4;
+    cursor: default;
 }
 
-.story-badge-card .badge-icon {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
+.stamp-rotating-text {
+    width: 100%;
+    height: 100%;
+    animation: spinStamp 18s linear infinite;
 }
 
-.story-badge-card strong {
-    display: block;
-    font-family: 'Armany', Georgia, serif;
-    font-size: 16px;
+.stamp-center-icon {
+    position: absolute;
+    font-size: 18px;
     color: var(--crema);
 }
 
-.story-badge-card span {
-    font-size: 13px;
-    color: var(--blanco);
+@keyframes spinStamp {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* =====================================================
@@ -504,11 +554,12 @@
 @media (max-width: 992px) {
     .story-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .story-main-img {
-        height: 380px;
+    .story-collage {
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .mv-grid {
@@ -539,11 +590,26 @@
         display: none;
     }
 
-    .story-badge-card {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        margin-top: 16px;
+    .collage-main-frame {
+        height: 360px;
+    }
+
+    .collage-secondary-frame {
+        left: -10px;
+        bottom: -20px;
+        width: 155px;
+        padding: 8px 8px 10px;
+    }
+
+    .collage-secondary-img {
+        height: 110px;
+    }
+
+    .story-stamp-badge {
+        right: -10px;
+        top: -15px;
+        width: 76px;
+        height: 76px;
     }
 
     .values-grid {
