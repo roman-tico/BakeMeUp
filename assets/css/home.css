@@ -35,6 +35,175 @@ HERO
     position: relative;
     margin-top: 90px;
     padding: 0 20px;
+    overflow: hidden;
+}
+
+/* =====================================================
+   ILUSTRACIONES FLOTANTES HERO (DINÁMICAS Y ORGÁNICAS)
+   ===================================================== */
+
+.hero-bg-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-floating-illustration {
+    position: absolute;
+    opacity: 0.72;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                filter 0.4s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    filter: saturate(1.22) contrast(1.05) drop-shadow(0 12px 26px rgba(38, 18, 15, 0.13));
+    will-change: transform;
+}
+
+.hero-floating-illustration:hover {
+    opacity: 1;
+    filter: saturate(1.32) contrast(1.08) drop-shadow(0 18px 36px rgba(38, 18, 15, 0.22));
+}
+
+/* 1. Rebanada de Pastel - Arriba Izquierda (más cerca del centro) */
+.hero-float-1 {
+    top: 8%;
+    left: 14%;
+    width: 145px;
+    transform: rotate(-14deg);
+    animation: floatPastel 6.5s ease-in-out infinite alternate;
+}
+.hero-float-1:hover {
+    transform: scale(1.16) rotate(-8deg) !important;
+}
+
+/* 2. Fresitas - Arriba Derecha (más cerca del centro) */
+.hero-float-2 {
+    top: 16%;
+    right: 15%;
+    width: 115px;
+    transform: rotate(18deg);
+    animation: floatFresas 5.8s ease-in-out infinite alternate;
+    animation-delay: 0.8s;
+}
+.hero-float-2:hover {
+    transform: scale(1.2) rotate(26deg) !important;
+}
+
+/* 3. Taza de Café - Abajo Izquierda (más cerca del centro) */
+.hero-float-3 {
+    bottom: 12%;
+    left: 15%;
+    width: 125px;
+    transform: rotate(-7deg);
+    animation: floatCafe 7.8s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
+}
+.hero-float-3:hover {
+    transform: scale(1.15) rotate(0deg) !important;
+}
+
+/* 4. Rol de Canela - Abajo Derecha (más cerca del centro) */
+.hero-float-4 {
+    bottom: 9%;
+    right: 16%;
+    width: 120px;
+    transform: rotate(15deg);
+    animation: floatRol 7.2s ease-in-out infinite alternate;
+    animation-delay: 2.2s;
+}
+.hero-float-4:hover {
+    transform: scale(1.18) rotate(22deg) !important;
+}
+
+/* --- Animaciones Individuales Desfasadas --- */
+
+@keyframes floatPastel {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(-14deg);
+    }
+    50% {
+        transform: translateY(-16px) translateX(6px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(-28px) translateX(-4px) rotate(-6deg);
+    }
+}
+
+@keyframes floatFresas {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(18deg) scale(1);
+    }
+    50% {
+        transform: translateY(-14px) translateX(-8px) rotate(24deg) scale(1.04);
+    }
+    100% {
+        transform: translateY(-26px) translateX(5px) rotate(12deg) scale(0.98);
+    }
+}
+
+@keyframes floatCafe {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(-7deg);
+    }
+    50% {
+        transform: translateY(-18px) translateX(8px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(-24px) translateX(-5px) rotate(-11deg);
+    }
+}
+
+@keyframes floatRol {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(15deg);
+    }
+    50% {
+        transform: translateY(-15px) translateX(-7px) rotate(9deg);
+    }
+    100% {
+        transform: translateY(-27px) translateX(6px) rotate(21deg);
+    }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+    .hero-float-1 { width: 120px; left: 8%; top: 7%; }
+    .hero-float-2 { width: 95px; right: 8%; top: 14%; }
+    .hero-float-3 { width: 105px; left: 8%; bottom: 10%; }
+    .hero-float-4 { width: 100px; right: 8%; bottom: 8%; }
+}
+
+@media (max-width: 900px) {
+    .hero-float-1 { width: 95px; left: 4%; top: 6%; }
+    .hero-float-2 { width: 75px; right: 4%; top: 12%; }
+    .hero-float-3 { width: 85px; left: 4%; bottom: 7%; }
+    .hero-float-4 { width: 80px; right: 4%; bottom: 6%; }
+}
+
+@media (max-width: 768px) {
+    .hero-floating-illustration {
+        opacity: 0.60;
+    }
+    .hero-float-1 {
+        width: 78px;
+        top: 6%;
+        left: 4%;
+        transform: rotate(-10deg);
+    }
+    .hero-float-2 {
+        width: 68px;
+        top: 12%;
+        right: 4%;
+        transform: rotate(14deg);
+    }
+    /* En teléfonos se ocultan los inferiores para mantener libre el área de interacción */
+    .hero-float-3,
+    .hero-float-4 {
+        display: none;
+    }
 }
 
 .hero-overlay {
