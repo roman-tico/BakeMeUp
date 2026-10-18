@@ -1,123 +1,76 @@
-# Propuesta de Sistema: Migración, Cotizador Web Dinámico e Histórico
+# Propuesta y Especificación Técnica: Sistema Web de Cotización, Histórico, KDS y Proveedores
 **Proyecto:** Bake Me Up  
-**Fecha de reunión:** 12 de octubre de 2026  
-**Participantes clave:** Sofia Gavito Alarcón, Carlos Ruiz (Woody), Lalo  
-**Estado:** Documento de especificación y propuesta técnica  
+**Líder de Proyecto:** Carlos Ruiz (Woody) / MexaDev  
+**Lead Técnico:** Lalo  
+**Cliente:** Sofia Gavito Alarcón  
+**Versión:** 2.6 - Catálogo de Proveedores, KDS Cocina y Flujo Operativo  
 
 ---
 
 ## 1. Resumen Ejecutivo
-
-Actualmente, **Bake Me Up** gestiona sus cotizaciones y pedidos a través de múltiples hojas y libros de cálculo (Exportek / Excel / Google Sheets). Debido al rápido crecimiento en el volumen de solicitudes y la alta volatilidad de los precios de insumos (como incrementos significativos en materias primas como el huevo), el método actual presenta fallas críticas de desactualización, discrepancias de precios según el personal que atiende y fragmentación de la información.
-
-Esta propuesta detalla la **migración integral del motor de cotizaciones y gestión de pedidos a la plataforma web de Bake Me Up**, sustituyendo por completo las hojas de cálculo por un sistema centralizado, intuitivo y automatizado.
-
-```mermaid
-flowchart LR
-    A[Insumos y Materias Primas Dinámicas] --> B(Motor Central de Cotización)
-    C[Estilos Estandarizados: Vintage, Domo, etc.] --> B
-    D[Diseño, Bizcocho, Rellenos y Adicionales] --> B
-    B --> E[Cotización Instantánea y Estandarizada]
-    E --> F[Histórico y Búsqueda por Foto/Tags]
-    E --> G[Calendario Central de Pedidos y Anticipos]
-```
+Migración integral del proceso de cotización y gestión de pedidos desde hojas de cálculo de Excel/Exportek hacia la plataforma web de **Bake Me Up**.
+* **Problema:** Desajustes de rentabilidad por alza en insumos (ej. huevo), falta de estandarización en precios, descontrol de comandas en papel y dispersión de contactos de proveedores.
+* **Solución:** Motor dinámico de costos en cascada, cotizador estandarizado en < 60 segundos, catálogo histórico con búsqueda visual, KDS (Kitchen Display System) en iPad para taller 100% libre de papel y directorio ágil de proveedores con botón a WhatsApp.
 
 ---
 
-## 2. Diagnóstico: Situación Actual (As-Is) vs. Solución Propuesta (To-Be)
+## 2. Módulos y Arquitectura Técnica
 
-| Dimensión | Situación Actual (Excel / Hojas Sueltas) | Solución Propuesta (Portal Web Bake Me Up) |
-| :--- | :--- | :--- |
-| **Fluctuación de Insumos** | Modificar un costo requiere actualizar manualmente múltiples fórmulas; los históricos quedan desfasados. | **Matriz Dinámica:** Al cambiar el costo de un insumo (ej. huevo, mantequilla), el costo base de todas las fórmulas se actualiza automáticamente en cascada. |
-| **Consistencia de Cotización** | Variación de precios dependiendo de la persona en mostrador/atención que realiza el cálculo. | **Estandarización Total:** Reglas de negocio fijas. Cualquier integrante del equipo ingresa los datos y obtiene exactamente el mismo precio. |
-| **Cálculo de Mano de Obra y Betún** | Cálculo manual y propenso a errores según el tamaño. | **Parámetros por Estilo:** Al seleccionar estilo (Vintage, Domo, Clásico) y porciones, el sistema calcula automáticamente cantidad de betún y tiempo invertido. |
-| **Búsqueda de Referencias** | Archivos dispersos y dificultad para localizar pasteles previos similares. | **Histórico Inteligente:** Búsqueda por descripción, etiquetas y catálogo fotográfico (con capacidad de búsqueda visual). |
-| **Agendamiento y Anticipos** | Uso fragmentado de Notion, Google Calendar y notas en mostrador. | **Calendario Integrado:** Registro de fecha, hora de entrega, monto abonado y saldo pendiente en una sola vista del portal. |
-| **Integridad y Control de Versiones** | Riesgo de duplicidad de archivos o sobreescritura errónea. | **Base de Datos Centralizada:** Auditoría de cotizaciones, versionado automático y respaldos continuos. |
+### Módulo A: Matriz Dinámica de Materias Primas e Insumos
+* Catálogo de materias primas con unidad de medida y precio de compra vigente.
+* Actualización en cascada sobre las fórmulas base.
+* **Regla de Costeo Base:** El pan se costea con el insumo de mayor valor para proteger el margen sin importar el sabor elegido por el cliente.
 
----
+### Módulo B: Motor Web de Cotización Rápida
+* Formulario ágil para mostrador / WhatsApp.
+* Parámetros: porciones, estilo (*Vintage*, *Domo*, *Clásico*, *Pisos*), sabores y adicionales (flores, impresiones comestibles, papel, MDF).
+* Cálculo automático de betún y mano de obra por estilo.
 
-## 3. Módulos del Sistema Web
+### Módulo C: Histórico y Búsqueda Visual
+* Búsqueda por descripción, etiquetas y por fotografía de referencia.
+* Comparador: costo histórico original vs. costo recalculado a precios de hoy.
 
-### Módulo 1: Catálogo y Matriz de Materias Primas Dinámicas
-* **Gestión de Insumos:** Registro de materias primas con unidad de medida y costo de adquisición vigente (harinas, lácteos, huevo, chocolate, etc.).
-* **Regla de Costeo Base de Bizcocho:** Dado que el sabor final no debe castigar el margen, el costeo base asume la receta estándar con los ingredientes de mayor costo para garantizar rentabilidad en cualquier elección del cliente.
-* **Actualización en Cascada:** Al editar el precio de un ingrediente, el sistema recalcula los costos de recetas base sin necesidad de intervenir fórmulas individuales.
+### Módulo D: Flujo de Pedidos y KDS de Cocina (iPad)
+* **Vista Admin (Dueñas):** Visibilidad financiera total (costo, anticipo, saldo y estatus). Control de entrega exclusivo para marcar `Entregado`.
+* **Vista KDS Cocina (iPad):** Sesión genérica permanente, 100% libre de papel.
+* **Seguridad (Data Masking en Backend):** La API de cocina **NO** devuelve campos de dinero (`total_price`, `deposit`, `balance_due`, etc.).
+* **3 Estados Operativos:** `Pendiente`, `En vitrina / refri` y `Entregado`.
 
-### Módulo 2: Motor de Cotización Estandarizado (Web Quoting Engine)
-Interfaz ágil optimizada para cotizar en mostrador o vía WhatsApp en menos de 1 minuto:
-1. **Datos del Pedido:**
-   - Fecha y hora de entrega.
-   - Número de personas / porciones.
-2. **Estilo y Estructura:**
-   - Selección de estilo predefinido (ej. *Vintage*, *Forma de Domo*, *Minimalista*, *Pisos múltiples*).
-   - Cálculo automático de volumen de betún requerido.
-   - Cálculo automático de tiempo de elaboración (mano de obra).
-3. **Sabores y Rellenos:**
-   - Sabor de pan / bizcocho.
-   - Sabor de relleno.
-4. **Adicionales y Acabados (Add-ons):**
-   - Impresiones comestibles.
-   - Flores (naturales o preservadas).
-   - Decoraciones en papel / toppers personalizados.
-   - Bases o decoraciones en MDF / acrílico.
-5. **Cálculo Financiero:**
-   - Costo de materia prima + Mano de obra + Gastos fijos/extras + Margen de ganancia deseado = **Precio Sugerido**.
-   - Resumen para el cliente (desglose o precio final limpio) y opción de generación de comprobante/PDF.
-
-### Módulo 3: Histórico y Búsqueda de Diseños
-* **Ficha de Cotización Histórica:** Cada cotización guarda fotografía de referencia, especificaciones, fecha y precio emitido.
-* **Recálculo Comparativo:** Capacidad de consultar una cotización pasada y ver:
-  - *Precio al que se cotizó originalmente.*
-  - *Costo actual equivalente con los precios de insumos de hoy.*
-* **Búsqueda Avanzada:**
-  - Búsqueda textual por palabras clave (ej. "flores rosas", "domo bautizo", "vintage corazón").
-  - Filtrado por rango de personas, rango de precio o estilo.
-  - Motor de búsqueda por similitud de imagen / fotografías de referencia.
-
-### Módulo 4: Calendario de Producción y Gestión de Pedidos
-* **Centralización de Entregas:** Vista de calendario (mensual, semanal, diaria) dentro del portal web.
-* **Control de Pagos:**
-  - Monto total cotizado.
-  - Anticipo recibido (registro de método de pago y fecha).
-  - Saldo pendiente contra entrega.
-* **Sincronización:** Posibilidad de enlace vía API/Webhook con Google Calendar para notificaciones del equipo operativo.
+### Módulo E: Catálogo y Directorio de Proveedores
+* **Campos:** Nombre / Negocio, contacto, teléfono, categoría (*Lácteos, Huevo, Harinas, MDF, Flores, etc.*) y notas de entrega/visita.
+* **Botón 1-Clic a WhatsApp:** Enlace directo (`https://wa.me/...`) para chat inmediato de pedido.
+* **Acceso:** Consulta disponible para todo el equipo (taller, mostrador y admin).
+* **Gestión y Soft Delete:** Altas, bajas y edición restringidas a Admin. Borrado lógico (`is_active = false`) para preservar integridad histórica de compras.
 
 ---
 
-## 4. Plan de Migración de Datos (Exportek / Excel a la Web)
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant EX as Hojas de Cálculo (Exportek/Excel)
-    participant ETL as Proceso de Limpieza y Extracción
-    participant DB as Base de Datos Web (Bake Me Up)
-    participant WEB as Portal de Cotizaciones
-    
-    EX->>ETL: Extracción de archivos y unificación de versiones
-    ETL->>ETL: Depuración de duplicados y normalización de materias primas
-    ETL->>DB: Carga inicial de recetas, insumos y catálogo histórico
-    DB->>WEB: Disponibilidad inmediata en cotizador y buscador
-```
-
-1. **Fase de Consolidación:**
-   - Depuración de copias redundantes de Excel para aislar la versión definitiva maestra.
-   - Extracción de fórmulas vigentes de betún, tiempos de mano de obra y costos de adicionales (MDF, flores, obleas).
-2. **Normalización del Modelo de Datos:**
-   - Tabla de Insumos (`ingredients`).
-   - Tabla de Fórmulas y Recetas (`recipes_matrix`).
-   - Tabla de Estilos y Coeficientes (`styles_config`).
-   - Tabla de Cotizaciones e Histórico (`quotes_history`).
-   - Tabla de Pedidos y Calendario (`orders_schedule`).
-3. **Carga y Verificación:**
-   - Validación cruzada: cotejar cotizaciones manuales recientes con el resultado arrojado por el nuevo motor web para verificar que los márgenes coincidan al centavo.
+## 3. Flujo Operativo Paso a Paso (Happy Path)
+1. **Paso 1: Solicitud y Captura:** Mostrador carga fecha/hora, personas, estilo y foto de referencia en el cotizador web.
+2. **Paso 2: Generación de Precio:** El motor calcula en < 1 segundo betún, horas de trabajo y precio oficial.
+3. **Paso 3: Confirmación y Anticipo:** Cliente acepta, dueña cobra anticipo (50%), registra método de pago y el sistema agenda el pedido.
+4. **Paso 4: Notificación al Taller:** Aparece en el iPad de cocina en estado `Pendiente` (sin datos de dinero).
+5. **Paso 5: Elaboración:** Pastelero hornea, rellena, betuna y decora siguiendo la ficha técnica.
+6. **Paso 6: Listo en Frío:** Pastelero cambia tarjeta a `En vitrina / refri`. Se notifica a las dueñas.
+7. **Paso 7: Llegada del Cliente:** Cliente llega a mostrador, dueña revisa saldo pendiente y cobra liquidación.
+8. **Paso 8: Entrega y Archivo:** Dueña presiona `Entregado`, saliendo de pendientes activos y guardándose en el histórico.
 
 ---
 
-## 5. Próximos Pasos y Asignación
+## 4. Matriz de Escenarios "What If" (Casos Borde)
+* **What If 1 (Cotización vencida):** Vigencia (7-15 días) y recálculo con 1 clic ante alzas de insumos.
+* **What If 2 (Cambio de fecha/hora):** Solo Admin edita; se reordena automáticamente en el iPad.
+* **What If 3 (Diseño atípico):** Modo "Estilo Personalizado" con mano de obra manual configurable.
+* **What If 4 (Cliente sin liquidar saldo):** Bloqueo/advertencia de deuda; no se entrega sin liquidar.
+* **What If 5 (Cancelación):** Retiro inmediato de cocina si está `Pendiente`; anticipo no reembolsable si ya está `En vitrina / refri`.
+* **What If 6 (Daño accidental en refri):** Regreso a `Pendiente` con marca visual de "Prioridad / Retrabajo".
+* **What If 7 (Falla de internet en taller):** Soporte offline en iPad (PWA / caché local).
 
-- [ ] **Woody / Lalo:** Diseñar el esquema de base de datos y evaluar la infraestructura técnica del cotizador dentro del repo de Bake Me Up.
-- [ ] **Woody / Lalo:** Evaluar la arquitectura del motor de búsqueda de imágenes (etiquetado inteligente vs. embeddings visuales ligeros).
-- [ ] **Sofi:** Compartir el archivo maestro de Excel limpio con las fórmulas de cálculo de betún, proporciones por porción y catálogo de costos actuales de materia prima.
-- [ ] **Sofi / Woody:** Validar los estilos estándar iniciales (Vintage, Domo, etc.) y los costos fijos de insumos extra (MDF, flores, impresiones comestibles).
+---
+
+## 5. Criterios de Aceptación para Lalo
+- [ ] Modelos de BD relacional para insumos, recetas, estilos, pedidos y proveedores (con soft delete).
+- [ ] API backend con data masking estricto para la vista de cocina.
+- [ ] Motor algorítmico de cálculo en cascada < 1 segundo.
+- [ ] Frontend táctil KDS en iPad con soporte offline y 3 estados.
+- [ ] Panel de administración con validación de entrega y control de anticipos.
+- [ ] Módulo de proveedores con enlace rápido a WhatsApp accesible globalmente.
