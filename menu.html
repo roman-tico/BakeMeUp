@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú - Bake me up</title>
+    <title>Menú | Bake Me Up</title>
+
     <!-- =====================
     SEO & OPEN GRAPH
     ===================== -->
-    <meta name="description" content="Explora nuestro menú: bebidas calientes, frappés, pasteles, tartas y repostería artesanal.">
-    <meta name="keywords" content="menú cafetería, menú bake me up, precios pasteles, bebidas, repostería fina">
+    <meta name="description" content="Explora nuestro menú: bebidas calientes, frappés, pasteles, tartas y repostería artesanal en Puebla.">
+    <meta name="keywords" content="menú cafetería, menú bake me up, precios pasteles, bebidas, repostería fina, puebla">
     <meta name="author" content="Bake Me Up">
     
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:title" content="Menú | Bake Me Up">
     <meta property="og:description" content="Explora nuestro menú: bebidas calientes, frappés, pasteles, tartas y repostería artesanal.">
-    <meta property="og:image" content="https://roman-tico.github.io/BakeMeUp/assets/documents/menu.pdf">
-    <meta property="og:url" content="https://roman-tico.github.io/BakeMeUp/menu.html">
+    <meta property="og:image" content="https://bakemeup.mx/assets/images/logos/isotipo-verde-535839.png">
+    <meta property="og:url" content="https://bakemeup.mx/menu.html">
     <meta property="og:type" content="website">
     
     <!-- =====================
-         FAVICON / ICONOS
-         ===================== -->
+    FAVICON / ICONOS
+    ===================== -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
@@ -28,91 +29,303 @@
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     
     <style>
+        @font-face {
+            font-family: 'Armany';
+            src: url('assets/fonts/Armany-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --verde-oliva: #535839;
+            --dorado: #d0bb7d;
+            --cafe-oscuro: #26120f;
+            --crema: #f5dfac;
+            --blanco: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html, body {
             width: 100%;
             height: 100%;
             overflow: hidden;
+            font-family: 'Armany', Georgia, serif;
+            background-color: var(--cafe-oscuro);
+            color: var(--cafe-oscuro);
         }
 
-        /* IFRAME - Solo para desktop */
+        .menu-layout {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+        }
+
+        /* Barra Superior de Navegación Bake Me Up */
+        .menu-topbar {
+            height: 62px;
+            background-color: var(--blanco);
+            border-bottom: 1px solid rgba(38, 18, 15, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 10;
+            flex-shrink: 0;
+            box-shadow: 0 2px 12px rgba(38, 18, 15, 0.08);
+        }
+
+        .topbar-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cafe-oscuro);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+        }
+
+        .topbar-back:hover {
+            background-color: rgba(83, 88, 57, 0.1);
+            color: var(--verde-oliva);
+        }
+
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--cafe-oscuro);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .topbar-brand img {
+            height: 36px;
+            width: auto;
+        }
+
+        .topbar-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--verde-oliva);
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+        }
+
+        .topbar-action:hover {
+            background-color: var(--cafe-oscuro);
+        }
+
+        /* IFRAME - Visor para escritorio */
         iframe {
             width: 100%;
-            height: 100%;
+            flex: 1;
             border: none;
             display: block;
+            background-color: #323639;
         }
 
-        /* PANTALLA DE CARGA - Solo se ve en móvil mientras redirige */
-        .loading-screen {
+        /* PANTALLA MÓVIL - Elegante y con controles de respaldo */
+        .mobile-menu-screen {
             display: none;
             width: 100%;
-            height: 100%;
-            background-color: #f5dfac;
+            flex: 1;
+            background-color: var(--crema);
             justify-content: center;
             align-items: center;
             flex-direction: column;
             text-align: center;
-            padding: 20px;
+            padding: 24px;
         }
 
-        .loading-screen.active {
+        .mobile-menu-screen.active {
             display: flex;
         }
 
-        .loading-text {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #26120f;
-            margin-top: 20px;
+        .mobile-card {
+            background-color: var(--blanco);
+            border: 2px solid var(--dorado);
+            border-radius: 24px;
+            padding: 36px 24px;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 16px 36px rgba(38, 18, 15, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
 
-        /* Spinner animado */
+        .mobile-card-logo {
+            width: 72px;
+            height: auto;
+        }
+
+        .mobile-card h1 {
+            font-size: 28px;
+            color: var(--cafe-oscuro);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .loading-text {
+            font-size: 16px;
+            color: var(--cafe-oscuro);
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
         .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(83, 88, 57, 0.2);
-            border-top-color: #535839;
+            width: 42px;
+            height: 42px;
+            border: 3.5px solid rgba(83, 88, 57, 0.2);
+            border-top-color: var(--verde-oliva);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.9s linear infinite;
+            margin: 4px 0;
+        }
+
+        .spinner.hidden {
+            display: none;
+        }
+
+        .mobile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        .btn-open-pdf {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 24px;
+            background-color: var(--verde-oliva);
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 6px 18px rgba(83, 88, 57, 0.25);
+        }
+
+        .btn-back-home {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: var(--cafe-oscuro);
+            border: 1.5px solid rgba(38, 18, 15, 0.25);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
         }
 
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        @media (max-width: 600px) {
+            .menu-topbar {
+                padding: 0 12px;
+                height: 56px;
+            }
+            .topbar-brand span {
+                display: none;
+            }
+            .topbar-back, .topbar-action {
+                font-size: 13px;
+                padding: 7px 12px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- IFRAME para desktop -->
-    <iframe id="pdf-viewer" src="assets/documents/menu.pdf" title="Menú Bake me up"></iframe>
-    
-    <!-- Pantalla de carga para móvil (solo se ve durante la redirección) -->
-    <div class="loading-screen" id="loading">
-        <div class="spinner"></div>
-        <p class="loading-text">Abriendo menú...</p>
+    <div class="menu-layout">
+        <!-- Barra superior de navegación -->
+        <header class="menu-topbar">
+            <a href="index.html" class="topbar-back">← Volver al inicio</a>
+            <a href="index.html" class="topbar-brand" aria-label="Bake Me Up Inicio">
+                <img src="assets/images/logos/isotipo-oscuro-26120f.png" alt="Bake Me Up">
+                <span>Menú Bake Me Up</span>
+            </a>
+            <a href="assets/documents/menu.pdf" target="_blank" rel="noopener" class="topbar-action">
+                Abrir PDF ↗
+            </a>
+        </header>
+
+        <!-- IFRAME para desktop -->
+        <iframe id="pdf-viewer" src="assets/documents/menu.pdf" title="Menú Bake me up"></iframe>
+        
+        <!-- Pantalla para móvil con botones de acción de respaldo -->
+        <div class="mobile-menu-screen" id="loading">
+            <div class="mobile-card">
+                <img src="assets/images/logos/isotipo-oscuro-26120f.png" alt="Bake Me Up" class="mobile-card-logo">
+                <h1>Menú Digital</h1>
+                <div class="spinner" id="menu-spinner"></div>
+                <p class="loading-text" id="menu-status-text">Abriendo nuestro menú de temporada...</p>
+                <div class="mobile-actions">
+                    <a href="assets/documents/menu.pdf" class="btn-open-pdf">Ver Menú (PDF)</a>
+                    <a href="index.html" class="btn-back-home">← Regresar a Inicio</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // DETECTAR SI ES MÓVIL (iOS o Android)
         function isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
-        // Si es móvil, redirigir directamente al PDF
+        function setReadyState() {
+            var spinner = document.getElementById('menu-spinner');
+            var statusText = document.getElementById('menu-status-text');
+            if (spinner) spinner.classList.add('hidden');
+            if (statusText) {
+                statusText.textContent = 'Explora nuestras bebidas calientes, frappés y repostería artesanal.';
+            }
+        }
+
         if (isMobile()) {
-            // Mostrar pantalla de carga
             document.getElementById('loading').classList.add('active');
             document.getElementById('pdf-viewer').style.display = 'none';
-            
-            // Redirigir al PDF después de 500ms (para que se vea el spinner)
-            setTimeout(function() {
-                window.location.href = 'assets/documents/menu.pdf';
-            }, 500);
+
+            // Si el usuario vuelve con el botón "Atrás", quitar el spinner infinito
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted || sessionStorage.getItem('bmu_menu_opened') === '1') {
+                    setReadyState();
+                }
+            });
+
+            if (sessionStorage.getItem('bmu_menu_opened') !== '1') {
+                setTimeout(function() {
+                    sessionStorage.setItem('bmu_menu_opened', '1');
+                    window.location.href = 'assets/documents/menu.pdf';
+                    setTimeout(setReadyState, 1200);
+                }, 400);
+            } else {
+                setReadyState();
+            }
         }
     </script>
 </body>

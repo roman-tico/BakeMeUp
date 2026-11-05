@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://roman-tico.github.io/BakeMeUp/sitemap.xml
+Sitemap: https://bakemeup.mx/sitemap.xml

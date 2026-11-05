@@ -52,6 +52,31 @@ La carpeta operativa oficial de la empresa en Google Drive es **`BAKE ME UP ADMI
 
 ---
 
+## 🌐 Infraestructura Web y Entorno de Desarrollo Local
+
+* **Dominio Oficial en Producción:** `https://bakemeup.mx`
+* **Cuenta y Repositorio de Despliegue:** 
+  * Correo Propietario: `c123carlos123ruiz123@gmail.com`
+  * Usuario GitHub: `roman-tico`
+  * Repositorio: `https://github.com/roman-tico/BakeMeUp.git`
+  * Hosting & DNS: GitHub Pages con proxy / DNS en Cloudflare
+* **Arquitectura Web:**
+  * Vanilla HTML5, CSS3 modular (`assets/css/`), JavaScript modular (`assets/js/`).
+  * Inyección asíncrona de componentes (`components/header.html`, `components/footer.html`) mediante `fetch()`.
+* **Entorno de Ejecución Local:**
+  * **Servidor HTTP:** Requiere servidor HTTP local para evitar bloqueos CORS en la carga de componentes.
+  * **Comando de Arranque:** `python -m http.server 8080 --bind 127.0.0.1`
+  * **Rutas Locales Principales:**
+    * Inicio: `http://localhost:8080/` o `http://localhost:8080/index.html`
+    * Menú Digital: `http://localhost:8080/menu.html`
+    * Personaliza tu Pastel: `http://localhost:8080/custom-cake.html`
+    * Bake Me Up Club: `http://localhost:8080/club.html`
+    * Sobre Nosotras (About Us): `http://localhost:8080/about.html`
+    * Componente Header: `http://localhost:8080/components/header.html`
+    * Componente Footer: `http://localhost:8080/components/footer.html`
+
+---
+
 ## 📝 Regla de Guardado de Documentos Oficiales
 
 Siempre que se genere o actualice un documento corporativo, carta administrativa o formato laboral para Bake Me Up, el asistente debe depositar copias automáticamente en:

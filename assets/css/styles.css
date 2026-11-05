@@ -51,6 +51,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -65,6 +66,10 @@ body {
     background-color: var(--blanco);
     line-height: 1.8;
     overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 /* Contenedor centralizado del sitio */
@@ -87,11 +92,12 @@ body {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 1px 3px rgba(38, 18, 15, 0.08);
     font-family: 'Armany', Georgia, serif;
     transform: translateY(0);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .header--hidden {
@@ -102,17 +108,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 10px 8px; /* Más padding arriba, menos abajo */
+    padding: 20px 10px 10px;
 }
 
 .logo img {
-    height: 90px;
+    height: 86px;
     width: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
 .logo:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 
@@ -175,9 +182,11 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-cta:hover {
+.nav-cta:hover,
+.nav-cta[aria-current="page"] {
     background-color: var(--cafe-oscuro);
     transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(38, 18, 15, 0.2);
 }
 
 
@@ -262,6 +271,23 @@ h3 {
     font-size: 1.4em;
     color: inherit;
     font-weight: normal;
+}
+
+/* =====================================================
+   ANIMACIÓN DE APARICIÓN AL HACER SCROLL (SUAVE)
+   ===================================================== */
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -400,10 +426,10 @@ h3 {
 
 .social-link {
     display: flex;
-    align-items: center; /* Alinea verticalmente el icono y el texto en el centro */
-    gap: 12px;           /* Espacio entre el icono y el texto */
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    color: var(--crema); /* Usamos el color de la sección */
+    color: var(--crema);
     font-size: 16px;
     font-family: 'Armany', Georgia, serif;
     transition: color 0.3s ease;
@@ -414,7 +440,7 @@ h3 {
 }
 
 .social-link svg {
-    fill: currentColor; /* Hace que el icono tome el color del texto */
+    fill: currentColor;
     width: 24px;
     height: 24px;
     transition: transform 0.3s ease;
@@ -432,11 +458,15 @@ h3 {
 .menu-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .menu-toggle span {
@@ -465,28 +495,32 @@ h3 {
 @media (max-width: 768px) {
     /* Header compacto */
     .logo img {
-        height: 60px;
+        height: 58px;
     }
 
     .header .container {
-        padding: 8px 10px;
+        padding: 9px 14px;
     }
 
     .nav {
         position: fixed;
-        top: 76px; /* Ajuste basado en la altura del header en móvil */
+        top: 76px;
         left: -100%;
         width: 100%;
         height: calc(100vh - 76px);
-        background-color: var(--blanco);
+        height: calc(100dvh - 76px);
+        background-color: rgba(255, 255, 255, 0.99);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         flex-direction: column;
         align-items: center;
-        gap: 22px;
-        padding: 30px 20px;
+        justify-content: flex-start;
+        gap: 24px;
+        padding: 36px 20px 50px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        transition: left 0.3s ease;
-        box-shadow: 0 4px 20px rgba(38, 18, 15, 0.1);
+        transition: left 0.32s cubic-bezier(0.25, 1, 0.5, 1);
+        box-shadow: 0 12px 30px rgba(38, 18, 15, 0.12);
     }
 
     .nav.active {
@@ -494,7 +528,14 @@ h3 {
     }
 
     .nav-link {
-        font-size: 18px;
+        font-size: 19px;
+        padding: 6px 12px;
+    }
+
+    .nav-cta {
+        font-size: 17px;
+        padding: 12px 28px;
+        margin-top: 4px;
     }
 
     .menu-toggle {
@@ -502,7 +543,7 @@ h3 {
     }
 
     .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
+        transform: rotate(45deg) translate(6px, 6px);
     }
 
     .menu-toggle.active span:nth-child(2) {
@@ -515,7 +556,7 @@ h3 {
 
     /* Footer en móvil - Totalmente Centrado */
     .footer {
-        padding: 40px 0 20px;
+        padding: 40px 0 24px;
     }
 
     .footer-content {
@@ -541,6 +582,7 @@ h3 {
         transform: scale(1);
         transform-origin: center center;
         display: block;
+        height: 135px;
     }
 
     .footer-heading-mixed {
@@ -561,14 +603,15 @@ h3 {
     .section-title-dark {
         font-size: 36px;
     }
+
+    .section-title-dark {
+        margin-bottom: 45px;
+    }
     
     .footer-isotipo-img {
         height: 20px;
     }
-}
 
-/* Padding de seguridad para contenedores en pantallas pequeñas */
-@media (max-width: 768px) {
     .container {
         padding: 0 20px;
     }
@@ -578,7 +621,13 @@ h3 {
     .container {
         padding: 0 16px;
     }
+
+    .section-title,
+    .section-title-dark {
+        font-size: 32px;
+    }
 }
+
 /* =====================================================
    HORARIOS DEL FOOTER
    ===================================================== */
@@ -591,8 +640,8 @@ h3 {
 
 .footer-hours .hours-grid {
     display: grid;
-    grid-template-columns: auto auto; /* Dos columnas automáticas */
-    gap: 8px 24px; /* Espaciado entre días y horas */
+    grid-template-columns: auto auto;
+    gap: 8px 24px;
     font-size: 18px;
     text-align: left;
 }
@@ -604,7 +653,7 @@ h3 {
 
 .footer-hours .time {
     color: var(--crema);
-    text-align: left; /* Horas alineadas a la izquierda de su columna */
+    text-align: left;
 }
 
 @media (max-width: 768px) {

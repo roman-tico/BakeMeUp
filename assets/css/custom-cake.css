@@ -9,8 +9,8 @@ SECCIÓN GENERAL
 
 .custom-cakes {
     padding-top: 150px;
-    padding-bottom: 120px;
-    background: #fbf7f2; /* suave crema para mejorar contraste con texto */
+    padding-bottom: 110px;
+    background: #fbf7f2;
     position: relative;
     overflow: hidden;
 }
@@ -163,41 +163,22 @@ SECCIÓN GENERAL
 /* --- ANIMACIONES ORGÁNICAS --- */
 
 @keyframes floatCakeA {
-    0% {
-        transform: translateY(0px) rotate(16deg);
-    }
-    50% {
-        transform: translateY(-16px) translateX(6px) rotate(22deg);
-    }
-    100% {
-        transform: translateY(-28px) translateX(-4px) rotate(12deg);
-    }
+    0% { transform: translateY(0px) rotate(16deg); }
+    50% { transform: translateY(-16px) translateX(6px) rotate(22deg); }
+    100% { transform: translateY(-28px) translateX(-4px) rotate(12deg); }
 }
 
 @keyframes floatCakeB {
-    0% {
-        transform: translateY(0px) rotate(-15deg);
-    }
-    50% {
-        transform: translateY(-18px) translateX(-6px) rotate(-9deg);
-    }
-    100% {
-        transform: translateY(-26px) translateX(5px) rotate(-20deg);
-    }
+    0% { transform: translateY(0px) rotate(-15deg); }
+    50% { transform: translateY(-18px) translateX(-6px) rotate(-9deg); }
+    100% { transform: translateY(-26px) translateX(5px) rotate(-20deg); }
 }
 
 @keyframes floatCakeC {
-    0% {
-        transform: translateY(0px) rotate(10deg);
-    }
-    50% {
-        transform: translateY(-14px) translateX(8px) rotate(16deg);
-    }
-    100% {
-        transform: translateY(-24px) translateX(-6px) rotate(4deg);
-    }
+    0% { transform: translateY(0px) rotate(10deg); }
+    50% { transform: translateY(-14px) translateX(8px) rotate(16deg); }
+    100% { transform: translateY(-24px) translateX(-6px) rotate(4deg); }
 }
-
 
 
 /* =====================================================
@@ -207,35 +188,37 @@ INTRO
 .custom-intro {
     text-align: center;
     max-width: 720px;
-    margin: auto;
-    margin-bottom: 90px;
+    margin: 0 auto 30px;
     font-size: 20px;
     line-height: 1.8;
-    color: #222222;
+    color: var(--cafe-oscuro);
     font-weight: 600;
 }
 
-/* CTA row (único botón principal) */
+/* CTA row */
 .cta-row {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 75px;
 }
 
 .main-cta {
-    background: var(--verde-oliva, #7a9a4a);
-    color: #ffffff;
-    padding: 12px 22px;
+    background: var(--verde-oliva);
+    color: var(--blanco);
+    padding: 15px 38px;
     border-radius: 999px;
+    font-size: 16px;
     font-weight: 700;
     display: inline-block;
     text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform .12s ease, box-shadow .12s ease;
+    box-shadow: 0 6px 20px rgba(83, 88, 57, 0.25);
+    transition: all 0.3s ease;
 }
+
 .main-cta:hover {
+    background: var(--cafe-oscuro);
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 26px rgba(38, 18, 15, 0.28);
 }
 
 /* =====================================================
@@ -247,10 +230,8 @@ FILAS ZIG ZAG
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: center;
-    margin-bottom: 130px;
+    margin-bottom: 110px;
 }
-
-
 
 /* =====================================================
 INVERTIR ORDEN
@@ -264,28 +245,26 @@ INVERTIR ORDEN
     direction: ltr;
 }
 
-
-
 /* =====================================================
 TEXTO
 ===================================================== */
 
 .cake-text h3 {
     font-size: 40px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     font-weight: 700;
-    color: #111111;
+    color: var(--cafe-oscuro);
+    line-height: 1.2;
 }
 
 .cake-text p {
     font-size: 19px;
-    margin-bottom: 30px;
-    color: #333333;
+    margin-bottom: 20px;
+    color: var(--cafe-oscuro);
+    opacity: 0.9;
     font-weight: 500;
     line-height: 1.8;
 }
-
-
 
 /* =====================================================
 IMAGEN CONTENEDOR
@@ -298,13 +277,8 @@ IMAGEN CONTENEDOR
     position: relative;
     overflow: hidden;
     background: var(--crema);
+    box-shadow: 0 16px 38px rgba(38, 18, 15, 0.12);
 }
-
-
-
-/* =====================================================
-IMAGEN
-===================================================== */
 
 .cake-image img {
     width: 100%;
@@ -312,9 +286,12 @@ IMAGEN
     object-fit: cover;
     object-position: center;
     border-radius: 24px;
+    transition: transform 0.5s ease;
 }
 
-
+.cake-image:hover img {
+    transform: scale(1.03);
+}
 
 /* =====================================================
 MANCHA DECORATIVA
@@ -333,7 +310,35 @@ MANCHA DECORATIVA
     pointer-events: none;
 }
 
+/* =====================================================
+CTA INFERIOR
+===================================================== */
 
+.custom-bottom-cta {
+    text-align: center;
+    max-width: 680px;
+    margin: 20px auto 0;
+    padding: 48px 32px;
+    background-color: var(--blanco);
+    border: 2px solid rgba(208, 187, 125, 0.45);
+    border-radius: 24px;
+    box-shadow: 0 14px 36px rgba(38, 18, 15, 0.07);
+}
+
+.custom-bottom-cta h3 {
+    font-size: 34px;
+    color: var(--cafe-oscuro);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.custom-bottom-cta p {
+    font-size: 18px;
+    color: var(--cafe-oscuro);
+    opacity: 0.88;
+    margin-bottom: 26px;
+    line-height: 1.65;
+}
 
 /* =====================================================
 RESPONSIVE
@@ -365,29 +370,32 @@ MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
-    /* Ajustes de espaciado y márgenes reducidos */
     .custom-cakes {
-        padding-top: 140px;
-        padding-bottom: 60px;
+        padding-top: 120px;
+        padding-bottom: 65px;
     }
 
     .custom-intro {
-        margin-bottom: 40px;
+        margin-bottom: 24px;
         font-size: 18px;
-        line-height: 1.6;
+        line-height: 1.65;
     }
 
     .cta-row {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 
     .main-cta {
-        padding: 10px 18px;
+        padding: 15px 32px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
     }
 
     .cake-row {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 28px;
         margin-bottom: 60px;
     }
 
@@ -406,19 +414,32 @@ MOBILE
     }
 
     .cake-text h3 {
-        font-size: 32px;
-        margin-bottom: 14px;
+        font-size: 30px;
+        margin-bottom: 12px;
     }
 
     .cake-text p {
         font-size: 17px;
-        line-height: 1.6;
-        margin-bottom: 15px;
+        line-height: 1.65;
+        margin-bottom: 10px;
+    }
+
+    .custom-bottom-cta {
+        padding: 36px 20px;
+        margin-top: 10px;
+    }
+
+    .custom-bottom-cta h3 {
+        font-size: 28px;
+    }
+
+    .custom-bottom-cta p {
+        font-size: 16px;
     }
 
     /* Adaptación de ilustraciones en celular */
     .custom-float-item {
-        opacity: 0.35;
+        opacity: 0.32;
     }
     .hero-fresas { width: 65px; left: 2%; top: 20px; }
     .hero-batido { width: 70px; right: 2%; top: 35px; }
@@ -426,7 +447,6 @@ MOBILE
     .b2-rebanada { width: 75px; left: 2%; top: 60%; }
     .b3-rol { width: 75px; right: 2%; top: 84%; }
     
-    /* Ocultamos los elementos adicionales en móvil para evitar sobrecarga */
     .hero-galleta,
     .b1-granos,
     .b2-fresas,
